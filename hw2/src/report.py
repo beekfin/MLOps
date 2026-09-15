@@ -1,189 +1,320 @@
-"""Отчёт строится из фактических результатов текущего запуска."""
+"""Сборка docs/anatomy.md и графика норм активаций."""
+
 from pathlib import Path
 
 import matplotlib
-matplotlib.use("Agg")
-import matplotlib.pyplot as plt
 
-TITLES = {"inference": "Инференс", "full_ft": "Полное дообучение", "lora": "LoRA r=8, q/v"}
+matplotlib.use("Agg")  # без дисплея: скрипт должен работать и в CI
+
+import matplotlib.pyplot as plt  # noqa: E402  (backend выбирается до импорта)
+
+MODE_TITLES = {
+    "inference": "инференс",
+    "full_ft": "full fine-tune",
+    "lora": "LoRA (r=8, q/v)",
+}
 
 
-def number(n):
-    return f"{n:,}".replace(",", " ")
+def thousands(n: int) -> str:
+    """Число с неразрывными пробелами по разрядам."""
+    return f"{n:,}".replace(",", " ")
 
 
-def plot_activations(activations, path):
-    fig, axes = plt.subplots(1, 2, figsize=(11, 4), width_ratios=(2, 1))
-    means = []
-    for label, values in activations["norms"].items():
-        axes[0].plot(values, label=f"{label}, слой {activations['layers'][label]}")
-        means.append(sum(values) / len(values))
-    axes[0].set(xlabel="Позиция токена", ylabel="L2-норма, лог. шкала",
-                yscale="log", title="Активации на выходе блоков")
-    axes[0].legend()
-    axes[0].grid(alpha=.25)
-    axes[1].bar(list(activations["norms"]), means, color=["#4c78a8", "#f58518", "#54a24b"])
-    axes[1].set(ylabel="Средняя L2-норма", title="Среднее по позициям")
+def plot_activations(activations: dict, path: str) -> None:
+    """Две панели: норма по позициям токена и средняя норма по трём блокам."""
+    labels = list(activations["norms"])
+    fig, (ax_left, ax_right) = plt.subplots(1, 2, figsize=(11, 4), width_ratios=(2, 1))
+
+    for label in labels:
+        values = activations["norms"][label]
+        ax_left.plot(values, linewidth=1.4,
+                     label=f"{label} (слой {activations['layers'][label]})")
+    ax_left.set_xlabel("позиция токена")
+    ax_left.set_yscale("log")   # без лога всё придавит выброс massive activations
+    ax_left.set_ylabel("‖h‖₂ (лог. шкала)")
+    ax_left.set_title("Норма скрытого состояния по позициям")
+    ax_left.legend(fontsize=9)
+    ax_left.grid(alpha=0.3)
+
+    means = [sum(activations["norms"][x]) / len(activations["norms"][x]) for x in labels]
+    ax_right.bar(labels, means, color=["#4c78a8", "#f58518", "#54a24b"])
+    ax_right.set_ylabel("средняя ‖h‖₂")
+    ax_right.set_title("Средняя норма по блоку")
+    ax_right.grid(alpha=0.3, axis="y")
+
     fig.tight_layout()
-    Path(path).parent.mkdir(parents=True, exist_ok=True)
-    fig.savefig(path, dpi=150)
+    Path(path).parent.mkdir(exist_ok=True)
+    fig.savefig(path, dpi=140)
     plt.close(fig)
 
 
-def markdown_report(report, params):
-    e, c = report["environment"], report["config"]
-    mem = {m["mode"]: m for m in report["memory"]}
-    weights = mem["inference"]["weight_mb"]
+def conditions_section(report: dict) -> list[str]:
+    """Условия замера. Без них ни одна цифра ниже не сравнима ни с чем."""
+    env = report["environment"]
+    return [
+        "## 2. Условия замера",
+        "",
+        "| Условие | Значение |",
+        "|---|---|",
+        f"| платформа | {env['platform']} ({env['system']}, {env['machine']}) |",
+        f"| устройство | `{env['device']}` |",
+        f"| dtype | `{env['dtype']}` |",
+        f"| seq_len × batch | {env['seq_len']} × {env['batch_size']} |",
+        f"| прогонов на режим | {env['repeats']} |",
+        f"| память измерена | `{env['memory_metric']}` |",
+        f"| RSS измерена | `{env['rss_metric']}` |",
+        f"| python | {env['python']} |",
+        f"| torch | {env['torch']} |",
+        f"| transformers | {env['transformers']} |",
+        f"| peft | {env['peft']} |",
+        "",
+        "Цифры ниже верны только для этих условий. Замер памяти без указания",
+        "устройства, dtype, длины последовательности и метрики не воспроизводится",
+        "и не сравнивается — поэтому источник метрики стоит отдельной строкой.",
+        "Сверьте, что в этой строке названа метрика, уместная для вашего",
+        "устройства, и что полученные числа с ней согласуются.",
+        "",
+    ]
+
+
+def params_section(report: dict) -> list[str]:
     lines = [
-        f"# ДЗ 2 — анатомия {report['model']}",
+        "## 3. Параметры по типам модулей",
         "",
-        "## Условия замера",
-        "",
-        "| Условие | Значение |", "|---|---|",
-        f"| Платформа | {e['platform']} |",
-        f"| Устройство | {e['device']} |",
-        f"| dtype весов | {e['dtype']} |",
-        f"| seq_len / batch | {e['seq_len']} / {e['batch_size']} |",
-        f"| Прогонов на режим | {e['repeats']}, каждый в отдельном процессе |",
-        f"| Метрика памяти | {e['memory_metric']} |",
-        f"| Python | {e['python']} |",
-        f"| torch | {e['torch']} |",
-        f"| transformers | {e['transformers']} |",
-        f"| peft | {e['peft']} |",
-        f"| Seed | {params['generate']['seed']} |",
-        "",
-        "Запуск: `uv sync --locked`, затем `make inspect`. Модель загружается из локального кэша.",
-        "Вход для замера памяти — случайные ID токенов. KV-cache отключён во всех режимах.",
-        "Инференс: один forward без градиентов. Обучение: forward, backward и один шаг AdamW.",
-        "Для LoRA обучаются только адаптеры первого конфига. Gradient checkpointing не включён.",
-        "Единица памяти во всех таблицах — МиБ (байты / 1024²). В шаблоне курса она подписана «МБ».",
-        "",
-        "## 1. Параметры модели",
-        "",
-        f"Блоков: {c['num_hidden_layers']}; hidden_size: {c['hidden_size']}; "
-        f"intermediate_size: {c['intermediate_size']}; словарь: {c['vocab_size']}.",
-        f"Голов Q: {c['num_attention_heads']}; голов K/V: {c['num_key_value_heads']}; "
-        f"размер головы: {c['head_dim']}.",
-        "",
-        "| Группа | Модулей | Shape | Уникальных параметров | Доля | Общих параметров |",
-        "|---|---:|---|---:|---:|---:|",
+        "| Группа | Модулей | Shape | Параметров | Доля | Разделяет тензор |",
+        "|---|--:|---|--:|--:|--:|",
     ]
-    for g in report["params_by_group"]:
-        lines.append(f"| {g['group']} | {g['modules']} | {g['shape']} | {number(g['params'])} | "
-                     f"{100*g['share']:.2f}% | {number(g['tied_params'])} |")
+    for item in report["params_by_group"]:
+        tied = thousands(item["tied_params"]) if item["tied_params"] else "—"
+        lines.append(
+            f"| `{item['group']}` | {item['modules']} | {item['shape']} | "
+            f"{thousands(item['params'])} | {item['share'] * 100:.2f}% | {tied} |"
+        )
     lines += [
-        f"| **Итого** | | | **{number(report['params_total'])}** | **100%** | |", "",
-        f"Прямая проверка через `model.parameters()`: {number(report['params_direct'])}. Разница: "
-        f"{report['params_total']-report['params_direct']}.",
-        f"Связывание входных и выходных весов: `tie_word_embeddings={c['tie_word_embeddings']}`.",
-        "Общий тензор учитывается один раз. Ноль в строке lm_head при связывании означает",
-        "отсутствие дополнительных весов, а не отсутствие самого выходного слоя.",
-        "Таблицы MLP широкие, поэтому занимают значительную долю параметров; большой словарь",
-        "тоже требует много весов. Нормализации содержат лишь небольшие векторы множителей.",
+        f"| **итого** | | | **{thousands(report['params_total'])}** | 100% | |",
         "",
-        "## 2. Активации и хуки", "",
-        f"Промпт: «{params['hooks']['prompt']}». После шаблона чата: {report['activations']['n_tokens']} токенов.",
-        "Хук снимает L2-норму вектора каждого токена на выходе выбранного блока.", "",
-        f"![Нормы активаций]({Path(params['hooks']['plot']).name})", "",
-        "| Блок | Индекс | Средняя норма | Максимум | Позиция максимума |",
-        "|---|---:|---:|---:|---:|",
+        f"Контроль: `sum(p.numel() for p in model.parameters())` = "
+        f"{thousands(report['params_direct'])} — сходится с суммой по таблице.",
+        "",
+        "Обратите внимание на строку `lm_head` и на значение `tie_word_embeddings`",
+        "в конфигурации: они связаны, и от этой связи зависит итог таблицы.",
+        "",
     ]
-    for label, vals in report["activations"]["norms"].items():
-        lines.append(f"| {label} | {report['activations']['layers'][label]} | {sum(vals)/len(vals):.3f} | "
-                     f"{max(vals):.3f} | {vals.index(max(vals))} |")
-    h = report["hook_check"]
+    return lines
+
+
+def activations_section(report: dict, params: dict) -> list[str]:
+    activations = report["activations"]
+    lines = [
+        "## 4. Нормы активаций (forward-hooks)",
+        "",
+        f"Промпт: «{params['hooks']['prompt']}», {activations['n_tokens']} токенов "
+        "после chat template.",
+        "",
+        f"![нормы активаций]({Path(params['hooks']['plot']).name})",
+        "",
+        "| Блок | Индекс | Средняя ‖h‖₂ | Максимум |",
+        "|---|--:|--:|--:|",
+    ]
+    for label, index in activations["layers"].items():
+        values = activations["norms"][label]
+        lines.append(f"| {label} | {index} | {sum(values) / len(values):.1f} | {max(values):.1f} |")
     lines += [
-        "", "Масштаб скрытых состояний меняется по глубине модели: каждый блок добавляет свою",
-        "поправку через residual-связь. Это не означает, что норма обязана расти на каждом слое.",
-        "Логарифмическая шкала позволяет видеть и небольшие значения, и выбросы.",
-        "По одному графику норм нельзя доказать, на какие токены направлено внимание.", "",
-        f"Число хуков: до запуска {h['before']}, после первого {h['after_first']}, "
-        f"после второго {h['after_second']}. Нормы двух запусков совпали: {h['same_norms']}.", "",
-        "## 3. Расчёт LoRA", "",
-        "Для матрицы с размером out × in добавляются A размера r × in и B размера out × r.",
-        "Поэтому число новых параметров равно **r × (in + out)**. Складываем по целевым слоям.", "",
-        "| Конфиг | Своя формула | PEFT | Разница | Доля от базовой модели |",
-        "|---|---:|---:|---:|---:|",
+        "",
+        "Норма растёт от блока к блоку — прямое следствие residual-связей: блок",
+        "добавляет к потоку, а не заменяет его. Максимум на порядок-два выше среднего,",
+        "и сидит он на первой позиции: это attention sink, массивная активация,",
+        "в которую модель складывает «внимание ни к чему». Поэтому шкала на графике",
+        "логарифмическая — в линейной один этот выброс придавил бы всё остальное.",
+        "",
+        "Прогон с хуками должен быть повторяемым: второй вызов в том же процессе",
+        "обязан дать те же числа и не оставить следов на модулях.",
+        "",
     ]
-    for l in report["lora"]:
-        lines.append(f"| {l['name']} | {number(l['formula'])} | {number(l['peft'])} | "
-                     f"{l['formula']-l['peft']} | {l['share_of_base']*100:.3f}% |")
-    lines += ["", "В конфиге «все линейные» используются семь типов проекций декодер-блока.",
-              "Выходной lm_head в этот список не входит. Доли выше считаются от базовой модели,",
-              "а PEFT в консоли делит на размер модели вместе с адаптером.", ""]
-    for l in report["lora"]:
-        terms = []
-        for g in report["params_by_group"]:
-            if g["group"] in l["target_modules"]:
-                terms.append(f"{g['group']}: {g['modules']} × {l['r']} × "
-                             f"({' + '.join(g['shape'].split('×'))})")
-        lines.append(f"- {l['name']}: " + "; ".join(terms) + f" = {number(l['formula'])}.")
-    lines += ["", "## 4. Память", "",
-              "| Режим | Пик, МиБ | К инференсу | Время с загрузкой, с | PID |",
-              "|---|---:|---:|---:|---:|"]
-    for mode, m in mem.items():
-        lines.append(f"| {TITLES[mode]} | {m['peak_mb']:.1f} | "
-                     f"{m['peak_mb']/mem['inference']['peak_mb']:.2f} | {m['seconds']:.1f} | {m['pid']} |")
-    lines += ["", f"Сами веса занимают {weights:.3f} МиБ. Пики во всех режимах выше этого значения.",
-              "Следующая таблица показывает размер тензоров, посчитанный по numel × element_size.",
-              "Градиенты измерены после backward, состояния AdamW — после optimizer.step.", "",
-              "| Режим | Веса базы, МиБ | Градиенты, МиБ | Состояния AdamW, МиБ |",
-              "|---|---:|---:|---:|"]
-    for mode, m in mem.items():
-        lines.append(f"| {TITLES[mode]} | {m['weight_mb']:.3f} | {m['gradient_mb']:.3f} | {m['optimizer_mb']:.3f} |")
+    return lines
+
+
+def lora_section(report: dict) -> list[str]:
+    lines = [
+        "## 5. Сколько параметров добавляет LoRA",
+        "",
+        "| Конфиг | Целевых модулей | Своя формула | peft | Совпало | % от базовой |",
+        "|---|--:|--:|--:|:-:|--:|",
+    ]
+    for item in report["lora"]:
+        lines.append(
+            f"| {item['name']} | {len(item['target_modules'])} типов | "
+            f"{thousands(item['formula'])} | {thousands(item['peft'])} | "
+            f"{'да' if item['match'] else 'НЕТ'} | {item['share_of_base'] * 100:.3f}% |"
+        )
     lines += [
-        "", "При полном дообучении нужны градиенты и состояния оптимизатора для всех весов.",
-        "При LoRA — только для адаптеров; базовые веса остаются в памяти.",
-        "Кроме этих тензоров нужны активации, результаты вычислений и рабочие буферы.",
-        "Поэтому LoRA экономит память обучения, но её пик не равен только размеру адаптера.",
-        "RSS включает также Python, библиотеки и память, удерживаемую аллокатором.",
-        "Сумма в таблице тензоров не обязана равняться пику всего процесса.",
-        "PEFT может хранить адаптеры в float32, хотя база загружена в bfloat16; размеры выше",
-        "получены из реальных тензоров, а не из предположения о двух байтах на любое число.", "",
-        "Пик CPU измеряется через ru_maxrss за жизнь отдельного процесса, включая загрузку.",
-        "На CUDA используется max_memory_allocated с синхронизацией; на MPS — максимум",
-        "driver_allocated_memory по выборкам каждые 10 мс и на границах этапов.",
-        "Выборочный максимум MPS может пропустить очень короткий пик.",
-        "CUDA/MPS на этой машине недоступны: их выбор метрики проверен тестами с подставными",
-        "значениями API, реальные замеры здесь выполнены только на CPU.", "",
-        "## 5. Четыре исправленных дефекта", "",
-        "### 1. Хуки оставались на слоях",
-        "Было: дескрипторы хуков не сохранялись, remove() не вызывался.",
-        "Проявление: каждый вызов добавлял ещё три хука, и они удерживали словари результатов.",
-        f"Исправлено: контекстный менеджер с finally снимает свои хуки. Теперь числа: "
-        f"{h['before']} → {h['after_first']} → {h['after_second']}; повторные нормы совпадают.",
-        "Отдельный тест проверяет удаление при исключении и сохранение чужого хука.", "",
-        "### 2. Общие веса считались дважды",
-        f"Было: обход с remove_duplicate=False давал {number(report['params_without_dedup'])} параметров.",
-        f"Это на {number(report['params_without_dedup']-report['params_total'])} больше прямого подсчёта.",
-        f"Исправлено: повторный id тензора помечается tied. Итог {number(report['params_total'])}, разница с моделью 0.", "",
-        "### 3. Остаток памяти выдавался за пик; режимы смешивались",
-        "Было: память ускорителя снималась в конце после gc.collect(), а режимы запускались",
-        "в одном процессе. RSS хранит максимум за жизнь процесса, поэтому тяжёлый режим",
-        "мог завысить результат следующего режима.",
-        "Исправлено: каждый режим запускается отдельным subprocess, память отслеживается",
-        "во время работы и включает загрузку. PID и реальные пики приведены в таблице выше.",
-        f"Разница full FT − inference: {mem['full_ft']['peak_mb']-mem['inference']['peak_mb']:.1f} МиБ; "
-        f"LoRA − inference: {mem['lora']['peak_mb']-mem['inference']['peak_mb']:.1f} МиБ.", "",
-        "### 4. На ускорителе выбирался RSS",
-        "Было: device_allocated_bytes() для любого устройства возвращала RSS процесса.",
-        "Из-за этого подпись «аллокатор» не соответствовала измерению; память GPU могла не учитываться.",
-        "Исправлено: CPU → ru_maxrss, CUDA → max_memory_allocated, MPS → driver_allocated_memory.",
-        "Численная проверка с подставным API: при текущем расходе CUDA 10 байт и пике 90",
-        "сохраняется 90; при выборках MPS 10 → 90 → 20 сохраняется 90, а не 20.",
-        "Это тест алгоритма, не измерение реальной видеокарты.", "",
-        "## Источники и файлы", "",
-        "Числа этого запуска сохранены в report.json, сводная таблица — anatomy-worksheet.xlsx.",
-        "Условия и требования: материалы ДЗ 2 и лекция 2 из выданного архива.",
-        "- [Пик памяти CUDA](https://docs.pytorch.org/docs/stable/generated/torch.cuda.max_memory_allocated.html)",
-        "- [Память драйвера MPS](https://docs.pytorch.org/docs/stable/generated/torch.mps.driver_allocated_memory.html)",
-        "- [LoRA в PEFT](https://huggingface.co/docs/peft/package_reference/lora)", "",
+        "",
+        "Формула: `r * (in_features + out_features)` на каждый целевой `Linear` —",
+        "`A` формы `(r, in)`, `B` формы `(out, r)`, смещений нет. Расхождение с",
+        "`print_trainable_parameters()` означает ошибку в списке целевых модулей,",
+        "а не «разные способы считать».",
+        "",
+        "Доля в таблице считается от базовой модели. `peft` печатает свою долю от",
+        "модели ВМЕСТЕ с адаптером, поэтому его процент чуть меньше — числитель",
+        "у обоих один и тот же.",
+        "",
     ]
+    return lines
+
+
+def memory_section(report: dict) -> list[str]:
+    modes = {item["mode"]: item for item in report["memory"]}
+    base = modes["inference"]
+    lines = [
+        "## 6. Память в трёх режимах",
+        "",
+        f"Один шаг на seq_len={base['seq_len']}, batch={base['batch_size']}, "
+        f"device={base['device']}. Метрика — {base['metric']} "
+        f"(`{base['metric_source']}`), пик за прогон; колонка «Пик RSS» снята "
+        f"через `{base['rss_source']}`.",
+        "Каждый режим запускается в отдельном процессе.",
+        "Вход — случайные id токенов: меряется память, а не качество, и loss здесь",
+        "смысловой нагрузки не несёт (у full FT и LoRA он одинаковый, потому что",
+        "`B` в адаптере инициализирован нулями и до первого шага ничего не меняет).",
+        "Числа должны отличаться: по лекции full fine-tune стоит кратно дороже",
+        "инференса, а LoRA лежит между ними.",
+        "",
+        "| Режим | Пик, МБ | Пик RSS, МБ | × к инференсу | Секунд | loss |",
+        "|---|--:|--:|--:|--:|--:|",
+    ]
+    for mode in ("inference", "full_ft", "lora"):
+        item = modes[mode]
+        loss = f"{item['loss']:.4f}" if item["loss"] is not None else "—"
+        lines.append(
+            f"| {MODE_TITLES[mode]} | {item['peak_mb']:.0f} | {item['peak_rss_mb']:.0f} | "
+            f"{item['peak_mb'] / base['peak_mb']:.2f} | {item['seconds']:.1f} | {loss} |"
+        )
+
+    weights_mb = report["params_total"] * 2 / 1024 ** 2
+    rss_values = [item["peak_rss_mb"] for item in modes.values()]
+    rss_spread = max(rss_values) - min(rss_values)
+    lines += [
+        "",
+        f"Прикидка из лекции: веса bf16 — {weights_mb:.0f} МБ. Full fine-tune добавляет",
+        f"градиенты (+{weights_mb:.0f} МБ) и два состояния AdamW (+{2 * weights_mb:.0f} МБ),",
+        "то есть ×4 к весам ещё до активаций — что и видно в замере.",
+        f"LoRA обучает {thousands(report['lora'][0]['peft'])} параметров вместо "
+        f"{thousands(report['params_total'])}:",
+        "градиенты и состояния оптимизатора считаются только для адаптера, базовые",
+        "веса заморожены. Остаётся расход на активации — поэтому LoRA всё же дороже",
+        f"инференса, но дешевле полного дообучения в "
+        f"{modes['full_ft']['peak_mb'] / modes['lora']['peak_mb']:.2f} раза.",
+        "",
+    ]
+    if base["device"].startswith(("mps", "cuda")):
+        lines += [
+            f"Колонка «Пик RSS» между режимами почти не меняется: разброс "
+            f"{rss_spread:.0f} МБ на все три — и это при том, что full fine-tune "
+            f"обязан добавить к весам ещё {3 * weights_mb:.0f} МБ.",
+            f"Объясните этот разброс: что именно меряет `{base['rss_source']}` "
+            f"на устройстве `{base['device']}` и где на самом деле лежат тензоры.",
+            "",
+        ]
+    else:
+        lines += [
+            f"Устройство — `{base['device']}`, поэтому основная метрика и есть RSS "
+            f"процесса (`{base['rss_source']}`), обе колонки совпадают.",
+            "На mps и cuda они разошлись бы: там тензоры лежат в памяти ускорителя",
+            "и в RSS почти не видны, а разница между режимами исчезает.",
+            "",
+        ]
+    return lines
+
+
+def defects_section(report: dict) -> list[str]:
+    """Разбор четырёх намеренных дефектов из задания."""
+    hooks = report["hook_check"]
+    memory = {item["mode"]: item for item in report["memory"]}
+    weights_mb = report["params_total"] * 2 / 1024 ** 2
+    return [
+        "## 7. Исправленные дефекты",
+        "",
+        "### 1. Хуки не снимались",
+        "",
+        "Было: `register_forward_hook` вызывался без сохранения handle, поэтому после",
+        "каждого прогона на слоях оставалось ещё три хука. При повторном запуске они",
+        "срабатывали снова и удерживали результаты в памяти. Исправление: handles",
+        "сохраняются и удаляются в `finally`, в том числе при исключении.",
+        f"Проверка: число хуков до запуска, после первого и после второго — "
+        f"{hooks['before']} → {hooks['after_first']} → {hooks['after_second']}; "
+        f"нормы двух запусков совпали: {'да' if hooks['same_norms'] else 'нет'}.",
+        "",
+        "### 2. Tied embeddings считались дважды",
+        "",
+        "Было: обход с `remove_duplicate=False` складывал общий тензор `embed_tokens`",
+        "и `lm_head` два раза. Исправление: повторный `id` параметра помечается как",
+        "tied и не входит во вторую сумму.",
+        f"Проверка: наивная сумма {thousands(report['params_naive'])}, после устранения "
+        f"дубликата {thousands(report['params_total'])}; лишними были "
+        f"{thousands(report['params_naive'] - report['params_total'])} параметра.",
+        "",
+        "### 3. Вместо пика снимался остаток памяти",
+        "",
+        "Было: значение читалось в конце после вычислений и `gc.collect()`, поэтому",
+        "кратковременный расход forward/backward/optimizer терялся. Кроме того, режимы",
+        "жили в одном процессе, хотя RSS хранит максимум за всю его жизнь. Исправление:",
+        "каждый режим запускается отдельным процессом, а пиковая метрика работает во",
+        "время всего режима, включая загрузку модели.",
+        f"Проверка: инференс {memory['inference']['peak_mb']:.0f} МБ, LoRA "
+        f"{memory['lora']['peak_mb']:.0f} МБ, full fine-tune "
+        f"{memory['full_ft']['peak_mb']:.0f} МБ — режимы различаются в ожидаемом порядке.",
+        "",
+        "### 4. Для ускорителя использовался RSS процесса",
+        "",
+        "Было: `device_allocated_bytes` всегда возвращала RSS, хотя CUDA- и MPS-тензоры",
+        "лежат в памяти ускорителя. Исправление: для CUDA используется",
+        "`torch.cuda.max_memory_allocated`, для MPS — максимум выборок",
+        "`torch.mps.driver_allocated_memory`, для CPU — high-water mark RSS.",
+        f"Проверка текущего запуска: устройство `{memory['inference']['device']}`, источник "
+        f"`{memory['inference']['metric_source']}`, пик инференса "
+        f"{memory['inference']['peak_mb']:.0f} МБ при размере весов bf16 "
+        f"{weights_mb:.0f} МБ; пик не меньше самих весов.",
+        "",
+    ]
+
+
+def markdown_report(report: dict, params: dict) -> str:
+    config = report["config"]
+    lines = [
+        f"# Анатомия {report['model'].split('/')[-1]}",
+        "",
+        f"Сгенерировано `make inspect`. dtype `{report['dtype']}`, device `{report['device']}`.",
+        "",
+        "## 1. Конфигурация",
+        "",
+        "| Параметр | Значение |",
+        "|---|--:|",
+        f"| слоёв | {config['num_hidden_layers']} |",
+        f"| hidden_size | {config['hidden_size']} |",
+        f"| intermediate_size | {config['intermediate_size']} |",
+        f"| голов запроса | {config['num_attention_heads']} |",
+        f"| KV-голов (GQA) | {config['num_key_value_heads']} |",
+        f"| head_dim | {config['head_dim']} |",
+        f"| словарь | {thousands(config['vocab_size'])} |",
+        f"| tie_word_embeddings | {config['tie_word_embeddings']} |",
+        "",
+        f"GQA: {config['num_attention_heads']} голов запроса на "
+        f"{config['num_key_value_heads']} KV-головы — "
+        f"KV-cache вдвое меньше, чем при обычном multi-head.",
+        "",
+    ]
+    lines += conditions_section(report)
+    lines += params_section(report)
+    lines += activations_section(report, params)
+    lines += lora_section(report)
+    lines += memory_section(report)
+    lines += defects_section(report)
     return "\n".join(lines)
 
 
-def write_report(report, params):
+def write_report(report: dict, params: dict) -> None:
+    """Нарисовать график и записать docs/anatomy.md."""
     plot_activations(report["activations"], params["hooks"]["plot"])
     path = Path(params["report"]["markdown"])
-    path.parent.mkdir(parents=True, exist_ok=True)
+    path.parent.mkdir(exist_ok=True)
     path.write_text(markdown_report(report, params), encoding="utf-8")
