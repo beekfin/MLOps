@@ -15,7 +15,7 @@ v2:
 	uv run dvc repro
 
 diff:
-	uv run dvc metrics diff
+	uv run dvc metrics diff HEAD~1
 
 dag:
 	uv run dvc dag

@@ -1,21 +1,21 @@
 {
-  "version": "v1",
-  "examples": 1656,
+  "version": "v2",
+  "examples": 2763,
   "system_prompts": 5,
-  "groups": 578,
+  "groups": 783,
   "largest_group": "dpkg",
-  "largest_group_share": 0.0525,
+  "largest_group_share": 0.0507,
   "answer_len": {
-    "p10": 171,
-    "p50": 546,
-    "p90": 1849,
-    "ratio_p90_p10": 10.81,
-    "cv": 1.102,
+    "p10": 175,
+    "p50": 557,
+    "p90": 1853,
+    "ratio_p90_p10": 10.59,
+    "cv": 1.228,
     "min": 31,
-    "max": 9664
+    "max": 24197
   },
-  "same_length_share": 0.0042,
-  "duplicate_answer_share": 0.0,
+  "same_length_share": 0.0033,
+  "duplicate_answer_share": 0.0007,
   "thresholds": {
     "min_examples": 1000,
     "min_system_prompts": 3,
@@ -27,5 +27,5 @@
   },
   "violations": [],
   "passed": true,
-  "seconds": 0.11
+  "seconds": 0.19
 }
