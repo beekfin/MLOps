@@ -106,7 +106,9 @@ def main() -> None:
         source_rows,
         key=lambda row: rank(f"askubuntu-{row['question_id']}"),
     )[:limit]
-    frequencies = Counter(tag for row in selected for tag in row["tags"])
+    # Частоты считаются по фиксированному источнику, а не по срезу версии:
+    # при расширении v1 -> v2 тема уже существующего примера не меняется.
+    frequencies = Counter(tag for row in source_rows for tag in row["tags"])
 
     out = Path(paths["raw"])
     out.parent.mkdir(parents=True, exist_ok=True)

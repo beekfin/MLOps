@@ -1,22 +1,22 @@
 {
-  "version": "v2",
+  "version": "v1",
   "seed": 42,
   "group_key": "topic",
-  "groups_total": 783,
+  "groups_total": 571,
   "sizes": {
-    "train": 2211,
-    "val": 276,
-    "test": 276
+    "train": 1325,
+    "val": 166,
+    "test": 165
   },
   "groups": {
-    "train": 378,
-    "val": 202,
-    "test": 203
+    "train": 298,
+    "val": 137,
+    "test": 136
   },
   "ratios_actual": {
-    "train": 0.8002,
-    "val": 0.0999,
-    "test": 0.0999
+    "train": 0.8001,
+    "val": 0.1002,
+    "test": 0.0996
   },
   "contamination": {
     "id_overlap": 0,
@@ -29,5 +29,5 @@
       "near_dup": []
     }
   },
-  "seconds": 1.2
+  "seconds": 0.74
 }
