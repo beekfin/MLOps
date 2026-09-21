@@ -11,8 +11,7 @@ stages:
   collect:
     cmd: python -m src.collect
     deps:
-      # TODO: добавить сюда путь к СВОЕМУ источнику данных.
-      # Без этого dvc не заметит, что источник изменился, и не пересчитает стадию.
+      - source/askubuntu.jsonl
       - src/collect.py
       - src/config.py
     params:

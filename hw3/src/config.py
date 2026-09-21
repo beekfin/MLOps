@@ -26,9 +26,8 @@ def source_files(params: dict) -> list[Path]:
     files = [Path(p) for p in sources[version]]
     missing = [f for f in files if not f.exists()]
     if missing:
-        # Первое, обо что спотыкается каждый: пакет приходит настроенным на
-        # курсовой датасет, которого у студента нет. Сообщение должно говорить,
-        # что делать, а не печатать FileNotFoundError с чужим абсолютным путём.
+        # Сообщение указывает отсутствующий источник и способ исправления,
+        # а не оставляет голый FileNotFoundError.
         raise SystemExit(
             "стадия collect не нашла источник:\n  "
             + "\n  ".join(str(f) for f in missing)

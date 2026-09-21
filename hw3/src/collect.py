@@ -1,122 +1,144 @@
-"""Стадия collect: источник → data/raw.jsonl.
+"""Стадия collect: снимок Ask Ubuntu -> chat JSONL.
 
-ЗДЕСЬ студент подменяет сбор на свой. Ниже — чтение parquet курсового датасета
-НМО; у вас на этом месте будет парсер сайта, выгрузка из БД, экспорт из Notion.
-Контракт стадии, а не её внутренности, держит остальной пайплайн:
-на выходе JSONL со строками {"id", "topic", "messages": [system, user, assistant]}.
-
-Скачанный чужой набор сам по себе сдачей не является (README, «Готовый датасет
-как источник»). Поэтому стадия не перекладывает parquet в JSONL один в один,
-а делает три вещи, и каждая видна числом в metrics/collect.json:
-
-  1. сужает набор до перечисленных тем (collect.topics), если это нужно задаче;
-  2. сверяет ответ с разметкой источника (collect.verify_answer_index) —
-     расхождение выбрасывается, а не переносится в обучение;
-  3. разводит единственную инструкцию источника на варианты
-     (collect.system_prompts), чтобы модель не заучила её формулировку.
+Из согласованного источника берутся вопросы по управлению пакетами и их
+принятые ответы. HTML преобразуется в обычный текст, каждому примеру
+назначается тематическая группа по тегам, а системная инструкция выбирается
+детерминированно по id.
 """
 
 import hashlib
+import html
 import json
+import re
 import time
+from collections import Counter
+from html.parser import HTMLParser
 from pathlib import Path
-
-import pyarrow.parquet as pq
 
 from src.config import load_params, source_files
 
-COLUMNS = ["id", "topic", "correct_choice_indices", "messages"]
-BATCH = 2000
+
+class TextExtractor(HTMLParser):
+    """Преобразовать HTML сообщения Stack Exchange в читаемый текст."""
+
+    BREAK_TAGS = {"p", "div", "br", "li", "pre", "blockquote", "h1", "h2", "h3", "h4"}
+
+    def __init__(self) -> None:
+        super().__init__(convert_charrefs=True)
+        self.parts: list[str] = []
+        self.hidden_depth = 0
+
+    def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
+        if tag in {"script", "style"}:
+            self.hidden_depth += 1
+        elif not self.hidden_depth and tag in self.BREAK_TAGS:
+            self.parts.append("\n")
+        if not self.hidden_depth and tag == "li":
+            self.parts.append("- ")
+
+    def handle_endtag(self, tag: str) -> None:
+        if tag in {"script", "style"} and self.hidden_depth:
+            self.hidden_depth -= 1
+        elif not self.hidden_depth and tag in self.BREAK_TAGS:
+            self.parts.append("\n")
+
+    def handle_data(self, data: str) -> None:
+        if not self.hidden_depth:
+            self.parts.append(data)
+
+
+def plain_text(value: str) -> str:
+    parser = TextExtractor()
+    parser.feed(value)
+    text = html.unescape("".join(parser.parts)).replace("\xa0", " ")
+    lines = [re.sub(r"[ \t]+", " ", line).strip() for line in text.splitlines()]
+    return "\n".join(line for line in lines if line).strip()
 
 
 def pick_prompt(example_id: str, variants: list[str]) -> str:
-    """Детерминированно выбрать вариант инструкции по id примера.
-
-    Именно sha1, а не встроенный hash(): тот солится на каждый запуск процесса,
-    и raw.jsonl переставал бы быть воспроизводимым.
-    """
     digest = hashlib.sha1(example_id.encode("utf-8")).hexdigest()
     return variants[int(digest, 16) % len(variants)]
 
 
-def answer_matches_source(row: dict) -> bool:
-    """Совпадает ли ответ ассистента с correct_choice_indices источника.
+def rank(example_id: str) -> str:
+    """Стабильный порядок выборки: v1 остаётся подмножеством v2."""
+    return hashlib.sha1(example_id.encode("utf-8")).hexdigest()
 
-    В sft_single правильный вариант ровно один, а ответ начинается с его
-    номера. Всё, что не так, — либо другой тип задачи, либо битая разметка.
-    """
-    indices = list(row["correct_choice_indices"] or [])
-    if len(indices) != 1:
-        return False
-    return row["messages"][2]["content"].startswith(f"Ответ: {indices[0]}")
+
+def choose_topic(tags: list[str], frequencies: Counter[str]) -> str:
+    """Выбрать наиболее конкретный тег, не создавая доминирующую группу."""
+    return min(tags, key=lambda tag: (frequencies[tag], tag))
+
+
+def read_source(paths: list[Path]) -> list[dict]:
+    rows: dict[int, dict] = {}
+    for path in paths:
+        with path.open(encoding="utf-8") as fh:
+            for lineno, line in enumerate(fh, start=1):
+                try:
+                    row = json.loads(line)
+                except json.JSONDecodeError as exc:
+                    raise SystemExit(f"{path}:{lineno}: битый JSON — {exc.msg}") from exc
+                required = {
+                    "question_id", "answer_id", "tags", "title_html",
+                    "question_html", "answer_html", "source_url",
+                }
+                missing = required - row.keys()
+                if missing:
+                    raise SystemExit(f"{path}:{lineno}: нет полей {sorted(missing)}")
+                rows[int(row["question_id"])] = row
+    return list(rows.values())
 
 
 def main() -> None:
     params = load_params()
     cfg = params["collect"]
     paths = params["paths"]
-    n_rows = cfg["n_rows"]
+    version = cfg["version"]
     variants = cfg["system_prompts"]
     if not variants:
         raise SystemExit("collect.system_prompts пуст: инструкцию брать неоткуда")
-    topics = cfg["topics"]
-    wanted = set(topics) if topics else None
+
+    started = time.perf_counter()
+    source_rows = read_source(source_files(params))
+    limit = int(cfg["n_rows"][version])
+    selected = sorted(
+        source_rows,
+        key=lambda row: rank(f"askubuntu-{row['question_id']}"),
+    )[:limit]
+    frequencies = Counter(tag for row in selected for tag in row["tags"])
 
     out = Path(paths["raw"])
     out.parent.mkdir(parents=True, exist_ok=True)
-
-    started = time.perf_counter()
-    scanned = written = dropped_topic = dropped_answer = 0
     prompts_used: set[str] = set()
-
+    groups: Counter[str] = Counter()
     with out.open("w", encoding="utf-8") as fh:
-        for src in source_files(params):
-            if not src.exists():
-                raise SystemExit(f"нет файла-источника: {src}")
-            taken = 0
-            # Фильтры применяются ДО отсечки n_rows: иначе «первые 3000 строк»
-            # и «3000 строк по теме» — разные вещи, и сужение набора давало бы
-            # случайный огрызок вместо заказанного объёма.
-            for batch in pq.ParquetFile(src).iter_batches(batch_size=BATCH, columns=COLUMNS):
-                for row in batch.to_pylist():
-                    if taken >= n_rows:
-                        break
-                    scanned += 1
-                    if wanted is not None and row["topic"] not in wanted:
-                        dropped_topic += 1
-                        continue
-                    if cfg["verify_answer_index"] and not answer_matches_source(row):
-                        dropped_answer += 1
-                        continue
-                    prompt = pick_prompt(row["id"], variants)
-                    prompts_used.add(prompt)
-                    record = {
-                        "id": row["id"],
-                        "topic": row["topic"],
-                        # messages из parquet уже в формате чата; меняется только
-                        # системная реплика — на выбранный вариант инструкции.
-                        "messages": [
-                            {"role": "system", "content": prompt},
-                            *(
-                                {"role": m["role"], "content": m["content"]}
-                                for m in row["messages"][1:]
-                            ),
-                        ],
-                    }
-                    fh.write(json.dumps(record, ensure_ascii=False) + "\n")
-                    taken += 1
-                    written += 1
-                if taken >= n_rows:
-                    break
+        for row in selected:
+            example_id = f"askubuntu-{row['question_id']}"
+            prompt = pick_prompt(example_id, variants)
+            topic = choose_topic(row["tags"], frequencies)
+            user = f"{plain_text(row['title_html'])}\n\n{plain_text(row['question_html'])}"
+            assistant = plain_text(row["answer_html"])
+            prompts_used.add(prompt)
+            groups[topic] += 1
+            record = {
+                "id": example_id,
+                "topic": topic,
+                "messages": [
+                    {"role": "system", "content": prompt},
+                    {"role": "user", "content": user},
+                    {"role": "assistant", "content": assistant},
+                ],
+            }
+            fh.write(json.dumps(record, ensure_ascii=False) + "\n")
 
     metrics = {
-        "version": cfg["version"],
-        "files": len(source_files(params)),
-        "rows_scanned": scanned,
-        "rows_written": written,
-        "dropped_topic_filter": dropped_topic,
-        "dropped_answer_mismatch": dropped_answer,
-        "topics_filter": len(wanted) if wanted else 0,
+        "version": version,
+        "source_files": len(source_files(params)),
+        "source_rows": len(source_rows),
+        "rows_written": len(selected),
+        "groups": len(groups),
+        "largest_group_share": round(max(groups.values()) / len(selected), 4),
         "system_prompt_variants": len(prompts_used),
         "seconds": round(time.perf_counter() - started, 2),
     }
@@ -125,11 +147,9 @@ def main() -> None:
     mpath.write_text(json.dumps(metrics, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
     print(
-        f"collect: версия {cfg['version']}, файлов {metrics['files']}, "
-        f"просмотрено {scanned}, записано {written} "
-        f"(фильтр тем -{dropped_topic}, расхождение с разметкой -{dropped_answer}), "
-        f"вариантов инструкции {len(prompts_used)}, "
-        f"{metrics['seconds']} с → {out}"
+        f"collect: {version}, источник {len(source_rows)} строк -> {len(selected)}, "
+        f"групп {len(groups)}, вариантов инструкции {len(prompts_used)}, "
+        f"{metrics['seconds']} с -> {out}"
     )
 
 

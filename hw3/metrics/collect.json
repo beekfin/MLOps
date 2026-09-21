@@ -1,0 +1,10 @@
+{
+  "version": "v1",
+  "source_files": 1,
+  "source_rows": 4841,
+  "rows_written": 1800,
+  "groups": 595,
+  "largest_group_share": 0.0533,
+  "system_prompt_variants": 5,
+  "seconds": 0.68
+}
