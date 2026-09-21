@@ -18,7 +18,7 @@ stages:
     params:
       params.yaml:
         collect:
-          version: v2
+          version: v1
           n_rows:
             v1: 1800
             v2: 3000
@@ -43,19 +43,19 @@ stages:
     outs:
     - path: data/raw.jsonl
       hash: md5
-      md5: 466878522983ce90fb85b481043accf0
-      size: 8351520
+      md5: 6c8c3dc802d5ee5e374be9d9f13c7382
+      size: 4991405
     - path: metrics/collect.json
       hash: md5
-      md5: 41e8c2fef34869fed641df8fb501f6a2
+      md5: 398db45f6dee819fb6a0d27dae66b531
       size: 190
   clean:
     cmd: python -m src.clean
     deps:
     - path: data/raw.jsonl
       hash: md5
-      md5: 466878522983ce90fb85b481043accf0
-      size: 8351520
+      md5: 6c8c3dc802d5ee5e374be9d9f13c7382
+      size: 4991405
     - path: src/clean.py
       hash: md5
       md5: 41a8df0a7c579e84c7af0519c72d4625
@@ -99,19 +99,19 @@ stages:
     outs:
     - path: data/clean.jsonl
       hash: md5
-      md5: 75363e449fef81467de14fe9ebdd94d9
-      size: 5776220
+      md5: b51322401c8491983ab3828a0739afa9
+      size: 3429141
     - path: metrics/clean.json
       hash: md5
-      md5: 2f3bb14e47a9afa725e2a6afa7a89eed
-      size: 456
+      md5: 622a0de399daed455e16423cbc18cd32
+      size: 454
   diversity:
     cmd: python -m src.diversity
     deps:
     - path: data/clean.jsonl
       hash: md5
-      md5: 75363e449fef81467de14fe9ebdd94d9
-      size: 5776220
+      md5: b51322401c8491983ab3828a0739afa9
+      size: 3429141
     - path: src/config.py
       hash: md5
       md5: 5a498b48e554d887a23ba19bd3c90932
@@ -147,15 +147,15 @@ stages:
     outs:
     - path: metrics/diversity.json
       hash: md5
-      md5: 0deec3b74a51ad1c992a739631bd55e6
-      size: 648
+      md5: 0723b65d581c3e33dc603ffc141fa259
+      size: 645
   split:
     cmd: python -m src.split
     deps:
     - path: data/clean.jsonl
       hash: md5
-      md5: 75363e449fef81467de14fe9ebdd94d9
-      size: 5776220
+      md5: b51322401c8491983ab3828a0739afa9
+      size: 3429141
     - path: src/config.py
       hash: md5
       md5: 5a498b48e554d887a23ba19bd3c90932
@@ -198,31 +198,31 @@ stages:
     outs:
     - path: data/test.jsonl
       hash: md5
-      md5: d2368f3679f695ec4fdc379b286847d8
-      size: 562744
+      md5: 5182910423f122cc13a061578e71f499
+      size: 314775
     - path: data/train.jsonl
       hash: md5
-      md5: c45af7a07856a1441b71d54fac0f8d3d
-      size: 4663818
+      md5: e9a17d332abde59da9046c61d3ab3ce0
+      size: 2787243
     - path: data/val.jsonl
       hash: md5
-      md5: 9e758f80064908519c7b6015055f97c4
-      size: 549658
+      md5: 70d49529e5aa43137c6c37c4fd6b933a
+      size: 327123
     - path: metrics/split.json
       hash: md5
-      md5: 5022f5607f1700adb5385491291309e3
-      size: 523
+      md5: 2e5dad9083563eddb1ca5b71a4f6e3e3
+      size: 524
   contamination:
     cmd: python scripts/check_contamination.py
     deps:
     - path: data/test.jsonl
       hash: md5
-      md5: d2368f3679f695ec4fdc379b286847d8
-      size: 562744
+      md5: 5182910423f122cc13a061578e71f499
+      size: 314775
     - path: data/train.jsonl
       hash: md5
-      md5: c45af7a07856a1441b71d54fac0f8d3d
-      size: 4663818
+      md5: e9a17d332abde59da9046c61d3ab3ce0
+      size: 2787243
     - path: scripts/check_contamination.py
       hash: md5
       md5: 1f89936035beebc83ab7b780ae461b9b
