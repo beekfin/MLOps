@@ -2,15 +2,15 @@
 # ни learning rate, ни путей.
 model:
   name: "Qwen/Qwen3-0.6B"
-  device: "auto"            # auto | cpu | cuda | mps
+  device: "mps"             # Apple Silicon training
   # float32 — рекомендованный в задании режим для CPU.
-  dtype: "float32"
+  dtype: "bfloat16"
   enable_thinking: false    # как в ДЗ 4: шаблон должен совпадать с обучением
 
 data:
   # Выход стадии tokenize из ДЗ 4. У студента — свой путь.
-  train: "data/tokenized/train.pt"
-  val: "data/tokenized/val.pt"
+  train: "data/tokenized_fast/train.pt"
+  val: "data/tokenized_fast/val.pt"
 
 lora:
   r: 8

@@ -6,8 +6,9 @@ stages:
   train_all:
     cmd: python -m src.train --variant all_layers
     deps:
-      - data/tokenized/train.pt
-      - data/tokenized/val.pt
+      - data/tokenized_fast/train.pt
+      - data/tokenized_fast/val.pt
+      - fast_data_manifest.json
       - src/train.py
       - src/data.py
       - src/runtime.py
@@ -27,8 +28,9 @@ stages:
   train_freeze:
     cmd: python -m src.train --variant freeze14
     deps:
-      - data/tokenized/train.pt
-      - data/tokenized/val.pt
+      - data/tokenized_fast/train.pt
+      - data/tokenized_fast/val.pt
+      - fast_data_manifest.json
       - src/train.py
       - src/data.py
       - src/runtime.py

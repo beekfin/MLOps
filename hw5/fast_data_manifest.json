@@ -1,0 +1,29 @@
+{
+  "seed": 42,
+  "max_len_filter": 512,
+  "method": "shuffle eligible complete HW4 tensors; no truncation",
+  "splits": {
+    "train": {
+      "source_examples": 2197,
+      "eligible": 1405,
+      "selected": 1000,
+      "tokens": 299384,
+      "max_length": 512,
+      "source": "/Users/surik/Documents/VUZ/MLOps/HW5_friend_fast/data/tokenized/train.pt",
+      "source_sha256": "a9f206c235a8830c69950378263c1885b4c1b1d15f2339b52437f9f1e88847ad",
+      "output_sha256": "bdd039a45a966ec28a12da43ea6fcb007063ab0eec120cbbeb28becb1134e69f"
+    },
+    "val": {
+      "source_examples": 273,
+      "eligible": 187,
+      "selected": 100,
+      "tokens": 30564,
+      "max_length": 509,
+      "source": "/Users/surik/Documents/VUZ/MLOps/HW5_friend_fast/data/tokenized/val.pt",
+      "source_sha256": "bb6994df63e84d0bced0c7357e8a757ffc0e1c3bf1a9c153cdcc855d288e4489",
+      "output_sha256": "b581e2c11413c905a2f3eae189e1c0bb092451611d854df23eff1ae5adc6bffe"
+    }
+  },
+  "original_config_sha256": "f6f5e569f96010416fb9c6c185e164c2cbcf043f7517b4fa2462b4cb4d9894d5",
+  "optimizer_steps_per_variant": 125
+}

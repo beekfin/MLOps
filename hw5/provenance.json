@@ -1,0 +1,7 @@
+{
+  "repository": "https://github.com/beekfin/MLOps",
+  "commit": "65eeb9691d8202c0c2fc060f3f390b429add4841",
+  "data_manifest": "fast_data_manifest.json",
+  "training_environment": "training_logs/environment.txt",
+  "note": "Local reduced-data experiment; no GitHub push."
+}
