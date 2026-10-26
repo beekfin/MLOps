@@ -1,5 +1,7 @@
 """Один sweep — родительский run, каждый кандидат — отдельный дочерний run."""
 import json
+import ctypes
+import gc
 import tempfile
 from pathlib import Path
 
@@ -9,6 +11,18 @@ from mlflow.models import infer_signature
 
 from src.common import connect, load_params, provenance, save_json
 from src.train import train
+
+
+def release_model_memory():
+    """Освободить обучение/пробную загрузку перед следующей большой моделью."""
+    from src.model import AdapterModel
+    # MLflow сохраняет последнюю загруженную PythonModel глобально.
+    # Возвращаем лёгкую незагруженную обёртку после проверки примера входа.
+    mlflow.models.set_model(AdapterModel())
+    gc.collect()
+    trim = getattr(ctypes.CDLL(None), "malloc_trim", None)
+    if trim is not None:  # Возврат свободных CPU-буферов ОС на Linux/glibc.
+        trim(0)
 
 
 def run_candidate(params, candidate, versions):
@@ -26,6 +40,7 @@ def run_candidate(params, candidate, versions):
     with tempfile.TemporaryDirectory(prefix="hw6-train-") as tmp:
         out = Path(tmp) / "adapter"
         results, details, answers = train(params, candidate, out, lambda values, step: mlflow.log_metrics(values, step=step))
+        release_model_memory()
         mlflow.log_metrics(results)
         mlflow.set_tags(details)
         samples = {"prompt": params["generation"]["prompts"], "answer": answers}
@@ -35,6 +50,7 @@ def run_candidate(params, candidate, versions):
             artifacts={"adapter": str(out)}, signature=infer_signature(example, answers[:1]),
             input_example=example,
             pip_requirements=["mlflow==2.22.2", "torch==2.14.0", "transformers==5.17.0", "peft==0.21.0", "pandas<3"])
+        release_model_memory()
         return {"run_id": mlflow.active_run().info.run_id, "name": candidate["name"], **results}
 
 
