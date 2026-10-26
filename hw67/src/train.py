@@ -16,6 +16,13 @@ from src.data import batches, load_split
 from src.runtime import allocated_bytes, memory_metric, resolve_device, resolve_dtype, set_seed
 
 
+def supervised_loss(model, batch):
+    """Не строить большой словарь логитов для замаскированного промпта."""
+    shifted = torch.nn.functional.pad(batch["labels"], (0, 1), value=-100)[:, 1:]
+    positions = (shifted != -100).any(dim=0).nonzero(as_tuple=True)[0]
+    return model(**batch, logits_to_keep=positions, shift_labels=shifted[:, positions]).loss
+
+
 @torch.no_grad()
 def evaluate(model, examples, pad_id, device):
     model.eval()
@@ -24,7 +31,7 @@ def evaluate(model, examples, pad_id, device):
         batch = {k: v.to(device) for k, v in batch.items()}
         n = int((batch["labels"][:, 1:] != -100).sum())
         if n:
-            total += float(model(**batch).loss) * n
+            total += float(supervised_loss(model, batch)) * n
             tokens += n
     model.train()
     if tokens == 0:
@@ -81,7 +88,7 @@ def train(params, candidate, out, log):
                 if not count:
                     continue
                 batch = {k: v.to(device) for k, v in batch.items()}
-                loss = model(**batch).loss * (count / n_tokens)
+                loss = supervised_loss(model, batch) * (count / n_tokens)
                 if not torch.isfinite(loss):
                     raise ValueError("train loss не конечен")
                 loss.backward()
