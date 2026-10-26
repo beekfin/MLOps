@@ -17,10 +17,33 @@ from src.runtime import allocated_bytes, memory_metric, resolve_device, resolve_
 
 
 def supervised_loss(model, batch):
-    """Не строить большой словарь логитов для замаскированного промпта."""
+    """Тот же causal LM loss, но словарь считается порциями по 32 токена.
+
+    У Qwen большой словарь: полный ответ даёт сотни МБ логитов. При обучении
+    пересчитываем малые порции на обратном проходе, не сохраняя их все.
+    """
+    from torch.utils.checkpoint import checkpoint
+    base = model.get_base_model() if hasattr(model, "get_base_model") else model
+    hidden = base.model(input_ids=batch["input_ids"],
+                        attention_mask=batch["attention_mask"], use_cache=False).last_hidden_state
     shifted = torch.nn.functional.pad(batch["labels"], (0, 1), value=-100)[:, 1:]
-    positions = (shifted != -100).any(dim=0).nonzero(as_tuple=True)[0]
-    return model(**batch, logits_to_keep=positions, shift_labels=shifted[:, positions]).loss
+    mask = shifted != -100
+    targets = shifted[mask]
+    states = hidden[mask]
+    if targets.numel() == 0:
+        raise ValueError("Нет токенов ответа под loss")
+
+    def chunk_loss(chunk, labels):
+        logits = base.lm_head(chunk).float()
+        return torch.nn.functional.cross_entropy(logits, labels, reduction="sum")
+
+    total = states.new_zeros(())
+    for chunk, labels in zip(states.split(32), targets.split(32)):
+        if torch.is_grad_enabled():
+            total = total + checkpoint(chunk_loss, chunk, labels, use_reentrant=False)
+        else:
+            total = total + chunk_loss(chunk, labels)
+    return total / targets.numel()
 
 
 @torch.no_grad()
