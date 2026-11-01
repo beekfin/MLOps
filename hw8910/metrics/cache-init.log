@@ -1,0 +1,3 @@
+$ ['/home/beekfin/sna23mk048/MLOps/hw8910/.venv/bin/python', 'lab.py', '--workspace', '/home/beekfin/sna23mk048/MLOps/hw8910/.runtime/experiments/4f51f976/cache', 'init']
+exit=0
+Создан синтетический стенд: /home/beekfin/sna23mk048/MLOps/hw8910/.runtime/experiments/4f51f976/cache

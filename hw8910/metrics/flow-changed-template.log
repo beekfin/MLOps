@@ -1,0 +1,14 @@
+$ ['/home/beekfin/sna23mk048/MLOps/hw8910/.venv/bin/python', '-m', 'src.pipeline', '--workspace', '/home/beekfin/sna23mk048/MLOps/hw8910/.runtime/experiments/4f51f976/cache']
+exit=0
+02:34:49.380 | INFO    | prefect - Starting temporary server on http://127.0.0.1:8922
+See https://www.prefect.io/docs/v3/concepts/server#how-to-guides for more information on running a dedicated Prefect server.
+02:34:52.107 | INFO    | Flow run 'fervent-gorilla' - Beginning flow run 'fervent-gorilla' for flow 'hw8910-release'
+02:34:52.212 | INFO    | Task run 'prepare_input-457' - PREPARED d18546842ff18885a685a9d6f315b9adcfa2e65d7872ebf3726603ace925e5e3
+02:34:52.215 | INFO    | Task run 'prepare_input-457' - Finished in state Completed()
+02:34:52.219 | INFO    | Task run 'obtain_artifact-ffd' - Читаем существующий training run STUB ONLY; обучения здесь нет
+02:34:52.221 | INFO    | Task run 'obtain_artifact-ffd' - Finished in state Completed()
+02:34:52.225 | INFO    | Task run 'evaluate_admission-2de' - Finished in state Completed()
+02:34:52.241 | INFO    | Task run 'publish_accepted-e6b' - ALREADY_PUBLISHED fixture-B
+02:34:52.242 | INFO    | Task run 'publish_accepted-e6b' - Finished in state Completed()
+02:34:53.116 | INFO    | Flow run 'fervent-gorilla' - Finished in state Completed()
+02:34:53.141 | INFO    | prefect - Stopping temporary server on http://127.0.0.1:8922

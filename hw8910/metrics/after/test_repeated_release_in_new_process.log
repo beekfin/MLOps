@@ -1,0 +1,13 @@
+$ ['/home/beekfin/sna23mk048/MLOps/hw8910/.venv/bin/python', '/home/beekfin/sna23mk048/MLOps/hw8910/lab.py', '--workspace', '/tmp/tmp5pv335md/workspace', 'init']
+exit=0
+Создан синтетический стенд: /tmp/tmp5pv335md/workspace
+
+$ ['/home/beekfin/sna23mk048/MLOps/hw8910/.venv/bin/python', '/home/beekfin/sna23mk048/MLOps/hw8910/lab.py', '--workspace', '/tmp/tmp5pv335md/workspace', 'run']
+exit=0
+PREPARED 88bbd559a04a7a432693a1c611ef2704bb711ac17dd5e22203ee9e5020f59fd4
+PUBLISHED fixture-B
+
+$ ['/home/beekfin/sna23mk048/MLOps/hw8910/.venv/bin/python', '/home/beekfin/sna23mk048/MLOps/hw8910/lab.py', '--workspace', '/tmp/tmp5pv335md/workspace', 'run']
+exit=0
+CACHE_HIT 88bbd559a04a7a432693a1c611ef2704bb711ac17dd5e22203ee9e5020f59fd4
+ALREADY_PUBLISHED fixture-B

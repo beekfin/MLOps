@@ -1,0 +1,14 @@
+$ ['/home/beekfin/sna23mk048/MLOps/hw8910/.venv/bin/python', '-m', 'src.pipeline', '--workspace', '/home/beekfin/sna23mk048/MLOps/hw8910/.runtime/experiments/4f51f976/cache']
+exit=0
+02:34:42.946 | INFO    | prefect - Starting temporary server on http://127.0.0.1:8986
+See https://www.prefect.io/docs/v3/concepts/server#how-to-guides for more information on running a dedicated Prefect server.
+02:34:45.770 | INFO    | Flow run 'nice-vulture' - Beginning flow run 'nice-vulture' for flow 'hw8910-release'
+02:34:45.879 | INFO    | Task run 'prepare_input-b49' - PREPARED d18546842ff18885a685a9d6f315b9adcfa2e65d7872ebf3726603ace925e5e3
+02:34:45.882 | INFO    | Task run 'prepare_input-b49' - Finished in state Completed()
+02:34:45.886 | INFO    | Task run 'obtain_artifact-28d' - Читаем существующий training run STUB ONLY; обучения здесь нет
+02:34:45.887 | INFO    | Task run 'obtain_artifact-28d' - Finished in state Completed()
+02:34:45.892 | INFO    | Task run 'evaluate_admission-2cc' - Finished in state Completed()
+02:34:45.913 | INFO    | Task run 'publish_accepted-e65' - ALREADY_PUBLISHED fixture-B
+02:34:45.915 | INFO    | Task run 'publish_accepted-e65' - Finished in state Completed()
+02:34:46.779 | INFO    | Flow run 'nice-vulture' - Finished in state Completed()
+02:34:46.808 | INFO    | prefect - Stopping temporary server on http://127.0.0.1:8986

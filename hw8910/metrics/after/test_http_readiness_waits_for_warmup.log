@@ -1,0 +1,176 @@
+$ ['/home/beekfin/sna23mk048/MLOps/hw8910/.venv/bin/python', '/home/beekfin/sna23mk048/MLOps/hw8910/lab.py', '--workspace', '/tmp/tmp66gn1b1p/workspace', 'init']
+exit=0
+Создан синтетический стенд: /tmp/tmp66gn1b1p/workspace
+
+HTTP /health None -> 200 {'alive': True, 'backend': 'STUB ONLY'}
+HTTP /health None -> 200 {'alive': True, 'backend': 'STUB ONLY'}
+HTTP /ready None -> 503 {'detail': 'Загрузка или прогрев'}
+HTTP /generate {'prompt': 'Hello'} -> 503 {'detail': 'Модель ещё не готова'}
+HTTP /ready None -> 503 {'detail': 'Загрузка или прогрев'}
+HTTP /ready None -> 503 {'detail': 'Загрузка или прогрев'}
+HTTP /ready None -> 503 {'detail': 'Загрузка или прогрев'}
+HTTP /ready None -> 503 {'detail': 'Загрузка или прогрев'}
+HTTP /ready None -> 503 {'detail': 'Загрузка или прогрев'}
+HTTP /ready None -> 503 {'detail': 'Загрузка или прогрев'}
+HTTP /ready None -> 503 {'detail': 'Загрузка или прогрев'}
+HTTP /ready None -> 503 {'detail': 'Загрузка или прогрев'}
+HTTP /ready None -> 503 {'detail': 'Загрузка или прогрев'}
+HTTP /ready None -> 503 {'detail': 'Загрузка или прогрев'}
+HTTP /ready None -> 503 {'detail': 'Загрузка или прогрев'}
+HTTP /ready None -> 503 {'detail': 'Загрузка или прогрев'}
+HTTP /ready None -> 503 {'detail': 'Загрузка или прогрев'}
+HTTP /ready None -> 503 {'detail': 'Загрузка или прогрев'}
+HTTP /ready None -> 503 {'detail': 'Загрузка или прогрев'}
+HTTP /ready None -> 503 {'detail': 'Загрузка или прогрев'}
+HTTP /ready None -> 503 {'detail': 'Загрузка или прогрев'}
+HTTP /ready None -> 503 {'detail': 'Загрузка или прогрев'}
+HTTP /ready None -> 503 {'detail': 'Загрузка или прогрев'}
+HTTP /ready None -> 503 {'detail': 'Загрузка или прогрев'}
+HTTP /ready None -> 503 {'detail': 'Загрузка или прогрев'}
+HTTP /ready None -> 503 {'detail': 'Загрузка или прогрев'}
+HTTP /ready None -> 503 {'detail': 'Загрузка или прогрев'}
+HTTP /ready None -> 503 {'detail': 'Загрузка или прогрев'}
+HTTP /ready None -> 503 {'detail': 'Загрузка или прогрев'}
+HTTP /ready None -> 503 {'detail': 'Загрузка или прогрев'}
+HTTP /ready None -> 503 {'detail': 'Загрузка или прогрев'}
+HTTP /ready None -> 503 {'detail': 'Загрузка или прогрев'}
+HTTP /ready None -> 503 {'detail': 'Загрузка или прогрев'}
+HTTP /ready None -> 503 {'detail': 'Загрузка или прогрев'}
+HTTP /ready None -> 503 {'detail': 'Загрузка или прогрев'}
+HTTP /ready None -> 503 {'detail': 'Загрузка или прогрев'}
+HTTP /ready None -> 503 {'detail': 'Загрузка или прогрев'}
+HTTP /ready None -> 503 {'detail': 'Загрузка или прогрев'}
+HTTP /ready None -> 503 {'detail': 'Загрузка или прогрев'}
+HTTP /ready None -> 503 {'detail': 'Загрузка или прогрев'}
+HTTP /ready None -> 503 {'detail': 'Загрузка или прогрев'}
+HTTP /ready None -> 503 {'detail': 'Загрузка или прогрев'}
+HTTP /ready None -> 503 {'detail': 'Загрузка или прогрев'}
+HTTP /ready None -> 503 {'detail': 'Загрузка или прогрев'}
+HTTP /ready None -> 503 {'detail': 'Загрузка или прогрев'}
+HTTP /ready None -> 503 {'detail': 'Загрузка или прогрев'}
+HTTP /ready None -> 503 {'detail': 'Загрузка или прогрев'}
+HTTP /ready None -> 503 {'detail': 'Загрузка или прогрев'}
+HTTP /ready None -> 503 {'detail': 'Загрузка или прогрев'}
+HTTP /ready None -> 503 {'detail': 'Загрузка или прогрев'}
+HTTP /ready None -> 503 {'detail': 'Загрузка или прогрев'}
+HTTP /ready None -> 503 {'detail': 'Загрузка или прогрев'}
+HTTP /ready None -> 503 {'detail': 'Загрузка или прогрев'}
+HTTP /ready None -> 503 {'detail': 'Загрузка или прогрев'}
+HTTP /ready None -> 503 {'detail': 'Загрузка или прогрев'}
+HTTP /ready None -> 503 {'detail': 'Загрузка или прогрев'}
+HTTP /ready None -> 503 {'detail': 'Загрузка или прогрев'}
+HTTP /ready None -> 503 {'detail': 'Загрузка или прогрев'}
+HTTP /ready None -> 503 {'detail': 'Загрузка или прогрев'}
+HTTP /ready None -> 503 {'detail': 'Загрузка или прогрев'}
+HTTP /ready None -> 503 {'detail': 'Загрузка или прогрев'}
+HTTP /ready None -> 503 {'detail': 'Загрузка или прогрев'}
+HTTP /ready None -> 503 {'detail': 'Загрузка или прогрев'}
+HTTP /ready None -> 503 {'detail': 'Загрузка или прогрев'}
+HTTP /ready None -> 503 {'detail': 'Загрузка или прогрев'}
+HTTP /ready None -> 503 {'detail': 'Загрузка или прогрев'}
+HTTP /ready None -> 503 {'detail': 'Загрузка или прогрев'}
+HTTP /ready None -> 503 {'detail': 'Загрузка или прогрев'}
+HTTP /ready None -> 503 {'detail': 'Загрузка или прогрев'}
+HTTP /ready None -> 503 {'detail': 'Загрузка или прогрев'}
+HTTP /ready None -> 503 {'detail': 'Загрузка или прогрев'}
+HTTP /ready None -> 503 {'detail': 'Загрузка или прогрев'}
+HTTP /ready None -> 503 {'detail': 'Загрузка или прогрев'}
+HTTP /ready None -> 503 {'detail': 'Загрузка или прогрев'}
+HTTP /ready None -> 503 {'detail': 'Загрузка или прогрев'}
+HTTP /ready None -> 503 {'detail': 'Загрузка или прогрев'}
+HTTP /ready None -> 503 {'detail': 'Загрузка или прогрев'}
+HTTP /ready None -> 503 {'detail': 'Загрузка или прогрев'}
+HTTP /ready None -> 503 {'detail': 'Загрузка или прогрев'}
+HTTP /ready None -> 503 {'detail': 'Загрузка или прогрев'}
+HTTP /ready None -> 200 {'ready': True, 'model_id': 'fixture-A', 'runtime_sha256': 'bc7bd5a4806e2e0e3b8569666b251d6c59a8d8e01e37fc37bf95b534023ca547'}
+HTTP /generate {'prompt': 'Hello'} -> 200 {'answer': 'STUB ONLY: fixture-A', 'output_tokens': 1, 'model_id': 'fixture-A', 'runtime_sha256': 'bc7bd5a4806e2e0e3b8569666b251d6c59a8d8e01e37fc37bf95b534023ca547', 'request_id': 'a75087e3-3079-4672-a379-ceee1e44fc9e', 'generation_seconds': 0.010085723988595419, 'queue_seconds': 1.305001205764711e-06, 'server_seconds': 0.010115958997630514}
+INFO:     Started server process [396614]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:34477 (Press CTRL+C to quit)
+INFO:     127.0.0.1:36564 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36576 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36588 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:36596 - "POST /generate HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:36612 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:36628 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:36630 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:36634 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:36646 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:36660 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:36676 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:36680 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:36686 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:36694 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:36698 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:36706 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:36710 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:36726 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:36736 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:36738 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:36752 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:36758 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:36760 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:36772 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:36778 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:36794 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:36804 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:36820 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:36822 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:36826 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:36830 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:36838 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:36844 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:36852 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:36862 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:36878 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:36886 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:36890 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:36898 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:36900 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:36908 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:36918 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:36930 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:36946 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:36958 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:36970 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:36974 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:36976 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:36978 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:36980 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:36986 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:36998 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:37012 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:37014 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:37016 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:37020 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:37034 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:37050 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:37058 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:37074 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:37084 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:37096 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:37110 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:37122 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:37130 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:37134 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:37146 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:37152 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:37160 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:37174 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:37182 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:37196 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:37204 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:37214 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:37230 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:37246 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:37262 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:37268 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:37284 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:37296 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:37302 - "GET /ready HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37308 - "POST /generate HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [396614]

@@ -1,0 +1,13 @@
+$ ['/home/beekfin/sna23mk048/MLOps/hw8910/.venv/bin/python', '-m', 'src.pipeline', '--workspace', '/home/beekfin/sna23mk048/MLOps/hw8910/.runtime/experiments/4f51f976/cache']
+exit=0
+02:34:30.062 | INFO    | prefect - Starting temporary server on http://127.0.0.1:8035
+See https://www.prefect.io/docs/v3/concepts/server#how-to-guides for more information on running a dedicated Prefect server.
+02:34:32.780 | INFO    | Flow run 'industrious-quokka' - Beginning flow run 'industrious-quokka' for flow 'hw8910-release'
+02:34:32.881 | INFO    | Task run 'prepare_input-79e' - Finished in state Cached(type=COMPLETED)
+02:34:32.885 | INFO    | Task run 'obtain_artifact-6fb' - Читаем существующий training run STUB ONLY; обучения здесь нет
+02:34:32.887 | INFO    | Task run 'obtain_artifact-6fb' - Finished in state Completed()
+02:34:32.891 | INFO    | Task run 'evaluate_admission-176' - Finished in state Completed()
+02:34:32.936 | INFO    | Task run 'publish_accepted-9ac' - PUBLISHED fixture-B
+02:34:32.938 | INFO    | Task run 'publish_accepted-9ac' - Finished in state Completed()
+02:34:33.790 | INFO    | Flow run 'industrious-quokka' - Finished in state Completed()
+02:34:33.820 | INFO    | prefect - Stopping temporary server on http://127.0.0.1:8035
