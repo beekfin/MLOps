@@ -1,0 +1,512 @@
+[
+  {
+    "path": "/health",
+    "status": 200,
+    "body": {
+      "alive": true,
+      "backend": "transformers+peft"
+    }
+  },
+  {
+    "path": "/ready",
+    "status": 503,
+    "body": {
+      "detail": "Загрузка или прогрев"
+    }
+  },
+  {
+    "path": "/health",
+    "status": 200,
+    "body": {
+      "alive": true,
+      "backend": "transformers+peft"
+    }
+  },
+  {
+    "path": "/ready",
+    "status": 503,
+    "body": {
+      "detail": "Загрузка или прогрев"
+    }
+  },
+  {
+    "path": "/health",
+    "status": 200,
+    "body": {
+      "alive": true,
+      "backend": "transformers+peft"
+    }
+  },
+  {
+    "path": "/ready",
+    "status": 503,
+    "body": {
+      "detail": "Загрузка или прогрев"
+    }
+  },
+  {
+    "path": "/health",
+    "status": 200,
+    "body": {
+      "alive": true,
+      "backend": "transformers+peft"
+    }
+  },
+  {
+    "path": "/ready",
+    "status": 503,
+    "body": {
+      "detail": "Загрузка или прогрев"
+    }
+  },
+  {
+    "path": "/health",
+    "status": 200,
+    "body": {
+      "alive": true,
+      "backend": "transformers+peft"
+    }
+  },
+  {
+    "path": "/ready",
+    "status": 503,
+    "body": {
+      "detail": "Загрузка или прогрев"
+    }
+  },
+  {
+    "path": "/health",
+    "status": 200,
+    "body": {
+      "alive": true,
+      "backend": "transformers+peft"
+    }
+  },
+  {
+    "path": "/ready",
+    "status": 503,
+    "body": {
+      "detail": "Загрузка или прогрев"
+    }
+  },
+  {
+    "path": "/health",
+    "status": 200,
+    "body": {
+      "alive": true,
+      "backend": "transformers+peft"
+    }
+  },
+  {
+    "path": "/ready",
+    "status": 503,
+    "body": {
+      "detail": "Загрузка или прогрев"
+    }
+  },
+  {
+    "path": "/health",
+    "status": 200,
+    "body": {
+      "alive": true,
+      "backend": "transformers+peft"
+    }
+  },
+  {
+    "path": "/ready",
+    "status": 503,
+    "body": {
+      "detail": "Загрузка или прогрев"
+    }
+  },
+  {
+    "path": "/health",
+    "status": 200,
+    "body": {
+      "alive": true,
+      "backend": "transformers+peft"
+    }
+  },
+  {
+    "path": "/ready",
+    "status": 503,
+    "body": {
+      "detail": "Загрузка или прогрев"
+    }
+  },
+  {
+    "path": "/health",
+    "status": 200,
+    "body": {
+      "alive": true,
+      "backend": "transformers+peft"
+    }
+  },
+  {
+    "path": "/ready",
+    "status": 503,
+    "body": {
+      "detail": "Загрузка или прогрев"
+    }
+  },
+  {
+    "path": "/health",
+    "status": 200,
+    "body": {
+      "alive": true,
+      "backend": "transformers+peft"
+    }
+  },
+  {
+    "path": "/ready",
+    "status": 503,
+    "body": {
+      "detail": "Загрузка или прогрев"
+    }
+  },
+  {
+    "path": "/health",
+    "status": 200,
+    "body": {
+      "alive": true,
+      "backend": "transformers+peft"
+    }
+  },
+  {
+    "path": "/ready",
+    "status": 503,
+    "body": {
+      "detail": "Загрузка или прогрев"
+    }
+  },
+  {
+    "path": "/health",
+    "status": 200,
+    "body": {
+      "alive": true,
+      "backend": "transformers+peft"
+    }
+  },
+  {
+    "path": "/ready",
+    "status": 503,
+    "body": {
+      "detail": "Загрузка или прогрев"
+    }
+  },
+  {
+    "path": "/health",
+    "status": 200,
+    "body": {
+      "alive": true,
+      "backend": "transformers+peft"
+    }
+  },
+  {
+    "path": "/ready",
+    "status": 503,
+    "body": {
+      "detail": "Загрузка или прогрев"
+    }
+  },
+  {
+    "path": "/health",
+    "status": 200,
+    "body": {
+      "alive": true,
+      "backend": "transformers+peft"
+    }
+  },
+  {
+    "path": "/ready",
+    "status": 503,
+    "body": {
+      "detail": "Загрузка или прогрев"
+    }
+  },
+  {
+    "path": "/health",
+    "status": 200,
+    "body": {
+      "alive": true,
+      "backend": "transformers+peft"
+    }
+  },
+  {
+    "path": "/ready",
+    "status": 503,
+    "body": {
+      "detail": "Загрузка или прогрев"
+    }
+  },
+  {
+    "path": "/health",
+    "status": 200,
+    "body": {
+      "alive": true,
+      "backend": "transformers+peft"
+    }
+  },
+  {
+    "path": "/ready",
+    "status": 503,
+    "body": {
+      "detail": "Загрузка или прогрев"
+    }
+  },
+  {
+    "path": "/health",
+    "status": 200,
+    "body": {
+      "alive": true,
+      "backend": "transformers+peft"
+    }
+  },
+  {
+    "path": "/ready",
+    "status": 503,
+    "body": {
+      "detail": "Загрузка или прогрев"
+    }
+  },
+  {
+    "path": "/health",
+    "status": 200,
+    "body": {
+      "alive": true,
+      "backend": "transformers+peft"
+    }
+  },
+  {
+    "path": "/ready",
+    "status": 503,
+    "body": {
+      "detail": "Загрузка или прогрев"
+    }
+  },
+  {
+    "path": "/health",
+    "status": 200,
+    "body": {
+      "alive": true,
+      "backend": "transformers+peft"
+    }
+  },
+  {
+    "path": "/ready",
+    "status": 503,
+    "body": {
+      "detail": "Загрузка или прогрев"
+    }
+  },
+  {
+    "path": "/health",
+    "status": 200,
+    "body": {
+      "alive": true,
+      "backend": "transformers+peft"
+    }
+  },
+  {
+    "path": "/ready",
+    "status": 503,
+    "body": {
+      "detail": "Загрузка или прогрев"
+    }
+  },
+  {
+    "path": "/health",
+    "status": 200,
+    "body": {
+      "alive": true,
+      "backend": "transformers+peft"
+    }
+  },
+  {
+    "path": "/ready",
+    "status": 503,
+    "body": {
+      "detail": "Загрузка или прогрев"
+    }
+  },
+  {
+    "path": "/health",
+    "status": 200,
+    "body": {
+      "alive": true,
+      "backend": "transformers+peft"
+    }
+  },
+  {
+    "path": "/ready",
+    "status": 503,
+    "body": {
+      "detail": "Загрузка или прогрев"
+    }
+  },
+  {
+    "path": "/health",
+    "status": 200,
+    "body": {
+      "alive": true,
+      "backend": "transformers+peft"
+    }
+  },
+  {
+    "path": "/ready",
+    "status": 503,
+    "body": {
+      "detail": "Загрузка или прогрев"
+    }
+  },
+  {
+    "path": "/health",
+    "status": 200,
+    "body": {
+      "alive": true,
+      "backend": "transformers+peft"
+    }
+  },
+  {
+    "path": "/ready",
+    "status": 503,
+    "body": {
+      "detail": "Загрузка или прогрев"
+    }
+  },
+  {
+    "path": "/health",
+    "status": 200,
+    "body": {
+      "alive": true,
+      "backend": "transformers+peft"
+    }
+  },
+  {
+    "path": "/ready",
+    "status": 503,
+    "body": {
+      "detail": "Загрузка или прогрев"
+    }
+  },
+  {
+    "path": "/health",
+    "status": 200,
+    "body": {
+      "alive": true,
+      "backend": "transformers+peft"
+    }
+  },
+  {
+    "path": "/ready",
+    "status": 503,
+    "body": {
+      "detail": "Загрузка или прогрев"
+    }
+  },
+  {
+    "path": "/health",
+    "status": 200,
+    "body": {
+      "alive": true,
+      "backend": "transformers+peft"
+    }
+  },
+  {
+    "path": "/ready",
+    "status": 503,
+    "body": {
+      "detail": "Загрузка или прогрев"
+    }
+  },
+  {
+    "path": "/health",
+    "status": 200,
+    "body": {
+      "alive": true,
+      "backend": "transformers+peft"
+    }
+  },
+  {
+    "path": "/ready",
+    "status": 503,
+    "body": {
+      "detail": "Загрузка или прогрев"
+    }
+  },
+  {
+    "path": "/health",
+    "status": 200,
+    "body": {
+      "alive": true,
+      "backend": "transformers+peft"
+    }
+  },
+  {
+    "path": "/ready",
+    "status": 503,
+    "body": {
+      "detail": "Загрузка или прогрев"
+    }
+  },
+  {
+    "path": "/health",
+    "status": 200,
+    "body": {
+      "alive": true,
+      "backend": "transformers+peft"
+    }
+  },
+  {
+    "path": "/ready",
+    "status": 503,
+    "body": {
+      "detail": "Загрузка или прогрев"
+    }
+  },
+  {
+    "path": "/health",
+    "status": 200,
+    "body": {
+      "alive": true,
+      "backend": "transformers+peft"
+    }
+  },
+  {
+    "path": "/ready",
+    "status": 503,
+    "body": {
+      "detail": "Загрузка или прогрев"
+    }
+  },
+  {
+    "path": "/health",
+    "status": 200,
+    "body": {
+      "alive": true,
+      "backend": "transformers+peft"
+    }
+  },
+  {
+    "path": "/ready",
+    "status": 503,
+    "body": {
+      "detail": "Загрузка или прогрев"
+    }
+  },
+  {
+    "path": "/health",
+    "status": 200,
+    "body": {
+      "alive": true,
+      "backend": "transformers+peft"
+    }
+  },
+  {
+    "path": "/ready",
+    "status": 503,
+    "body": {
+      "detail": "Загрузка или прогрев"
+    }
+  }
+]

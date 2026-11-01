@@ -84,6 +84,14 @@ def verify_files(manifest, workspace):
     artifact = (root / manifest.get('artifact_path', manifest['artifact_uri'])).resolve()
     if not artifact.is_relative_to(root):
         raise ValueError('Артефакт должен находиться в workspace')
+    if manifest.get('synthetic') is True:
+        if (not artifact.is_file() or set(files) != {artifact.name}
+                or not artifact.read_bytes().startswith(b'STUB ONLY')):
+            raise ValueError('Тестовый артефакт должен быть одним текстовым файлом STUB ONLY')
+    elif manifest.get('synthetic') is not False or not artifact.is_dir():
+        raise ValueError('Нужна явно указанная настоящая модель или тестовая фикстура')
+    elif not {'adapter_model.safetensors', 'adapter_config.json', 'manifest.json'} <= set(files):
+        raise ValueError('Не закреплены обязательные файлы адаптера')
     base = artifact if artifact.is_dir() else artifact.parent
     actual = {}
     for name, expected in files.items():
@@ -95,7 +103,7 @@ def verify_files(manifest, workspace):
             raise ValueError('Изменены байты артефакта: ' + name)
     if digest(canonical(actual)) != manifest['model_sha256']:
         raise ValueError('Не совпадает общий хеш модели')
-    if not manifest.get('synthetic', manifest['model_id'].startswith('fixture-')):
+    if manifest['synthetic'] is False:
         for name, expected in manifest.get('runtime_file_hashes', {}).items():
             path = (artifact / name).resolve()
             if not path.is_relative_to(artifact) or digest(path.read_bytes()) != expected:

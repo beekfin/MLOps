@@ -14,6 +14,8 @@ if not ((SOURCE/'data/eval/golden.jsonl').is_file() and (SOURCE/'metrics/candida
 EVAL_LIBRARIES = {'torch':'2.14.0','transformers':'5.17.0','peft':'0.21.0',
                   'tokenizers':'0.23.2','numpy':'2.5.3','accelerate':'1.15.0',
                   'safetensors':'0.8.0','huggingface-hub':'1.33.0'}
+ARTIFACT_FILES = {'adapter_config.json','adapter_model.safetensors','manifest.json',
+                  'tokenizer.json','tokenizer_config.json','chat_template.jinja'}
 
 
 def read(path):
@@ -42,6 +44,20 @@ def evaluation_fingerprint(value):
 
 
 def verify_evaluation(root, manifest, report=None):
+    source_path = Path(root)/'model-source.json'
+    if file_hash(source_path) != manifest.get('source_record_sha256'):
+        raise ValueError('Изменено подтверждение происхождения артефакта')
+    provenance = read(source_path)
+    registry = provenance['registry']
+    if provenance['run_id'] != manifest['training_run_id'] or registry['run_id'] != provenance['run_id']:
+        raise ValueError('Артефакт получен из другого training run')
+    if manifest['artifact_uri'] != f"models:/{registry['name']}/{registry['version']}":
+        raise ValueError('Артефакт получен из другой версии реестра')
+    adapter = release.verify_files(manifest, root)
+    if set(provenance['files']) != ARTIFACT_FILES:
+        raise ValueError('Неполный список исходных файлов модели')
+    if any(file_hash(adapter/name) != expected for name,expected in provenance['files'].items()):
+        raise ValueError('Файлы отличаются от артефакта оценённого training run: нужна новая оценка')
     source, solution = load_evaluation(root)
     refs = manifest['evaluation_files']
     for name, expected in refs.items():
@@ -82,7 +98,7 @@ def verify_evaluation(root, manifest, report=None):
     g = runtime['generation']
     expected_g = {key: config[key] for key in ['system','seed','max_new_tokens','enable_thinking']}
     expected_g['do_sample'] = False
-    if g != expected_g:
+    if release.canonical(g) != release.canonical(expected_g):
         raise ValueError('Изменены условия генерации')
     adapter = release.verify_files(manifest, root)
     original = read(adapter/'manifest.json')['model']
@@ -118,8 +134,28 @@ def create_report(root, manifest, report_name='release-report.json'):
 def prepare(root):
     root = Path(root).resolve(); root.mkdir(parents=True, exist_ok=True)
     source_adapter = PROJECT/'.runtime/import/model/artifacts/adapter'
+    if (root/'accepted.json').is_file():
+        accepted = read(root/'accepted.json')
+        provenance = read(PROJECT/'evidence/model-source.json')
+        previous = read(root/'model-source.json')
+        same_source = provenance['run_id'] == previous['run_id'] and provenance['files'] == previous['files']
+        same_data = all(file_hash(SOURCE/name) == expected for name,expected in accepted['evaluation_files'].items())
+        same_files = all(file_hash(source_adapter/name) == expected for name,expected in previous['files'].items())
+        if not (same_source and same_data and same_files):
+            raise ValueError('Принятый workspace неизменяем; для другого кандидата создайте отдельный --workspace')
+        report = read(root/'release-report.json')
+        release.validate_release(accepted, report)
+        verify_evaluation(root, accepted, report)
+        print('Принятый workspace сохранён; входы и артефакт не изменились:',root)
+        return
     artifact = root/'artifact'
     shutil.copytree(source_adapter, artifact, dirs_exist_ok=True)
+    source_record = PROJECT/'evidence/model-source.json'
+    provenance = read(source_record)
+    if set(provenance['files']) != ARTIFACT_FILES or any(
+            file_hash(artifact/name) != expected for name,expected in provenance['files'].items()):
+        raise ValueError('Файлы адаптера изменены после получения из MLflow')
+    shutil.copy2(source_record,root/'model-source.json')
     evidence = root/'hw67-evidence'
     names = ['evaluation/params.json','evaluation/baseline.json',
              'data/eval/golden.jsonl','data/eval/behavioral.jsonl','data/eval/training-index.jsonl',
@@ -146,6 +182,7 @@ def prepare(root):
     manifest = {'schema_version':1,'model_id':f"{spec['name']}/{spec['version']}@{spec['run_id']}",
         'artifact_uri':candidate['model']['uri'],'artifact_path':'artifact', 'synthetic':False,
         'training_run_id':candidate['model']['run_id'],'registry_version':str(spec['version']),
+        'source_record_sha256':file_hash(root/'model-source.json'),
         'model_sha256':fingerprint(files),'file_hashes':files,
         'runtime_file_hashes':{**token_files,'chat_template.jinja':runtime['template_sha256']},
         'protocol_sha256':candidate['protocol_sha256'],'golden_sha256':candidate['golden_sha256'],

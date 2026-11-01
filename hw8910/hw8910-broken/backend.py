@@ -7,6 +7,8 @@ import release
 
 class TransformersBackend:
     def __init__(self, manifest, root):
+        if manifest.get('synthetic') is not False:
+            raise ValueError('Настоящий генератор не принимает тестовые фикстуры')
         import torch
         from peft import PeftModel
         from transformers import AutoModelForCausalLM, AutoTokenizer, set_seed

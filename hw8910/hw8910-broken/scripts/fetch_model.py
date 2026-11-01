@@ -34,10 +34,16 @@ def main():
     if not artifact_uri.startswith('mlflow-artifacts:/'):raise ValueError('Нужен локальный MLflow artifact proxy')
     prefix=artifact_uri[len('mlflow-artifacts:/'):].strip('/')+'/model/artifacts/adapter/'
     target=ROOT/'.runtime/import/model/artifacts/adapter';target.mkdir(parents=True,exist_ok=True)
-    hashes={}
+    hashes={};payloads={}
     for name in ['adapter_config.json','adapter_model.safetensors','manifest.json','tokenizer.json','tokenizer_config.json','chat_template.jinja']:
         payload=get(args.tracking_uri+'/api/2.0/mlflow-artifacts/artifacts/'+quote(prefix+name,safe='/'))
-        release.atomic_bytes(target/name,payload);hashes[name]=release.digest(payload)
+        payloads[name]=payload;hashes[name]=release.digest(payload)
+    record=ROOT/'evidence/model-source.json'
+    if record.is_file():
+        previous=json.loads(record.read_text())
+        if previous['run_id']==spec['run_id'] and previous['files']!=hashes:
+            raise ValueError('Изменены файлы прежнего training run; старую оценку использовать нельзя')
+    for name,payload in payloads.items():release.atomic_bytes(target/name,payload)
     release.write_json(ROOT/'evidence/model-source.json',{'registry':version,'run_id':spec['run_id'],
         'artifact_uri':artifact_uri,'files':hashes,'operation':'read existing completed run; no training'})
     print('Артефакт получен:',target)

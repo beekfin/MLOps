@@ -1,5 +1,6 @@
 test_atomic_write_error_preserves_pointer (test_integration.IntegrationTests.test_atomic_write_error_preserves_pointer) ... FAIL
 test_cache_recovery_and_changed_input (test_integration.IntegrationTests.test_cache_recovery_and_changed_input) ... FAIL
+test_fixture_name_does_not_bypass_real_evaluation (test_integration.IntegrationTests.test_fixture_name_does_not_bypass_real_evaluation) ... FAIL
 test_http_invalid_request_does_not_call_backend (test_integration.IntegrationTests.test_http_invalid_request_does_not_call_backend) ... 
   test_http_invalid_request_does_not_call_backend (test_integration.IntegrationTests.test_http_invalid_request_does_not_call_backend) (payload="{'prompt': 'Hi', 'max_new_tokens': 100000}") ... FAIL
   test_http_invalid_request_does_not_call_backend (test_integration.IntegrationTests.test_http_invalid_request_does_not_call_backend) (payload="{'prompt': 'Hi', 'max_new_tokens': True}") ... FAIL
@@ -33,6 +34,16 @@ Traceback (most recent call last):
   File "/home/beekfin/sna23mk048/MLOps/hw8910/hw8910-broken/tests/test_integration.py", line 94, in test_cache_recovery_and_changed_input
     self.assertIn('PREPARED', changed.stdout)
 AssertionError: 'PREPARED' not found in 'CACHE_HIT 88bbd559a04a7a432693a1c611ef2704bb711ac17dd5e22203ee9e5020f59fd4\nPUBLISHED fixture-B\n'
+
+======================================================================
+FAIL: test_fixture_name_does_not_bypass_real_evaluation (test_integration.IntegrationTests.test_fixture_name_does_not_bypass_real_evaluation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/beekfin/sna23mk048/MLOps/hw8910/hw8910-broken/tests/test_integration.py", line 184, in test_fixture_name_does_not_bypass_real_evaluation
+    self.assertNotEqual(result.returncode, 0, result.stdout)
+AssertionError: 0 == 0 : PREPARED 88bbd559a04a7a432693a1c611ef2704bb711ac17dd5e22203ee9e5020f59fd4
+PUBLISHED fixture-B
+
 
 ======================================================================
 FAIL: test_http_invalid_request_does_not_call_backend (test_integration.IntegrationTests.test_http_invalid_request_does_not_call_backend) (payload="{'prompt': 'Hi', 'max_new_tokens': 100000}")
@@ -152,6 +163,6 @@ Traceback (most recent call last):
 AssertionError: 0 == 0
 
 ----------------------------------------------------------------------
-Ran 8 tests in 1.033s
+Ran 9 tests in 0.835s
 
-FAILED (failures=16)
+FAILED (failures=17)

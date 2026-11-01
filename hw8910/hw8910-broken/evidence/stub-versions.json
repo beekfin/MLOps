@@ -5,7 +5,7 @@
       "init"
     ],
     "exit_code": 0,
-    "stdout": "Создан синтетический стенд: /home/beekfin/sna23mk048/MLOps/hw8910/hw8910-broken/.runtime/versions-62edd93c\n",
+    "stdout": "Создан синтетический стенд: /home/beekfin/sna23mk048/MLOps/hw8910/hw8910-broken/.runtime/versions-cbd5d04e\n",
     "stderr": ""
   },
   {
@@ -14,13 +14,6 @@
     "body": {
       "alive": true,
       "backend": "STUB ONLY"
-    }
-  },
-  {
-    "path": "/ready",
-    "status": 503,
-    "body": {
-      "detail": "Загрузка или прогрев"
     }
   },
   {
@@ -257,10 +250,10 @@
       "output_tokens": 1,
       "model_id": "fixture-A",
       "runtime_sha256": "bc7bd5a4806e2e0e3b8569666b251d6c59a8d8e01e37fc37bf95b534023ca547",
-      "request_id": "a7415973-dfec-4f02-adbc-110f95f59a3c",
-      "generation_seconds": 0.010086826994665898,
-      "queue_seconds": 2.0769948605448008e-06,
-      "server_seconds": 0.010149041991098784
+      "request_id": "865c3a18-474b-4543-8487-0f1ed041e2ed",
+      "generation_seconds": 0.010171822999836877,
+      "queue_seconds": 1.4139950508251786e-06,
+      "server_seconds": 0.010236210000584833
     }
   },
   {
@@ -285,10 +278,10 @@
       "output_tokens": 1,
       "model_id": "fixture-A",
       "runtime_sha256": "bc7bd5a4806e2e0e3b8569666b251d6c59a8d8e01e37fc37bf95b534023ca547",
-      "request_id": "ef2cc8c9-82d3-4fe3-a8b0-49153b8d08e9",
-      "generation_seconds": 0.010089864008477889,
-      "queue_seconds": 1.243999577127397e-06,
-      "server_seconds": 0.010134172000107355
+      "request_id": "7e88d9a0-717d-4932-9bb6-b90c652088a3",
+      "generation_seconds": 0.01010735500312876,
+      "queue_seconds": 1.020991476252675e-06,
+      "server_seconds": 0.010147831999347545
     }
   },
   {
@@ -523,13 +516,6 @@
   },
   {
     "path": "/ready",
-    "status": 503,
-    "body": {
-      "detail": "Загрузка или прогрев"
-    }
-  },
-  {
-    "path": "/ready",
     "status": 200,
     "body": {
       "ready": true,
@@ -545,10 +531,10 @@
       "output_tokens": 1,
       "model_id": "fixture-B",
       "runtime_sha256": "bc7bd5a4806e2e0e3b8569666b251d6c59a8d8e01e37fc37bf95b534023ca547",
-      "request_id": "4b0f2770-8f64-4a85-9350-ef49c6d6a786",
-      "generation_seconds": 0.010090231007779948,
-      "queue_seconds": 1.6080011846497655e-06,
-      "server_seconds": 0.010131458009709604
+      "request_id": "61ceb2bb-20e1-4268-a2c6-af1fdfddb6e2",
+      "generation_seconds": 0.010122872001375072,
+      "queue_seconds": 8.799979696050286e-07,
+      "server_seconds": 0.010191659996053204
     }
   },
   {
@@ -577,10 +563,10 @@
       "output_tokens": 1,
       "model_id": "fixture-B",
       "runtime_sha256": "bc7bd5a4806e2e0e3b8569666b251d6c59a8d8e01e37fc37bf95b534023ca547",
-      "request_id": "7bd0e463-742f-4374-b800-daef495e3e25",
-      "generation_seconds": 0.010105595996719785,
-      "queue_seconds": 3.1709932954981923e-06,
-      "server_seconds": 0.010159274999750778
+      "request_id": "86479605-2f28-4115-a7f4-d55c893a594c",
+      "generation_seconds": 0.010186607003561221,
+      "queue_seconds": 1.4840043149888515e-06,
+      "server_seconds": 0.010234979999950156
     }
   },
   {
@@ -594,13 +580,6 @@
     "body": {
       "alive": true,
       "backend": "STUB ONLY"
-    }
-  },
-  {
-    "path": "/ready",
-    "status": 503,
-    "body": {
-      "detail": "Загрузка или прогрев"
     }
   },
   {
@@ -837,10 +816,10 @@
       "output_tokens": 1,
       "model_id": "fixture-A",
       "runtime_sha256": "bc7bd5a4806e2e0e3b8569666b251d6c59a8d8e01e37fc37bf95b534023ca547",
-      "request_id": "0589c3a0-6883-454d-857b-a76019e14eb4",
-      "generation_seconds": 0.01011076800932642,
-      "queue_seconds": 1.2849923223257065e-06,
-      "server_seconds": 0.010158498989767395
+      "request_id": "f14b489d-67e1-44b7-ad2f-2285ca8524dd",
+      "generation_seconds": 0.010116368008311838,
+      "queue_seconds": 8.259958121925592e-07,
+      "server_seconds": 0.010165792002226226
     }
   },
   {

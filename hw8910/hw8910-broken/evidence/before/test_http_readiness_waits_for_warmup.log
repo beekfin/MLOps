@@ -1,11 +1,11 @@
-$ ['/home/beekfin/sna23mk048/MLOps/hw8910/hw8910-broken/.venv/bin/python', '/tmp/hw8910-original-0boov5op/lab.py', '--workspace', '/tmp/tmpy3_0el4_/workspace', 'init']
+$ ['/home/beekfin/sna23mk048/MLOps/hw8910/hw8910-broken/.venv/bin/python', '/tmp/hw8910-original-i2qn84bv/lab.py', '--workspace', '/tmp/tmpmjia2qne/workspace', 'init']
 exit=0
-Создан синтетический стенд: /tmp/tmpy3_0el4_/workspace
+Создан синтетический стенд: /tmp/tmpmjia2qne/workspace
 
 HTTP /health None -> 200 {'alive': True, 'backend': 'STUB ONLY'}
 HTTP /health None -> 200 {'alive': True, 'backend': 'STUB ONLY'}
 HTTP /ready None -> 200 {'ready': True}
-STUB ONLY: http://127.0.0.1:32795
-127.0.0.1 - - [02/Nov/2026 01:33:00] "GET /health HTTP/1.1" 200 -
-127.0.0.1 - - [02/Nov/2026 01:33:00] "GET /health HTTP/1.1" 200 -
-127.0.0.1 - - [02/Nov/2026 01:33:00] "GET /ready HTTP/1.1" 200 -
+STUB ONLY: http://127.0.0.1:36361
+127.0.0.1 - - [02/Nov/2026 01:56:12] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [02/Nov/2026 01:56:12] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [02/Nov/2026 01:56:12] "GET /ready HTTP/1.1" 200 -

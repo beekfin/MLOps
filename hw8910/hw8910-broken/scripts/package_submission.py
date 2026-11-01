@@ -57,7 +57,7 @@ GitHub Releases репозитория beekfin/MLOps и передать ссы�
     (out/'ARTIFACTS.txt').write_text(instructions)
     manifest={'git_commit':subprocess.check_output(['git','rev-parse','HEAD'],cwd=REPO,text=True).strip(),
         'original_commit':'e4cf8ad','initial_fix_commit':'f402799','original_tests_fingerprint':'09bd65e6b886',
-        'hw67_tests_fingerprint':'c42ac7788026','checks':{'provided':13,'own':8,'hw67':24},
+        'hw67_tests_fingerprint':'c42ac7788026','checks':{'provided':13,'own':9,'hw67':24},
         'training_run_id':m['training_run_id'],'model_id':m['model_id'],'runtime_sha256':m['runtime_sha256'],
         'benchmark':json.loads((ROOT/'evidence/benchmark.json').read_text()),'video':'hw8910_beekfin_4k_music.mp4'}
     (out/'SUBMISSION.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n')

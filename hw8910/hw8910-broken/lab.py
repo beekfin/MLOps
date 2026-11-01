@@ -36,7 +36,7 @@ def initialize(root):
     for version in ['A','B']:
         artifact=root/f'model-{version}.txt';artifact.write_text(f'STUB ONLY — version {version}\n')
         files={artifact.name:digest(artifact.read_bytes())}
-        m={'schema_version':1,'model_id':f'fixture-{version}',
+        m={'schema_version':1,'model_id':f'fixture-{version}','synthetic':True,
            'artifact_uri':artifact.name,'model_sha256':digest(canonical(files)),
            'protocol_sha256':'d'*64,'golden_sha256':'e'*64,
            'runtime_sha256':digest(canonical(runtime)),'runtime':runtime,'file_hashes':files}
@@ -85,16 +85,23 @@ def artifact(root, manifest_name='manifest-B.json'):
 
 def validate_bound(root, manifest, report_name):
     report = read(root / report_name)
-    if not manifest['model_id'].startswith('fixture-'):
+    return validate_bound_report(root, manifest, report)
+
+
+def validate_bound_report(root, manifest, report):
+    release.validate_release(manifest, report)
+    release.verify_files(manifest, root)
+    if manifest['synthetic'] is True:
+        if report.get('synthetic') is not True:
+            raise ValueError('Отчёт фикстуры должен быть явно помечен synthetic=True')
+    else:
         from model_release import verify_evaluation
         verify_evaluation(root, manifest, report)
-    release.validate_release(manifest, report)
     return report
 
 
 def publish_event(root, manifest, report, fail_after_pointer=False):
-    release.validate_release(manifest, report)
-    release.verify_files(manifest, root)
+    validate_bound_report(root, manifest, report)
     state_path = root / 'release-state.json'
     state = read(state_path) if state_path.exists() else {'events': [], 'pending': None}
     target = root / 'accepted.json'

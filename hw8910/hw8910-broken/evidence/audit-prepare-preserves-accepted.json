@@ -1,0 +1,14 @@
+[
+  {
+    "implementation": "old",
+    "rejected": false,
+    "pointer_unchanged": true,
+    "all_accepted_files_unchanged": false
+  },
+  {
+    "implementation": "fixed",
+    "rejected": true,
+    "pointer_unchanged": true,
+    "all_accepted_files_unchanged": true
+  }
+]

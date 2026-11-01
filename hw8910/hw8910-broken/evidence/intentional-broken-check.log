@@ -22,7 +22,7 @@ test_runtime_change_with_stale_hash_rejected (test_release.ReleaseContractTests.
 FAIL: test_changed_bytes_at_same_path_invalidate_cache (test_release.ReleaseContractTests.test_changed_bytes_at_same_path_invalidate_cache)
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "/tmp/hw8910-ci-negative-8swzvk1v/tests/test_release.py", line 42, in test_changed_bytes_at_same_path_invalidate_cache
+  File "/tmp/hw8910-ci-negative-nr1_am10/tests/test_release.py", line 42, in test_changed_bytes_at_same_path_invalidate_cache
     self.assertNotEqual(old,release.cache_key(self.data,self.config))
 AssertionError: '0000000000000000000000000000000000000000000000000000000000000000' == '0000000000000000000000000000000000000000000000000000000000000000'
 
@@ -30,7 +30,7 @@ AssertionError: '000000000000000000000000000000000000000000000000000000000000000
 FAIL: test_every_preparation_setting_invalidates_cache (test_release.ReleaseContractTests.test_every_preparation_setting_invalidates_cache) (key='tokenizer_revision')
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "/tmp/hw8910-ci-negative-8swzvk1v/tests/test_release.py", line 48, in test_every_preparation_setting_invalidates_cache
+  File "/tmp/hw8910-ci-negative-nr1_am10/tests/test_release.py", line 48, in test_every_preparation_setting_invalidates_cache
     config={**self.config,key:value};self.assertNotEqual(old,release.cache_key(self.data,config))
                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 AssertionError: '0000000000000000000000000000000000000000000000000000000000000000' == '0000000000000000000000000000000000000000000000000000000000000000'
@@ -39,7 +39,7 @@ AssertionError: '000000000000000000000000000000000000000000000000000000000000000
 FAIL: test_every_preparation_setting_invalidates_cache (test_release.ReleaseContractTests.test_every_preparation_setting_invalidates_cache) (key='template_sha256')
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "/tmp/hw8910-ci-negative-8swzvk1v/tests/test_release.py", line 48, in test_every_preparation_setting_invalidates_cache
+  File "/tmp/hw8910-ci-negative-nr1_am10/tests/test_release.py", line 48, in test_every_preparation_setting_invalidates_cache
     config={**self.config,key:value};self.assertNotEqual(old,release.cache_key(self.data,config))
                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 AssertionError: '0000000000000000000000000000000000000000000000000000000000000000' == '0000000000000000000000000000000000000000000000000000000000000000'
@@ -48,7 +48,7 @@ AssertionError: '000000000000000000000000000000000000000000000000000000000000000
 FAIL: test_every_preparation_setting_invalidates_cache (test_release.ReleaseContractTests.test_every_preparation_setting_invalidates_cache) (key='max_length')
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "/tmp/hw8910-ci-negative-8swzvk1v/tests/test_release.py", line 48, in test_every_preparation_setting_invalidates_cache
+  File "/tmp/hw8910-ci-negative-nr1_am10/tests/test_release.py", line 48, in test_every_preparation_setting_invalidates_cache
     config={**self.config,key:value};self.assertNotEqual(old,release.cache_key(self.data,config))
                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 AssertionError: '0000000000000000000000000000000000000000000000000000000000000000' == '0000000000000000000000000000000000000000000000000000000000000000'
@@ -57,12 +57,12 @@ AssertionError: '000000000000000000000000000000000000000000000000000000000000000
 FAIL: test_every_preparation_setting_invalidates_cache (test_release.ReleaseContractTests.test_every_preparation_setting_invalidates_cache) (key='code_revision')
 ----------------------------------------------------------------------
 Traceback (most recent call last):
-  File "/tmp/hw8910-ci-negative-8swzvk1v/tests/test_release.py", line 48, in test_every_preparation_setting_invalidates_cache
+  File "/tmp/hw8910-ci-negative-nr1_am10/tests/test_release.py", line 48, in test_every_preparation_setting_invalidates_cache
     config={**self.config,key:value};self.assertNotEqual(old,release.cache_key(self.data,config))
                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 AssertionError: '0000000000000000000000000000000000000000000000000000000000000000' == '0000000000000000000000000000000000000000000000000000000000000000'
 
 ----------------------------------------------------------------------
-Ran 13 tests in 0.005s
+Ran 13 tests in 0.006s
 
 FAILED (failures=5)

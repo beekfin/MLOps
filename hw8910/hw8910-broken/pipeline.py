@@ -39,7 +39,7 @@ def obtain_artifact(workspace, manifest_name, prepared, fail_after_prepare=False
     if prepared['cache_key'] != release.cache_key(root/'input.txt', lab.preparation_config(root)):
         raise ValueError('Подготовка не соответствует текущему входу')
     manifest = lab.artifact(root, manifest_name)
-    if not manifest['model_id'].startswith('fixture-'):
+    if manifest['synthetic'] is False:
         if prepared['input_sha256'] != release.digest((root/'hw67-evidence/data/eval/golden.jsonl').read_bytes()):
             raise ValueError('Подготовленные данные изменились: нужна согласованная новая оценка')
         config = prepared['config']; runtime = manifest['runtime']
@@ -56,7 +56,7 @@ def obtain_artifact(workspace, manifest_name, prepared, fail_after_prepare=False
 def evaluate_admission(workspace, descriptor, report_name):
     root = Path(workspace)
     manifest = lab.read(root/descriptor['manifest'])
-    if not manifest['model_id'].startswith('fixture-'):
+    if manifest['synthetic'] is False:
         from model_release import create_report
         create_report(root, manifest, report_name)
     report = lab.validate_bound(root, manifest, report_name)

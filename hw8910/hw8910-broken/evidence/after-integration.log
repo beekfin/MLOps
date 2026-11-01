@@ -1,5 +1,6 @@
 test_atomic_write_error_preserves_pointer (test_integration.IntegrationTests.test_atomic_write_error_preserves_pointer) ... ok
 test_cache_recovery_and_changed_input (test_integration.IntegrationTests.test_cache_recovery_and_changed_input) ... ok
+test_fixture_name_does_not_bypass_real_evaluation (test_integration.IntegrationTests.test_fixture_name_does_not_bypass_real_evaluation) ... ok
 test_http_invalid_request_does_not_call_backend (test_integration.IntegrationTests.test_http_invalid_request_does_not_call_backend) ... ok
 test_http_loaded_version_restart_and_rollback (test_integration.IntegrationTests.test_http_loaded_version_restart_and_rollback) ... ok
 test_http_readiness_waits_for_warmup (test_integration.IntegrationTests.test_http_readiness_waits_for_warmup) ... ok
@@ -8,6 +9,6 @@ test_repeated_release_in_new_process (test_integration.IntegrationTests.test_rep
 test_tampered_artifact_is_not_published (test_integration.IntegrationTests.test_tampered_artifact_is_not_published) ... ok
 
 ----------------------------------------------------------------------
-Ran 8 tests in 6.256s
+Ran 9 tests in 5.126s
 
 OK

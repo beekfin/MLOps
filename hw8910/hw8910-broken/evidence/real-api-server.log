@@ -1,295 +1,344 @@
-Nov 02 01:27:41 thinkbiba systemd[3173]: Started [systemd-run] /home/beekfin/sna23mk048/MLOps/hw8910/hw8910-broken/.venv/bin/python service.py --workspace .runtime/real --backend transformers --port 8091 --warmup-seconds 1.
-Nov 02 01:27:41 thinkbiba python[260441]: INFO:     Started server process [260441]
-Nov 02 01:27:41 thinkbiba python[260441]: INFO:     Waiting for application startup.
-Nov 02 01:27:41 thinkbiba python[260441]: INFO:     Application startup complete.
-Nov 02 01:27:41 thinkbiba python[260441]: INFO:     Uvicorn running on http://127.0.0.1:8091 (Press CTRL+C to quit)
-Nov 02 01:27:41 thinkbiba python[260441]: INFO:     127.0.0.1:44716 - "GET /health HTTP/1.1" 200 OK
-Nov 02 01:27:41 thinkbiba python[260441]: INFO:     127.0.0.1:44718 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:27:42 thinkbiba python[260441]: INFO:     127.0.0.1:44730 - "GET /health HTTP/1.1" 200 OK
-Nov 02 01:27:42 thinkbiba python[260441]: INFO:     127.0.0.1:44736 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:27:43 thinkbiba python[260441]: INFO:     127.0.0.1:44742 - "GET /health HTTP/1.1" 200 OK
-Nov 02 01:27:43 thinkbiba python[260441]: INFO:     127.0.0.1:44752 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:27:43 thinkbiba python[260441]: INFO:     127.0.0.1:44760 - "GET /health HTTP/1.1" 200 OK
-Nov 02 01:27:43 thinkbiba python[260441]: INFO:     127.0.0.1:44762 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:27:43 thinkbiba python[260441]: INFO:     127.0.0.1:44766 - "GET /health HTTP/1.1" 200 OK
-Nov 02 01:27:43 thinkbiba python[260441]: INFO:     127.0.0.1:44768 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:27:44 thinkbiba python[260441]: INFO:     127.0.0.1:44774 - "GET /health HTTP/1.1" 200 OK
-Nov 02 01:27:44 thinkbiba python[260441]: INFO:     127.0.0.1:44790 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:27:44 thinkbiba python[260441]: INFO:     127.0.0.1:44804 - "GET /health HTTP/1.1" 200 OK
-Nov 02 01:27:44 thinkbiba python[260441]: INFO:     127.0.0.1:48258 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:27:44 thinkbiba python[260441]: INFO:     127.0.0.1:48268 - "GET /health HTTP/1.1" 200 OK
-Nov 02 01:27:44 thinkbiba python[260441]: INFO:     127.0.0.1:48284 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:27:44 thinkbiba python[260441]: INFO:     127.0.0.1:48290 - "GET /health HTTP/1.1" 200 OK
-Nov 02 01:27:44 thinkbiba python[260441]: INFO:     127.0.0.1:48292 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:27:45 thinkbiba python[260441]: INFO:     127.0.0.1:48296 - "GET /health HTTP/1.1" 200 OK
-Nov 02 01:27:45 thinkbiba python[260441]: INFO:     127.0.0.1:48306 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:27:45 thinkbiba python[260441]: INFO:     127.0.0.1:48316 - "GET /health HTTP/1.1" 200 OK
-Nov 02 01:27:45 thinkbiba python[260441]: INFO:     127.0.0.1:48330 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:27:45 thinkbiba python[260441]: INFO:     127.0.0.1:48334 - "GET /health HTTP/1.1" 200 OK
-Nov 02 01:27:45 thinkbiba python[260441]: INFO:     127.0.0.1:48348 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:27:45 thinkbiba python[260441]: INFO:     127.0.0.1:48358 - "GET /health HTTP/1.1" 200 OK
-Nov 02 01:27:45 thinkbiba python[260441]: INFO:     127.0.0.1:48360 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:27:46 thinkbiba python[260441]: INFO:     127.0.0.1:48374 - "GET /health HTTP/1.1" 200 OK
-Nov 02 01:27:46 thinkbiba python[260441]: INFO:     127.0.0.1:48386 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:27:46 thinkbiba python[260441]: INFO:     127.0.0.1:48402 - "GET /health HTTP/1.1" 200 OK
-Nov 02 01:27:46 thinkbiba python[260441]: INFO:     127.0.0.1:48404 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:27:46 thinkbiba python[260441]: INFO:     127.0.0.1:48416 - "GET /health HTTP/1.1" 200 OK
-Nov 02 01:27:46 thinkbiba python[260441]: INFO:     127.0.0.1:48418 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:27:46 thinkbiba python[260441]: INFO:     127.0.0.1:48422 - "GET /health HTTP/1.1" 200 OK
-Nov 02 01:27:46 thinkbiba python[260441]: INFO:     127.0.0.1:48428 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:27:47 thinkbiba python[260441]: INFO:     127.0.0.1:48434 - "GET /health HTTP/1.1" 200 OK
-Nov 02 01:27:47 thinkbiba python[260441]: INFO:     127.0.0.1:48442 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:27:47 thinkbiba python[260441]: INFO:     127.0.0.1:48448 - "GET /health HTTP/1.1" 200 OK
-Nov 02 01:27:47 thinkbiba python[260441]: INFO:     127.0.0.1:48452 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:27:47 thinkbiba python[260441]: INFO:     127.0.0.1:48454 - "GET /health HTTP/1.1" 200 OK
-Nov 02 01:27:47 thinkbiba python[260441]: INFO:     127.0.0.1:48456 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:27:48 thinkbiba python[260441]: INFO:     127.0.0.1:48472 - "GET /health HTTP/1.1" 200 OK
-Nov 02 01:27:48 thinkbiba python[260441]: INFO:     127.0.0.1:48480 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:27:48 thinkbiba python[260441]: INFO:     127.0.0.1:48490 - "GET /health HTTP/1.1" 200 OK
-Nov 02 01:27:48 thinkbiba python[260441]: INFO:     127.0.0.1:48504 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:27:48 thinkbiba python[260441]: INFO:     127.0.0.1:48510 - "GET /health HTTP/1.1" 200 OK
-Nov 02 01:27:48 thinkbiba python[260441]: INFO:     127.0.0.1:48516 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:27:49 thinkbiba python[260441]: INFO:     127.0.0.1:48530 - "GET /health HTTP/1.1" 200 OK
-Nov 02 01:27:49 thinkbiba python[260441]: INFO:     127.0.0.1:48538 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:27:49 thinkbiba python[260441]: [114B blob data]
-Nov 02 01:27:49 thinkbiba python[260441]: INFO:     127.0.0.1:48562 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:27:49 thinkbiba python[260441]: INFO:     127.0.0.1:48566 - "GET /health HTTP/1.1" 200 OK
-Nov 02 01:27:49 thinkbiba python[260441]: INFO:     127.0.0.1:48580 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:27:50 thinkbiba python[260441]: INFO:     127.0.0.1:48586 - "GET /health HTTP/1.1" 200 OK
-Nov 02 01:27:50 thinkbiba python[260441]: INFO:     127.0.0.1:48590 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:27:50 thinkbiba python[260441]: [122B blob data]
-Nov 02 01:27:50 thinkbiba python[260441]: INFO:     127.0.0.1:48608 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:27:50 thinkbiba python[260441]: [213B blob data]
-Nov 02 01:27:50 thinkbiba python[260441]: INFO:     127.0.0.1:48614 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:27:51 thinkbiba python[260441]: [141B blob data]
-Nov 02 01:27:51 thinkbiba python[260441]: [159B blob data]
-Nov 02 01:27:51 thinkbiba python[260441]: [88B blob data]
-Nov 02 01:27:51 thinkbiba python[260441]: INFO:     127.0.0.1:48638 - "GET /health HTTP/1.1" 200 OK
-Nov 02 01:27:51 thinkbiba python[260441]: INFO:     127.0.0.1:48650 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:27:56 thinkbiba python[260441]: INFO:     127.0.0.1:48658 - "GET /health HTTP/1.1" 200 OK
-Nov 02 01:27:56 thinkbiba python[260441]: INFO:     127.0.0.1:58328 - "GET /health HTTP/1.1" 200 OK
-Nov 02 01:27:56 thinkbiba python[260441]: INFO:     127.0.0.1:58344 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:27:57 thinkbiba python[260441]: INFO:     127.0.0.1:58346 - "GET /health HTTP/1.1" 200 OK
-Nov 02 01:27:57 thinkbiba python[260441]: INFO:     127.0.0.1:58360 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:27:57 thinkbiba python[260441]: INFO:     127.0.0.1:58368 - "GET /health HTTP/1.1" 200 OK
-Nov 02 01:27:57 thinkbiba python[260441]: INFO:     127.0.0.1:58372 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:27:57 thinkbiba python[260441]: INFO:     127.0.0.1:58384 - "GET /health HTTP/1.1" 200 OK
-Nov 02 01:27:57 thinkbiba python[260441]: INFO:     127.0.0.1:58390 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:27:57 thinkbiba python[260441]: INFO:     127.0.0.1:58402 - "GET /health HTTP/1.1" 200 OK
-Nov 02 01:27:57 thinkbiba python[260441]: INFO:     127.0.0.1:58414 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:27:58 thinkbiba python[260441]: INFO:     127.0.0.1:58420 - "GET /health HTTP/1.1" 200 OK
-Nov 02 01:27:58 thinkbiba python[260441]: INFO:     127.0.0.1:58430 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:27:58 thinkbiba python[260441]: INFO:     127.0.0.1:58436 - "GET /health HTTP/1.1" 200 OK
-Nov 02 01:27:58 thinkbiba python[260441]: INFO:     127.0.0.1:58440 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:27:58 thinkbiba python[260441]: INFO:     127.0.0.1:58446 - "GET /health HTTP/1.1" 200 OK
-Nov 02 01:27:58 thinkbiba python[260441]: INFO:     127.0.0.1:58462 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:27:58 thinkbiba python[260441]: INFO:     127.0.0.1:58466 - "GET /health HTTP/1.1" 200 OK
-Nov 02 01:27:58 thinkbiba python[260441]: INFO:     127.0.0.1:58478 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:27:59 thinkbiba python[260441]: INFO:     127.0.0.1:58486 - "GET /health HTTP/1.1" 200 OK
-Nov 02 01:27:59 thinkbiba python[260441]: INFO:     127.0.0.1:58488 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:27:59 thinkbiba python[260441]: INFO:     127.0.0.1:58504 - "GET /health HTTP/1.1" 200 OK
-Nov 02 01:27:59 thinkbiba python[260441]: INFO:     127.0.0.1:58510 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:27:59 thinkbiba python[260441]: INFO:     127.0.0.1:58522 - "GET /health HTTP/1.1" 200 OK
-Nov 02 01:27:59 thinkbiba python[260441]: INFO:     127.0.0.1:58536 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:28:00 thinkbiba python[260441]: INFO:     127.0.0.1:58542 - "GET /health HTTP/1.1" 200 OK
-Nov 02 01:28:00 thinkbiba python[260441]: INFO:     127.0.0.1:58556 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:28:00 thinkbiba python[260441]: INFO:     127.0.0.1:58572 - "GET /health HTTP/1.1" 200 OK
-Nov 02 01:28:00 thinkbiba python[260441]: INFO:     127.0.0.1:58588 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:28:00 thinkbiba python[260441]: INFO:     127.0.0.1:58600 - "GET /health HTTP/1.1" 200 OK
-Nov 02 01:28:00 thinkbiba python[260441]: INFO:     127.0.0.1:58616 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:28:00 thinkbiba python[260441]: INFO:     127.0.0.1:58632 - "GET /health HTTP/1.1" 200 OK
-Nov 02 01:28:00 thinkbiba python[260441]: INFO:     127.0.0.1:58638 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:28:01 thinkbiba python[260441]: INFO:     127.0.0.1:58648 - "GET /health HTTP/1.1" 200 OK
-Nov 02 01:28:01 thinkbiba python[260441]: INFO:     127.0.0.1:58654 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:28:01 thinkbiba python[260441]: INFO:     127.0.0.1:58664 - "GET /health HTTP/1.1" 200 OK
-Nov 02 01:28:01 thinkbiba python[260441]: INFO:     127.0.0.1:58672 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:28:01 thinkbiba python[260441]: INFO:     127.0.0.1:58682 - "GET /health HTTP/1.1" 200 OK
-Nov 02 01:28:01 thinkbiba python[260441]: INFO:     127.0.0.1:58690 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:28:02 thinkbiba python[260441]: INFO:     127.0.0.1:58704 - "GET /health HTTP/1.1" 200 OK
-Nov 02 01:28:02 thinkbiba python[260441]: INFO:     127.0.0.1:58714 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:28:02 thinkbiba python[260441]: INFO:     127.0.0.1:58728 - "GET /health HTTP/1.1" 200 OK
-Nov 02 01:28:02 thinkbiba python[260441]: INFO:     127.0.0.1:58730 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:28:02 thinkbiba python[260441]: INFO:     127.0.0.1:58744 - "GET /health HTTP/1.1" 200 OK
-Nov 02 01:28:02 thinkbiba python[260441]: INFO:     127.0.0.1:58760 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:28:02 thinkbiba python[260441]: INFO:     127.0.0.1:58774 - "GET /health HTTP/1.1" 200 OK
-Nov 02 01:28:02 thinkbiba python[260441]: INFO:     127.0.0.1:58790 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:28:03 thinkbiba python[260441]: INFO:     127.0.0.1:58792 - "GET /health HTTP/1.1" 200 OK
-Nov 02 01:28:03 thinkbiba python[260441]: INFO:     127.0.0.1:58800 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:28:03 thinkbiba python[260441]: INFO:     127.0.0.1:58814 - "GET /health HTTP/1.1" 200 OK
-Nov 02 01:28:03 thinkbiba python[260441]: INFO:     127.0.0.1:58828 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:28:03 thinkbiba python[260441]: INFO:     127.0.0.1:58830 - "GET /health HTTP/1.1" 200 OK
-Nov 02 01:28:03 thinkbiba python[260441]: INFO:     127.0.0.1:58836 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:28:04 thinkbiba python[260441]: INFO:     127.0.0.1:58846 - "GET /health HTTP/1.1" 200 OK
-Nov 02 01:28:04 thinkbiba python[260441]: INFO:     127.0.0.1:58854 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:28:04 thinkbiba python[260441]: INFO:     127.0.0.1:50608 - "GET /health HTTP/1.1" 200 OK
-Nov 02 01:28:04 thinkbiba python[260441]: INFO:     127.0.0.1:50612 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:28:04 thinkbiba python[260441]: INFO:     127.0.0.1:50626 - "GET /health HTTP/1.1" 200 OK
-Nov 02 01:28:04 thinkbiba python[260441]: INFO:     127.0.0.1:50634 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:28:04 thinkbiba python[260441]: INFO:     127.0.0.1:50636 - "GET /health HTTP/1.1" 200 OK
-Nov 02 01:28:04 thinkbiba python[260441]: INFO:     127.0.0.1:50642 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:28:05 thinkbiba python[260441]: INFO:     127.0.0.1:50646 - "GET /health HTTP/1.1" 200 OK
-Nov 02 01:28:05 thinkbiba python[260441]: INFO:     127.0.0.1:50650 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:28:05 thinkbiba python[260441]: INFO:     127.0.0.1:50658 - "GET /health HTTP/1.1" 200 OK
-Nov 02 01:28:05 thinkbiba python[260441]: INFO:     127.0.0.1:50666 - "GET /ready HTTP/1.1" 200 OK
-Nov 02 01:28:05 thinkbiba python[260441]: INFO:     127.0.0.1:50674 - "GET /debug HTTP/1.1" 200 OK
-Nov 02 01:28:05 thinkbiba python[260441]: INFO:     127.0.0.1:50684 - "POST /generate HTTP/1.1" 422 Unprocessable Entity
-Nov 02 01:28:05 thinkbiba python[260441]: INFO:     127.0.0.1:50688 - "GET /debug HTTP/1.1" 200 OK
-Nov 02 01:28:10 thinkbiba python[260441]: INFO:     127.0.0.1:50702 - "POST /generate HTTP/1.1" 200 OK
-Nov 02 01:29:08 thinkbiba python[260441]: INFO:     127.0.0.1:51840 - "POST /generate HTTP/1.1" 200 OK
-Nov 02 01:29:14 thinkbiba python[260441]: INFO:     127.0.0.1:51850 - "POST /generate HTTP/1.1" 200 OK
-Nov 02 01:29:21 thinkbiba python[260441]: INFO:     127.0.0.1:34944 - "POST /generate HTTP/1.1" 200 OK
-Nov 02 01:29:25 thinkbiba python[260441]: INFO:     127.0.0.1:34956 - "POST /generate HTTP/1.1" 200 OK
-Nov 02 01:29:30 thinkbiba python[260441]: INFO:     127.0.0.1:52192 - "POST /generate HTTP/1.1" 200 OK
-Nov 02 01:29:36 thinkbiba python[260441]: INFO:     127.0.0.1:52204 - "POST /generate HTTP/1.1" 200 OK
-Nov 02 01:29:43 thinkbiba python[260441]: INFO:     127.0.0.1:57324 - "POST /generate HTTP/1.1" 200 OK
-Nov 02 01:29:48 thinkbiba python[260441]: INFO:     127.0.0.1:57330 - "POST /generate HTTP/1.1" 200 OK
-Nov 02 01:29:53 thinkbiba python[260441]: INFO:     127.0.0.1:50334 - "POST /generate HTTP/1.1" 200 OK
-Nov 02 01:29:58 thinkbiba python[260441]: INFO:     127.0.0.1:50346 - "POST /generate HTTP/1.1" 200 OK
-Nov 02 01:30:03 thinkbiba python[260441]: INFO:     127.0.0.1:50360 - "POST /generate HTTP/1.1" 200 OK
-Nov 02 01:30:07 thinkbiba python[260441]: INFO:     127.0.0.1:39242 - "POST /generate HTTP/1.1" 200 OK
-Nov 02 01:30:11 thinkbiba python[260441]: INFO:     127.0.0.1:39256 - "POST /generate HTTP/1.1" 200 OK
-Nov 02 01:30:15 thinkbiba python[260441]: INFO:     127.0.0.1:50386 - "POST /generate HTTP/1.1" 200 OK
-Nov 02 01:30:21 thinkbiba python[260441]: INFO:     127.0.0.1:50396 - "POST /generate HTTP/1.1" 200 OK
-Nov 02 01:30:25 thinkbiba python[260441]: INFO:     127.0.0.1:56748 - "POST /generate HTTP/1.1" 200 OK
-Nov 02 01:30:25 thinkbiba systemd[3173]: Stopping [systemd-run] /home/beekfin/sna23mk048/MLOps/hw8910/hw8910-broken/.venv/bin/python service.py --workspace .runtime/real --backend transformers --port 8091 --warmup-seconds 1...
-Nov 02 01:30:25 thinkbiba python[260441]: INFO:     Shutting down
-Nov 02 01:30:25 thinkbiba python[260441]: INFO:     Waiting for application shutdown.
-Nov 02 01:30:25 thinkbiba python[260441]: INFO:     Application shutdown complete.
-Nov 02 01:30:25 thinkbiba python[260441]: INFO:     Finished server process [260441]
-Nov 02 01:30:25 thinkbiba systemd[3173]: Stopped [systemd-run] /home/beekfin/sna23mk048/MLOps/hw8910/hw8910-broken/.venv/bin/python service.py --workspace .runtime/real --backend transformers --port 8091 --warmup-seconds 1.
-Nov 02 01:30:25 thinkbiba systemd[3173]: mlops-hw8910-api-v2.service: Consumed 4min 3.579s CPU time over 2min 44.524s wall clock time, 3.4G memory peak.
-Nov 02 01:30:25 thinkbiba systemd[3173]: Started [systemd-run] /home/beekfin/sna23mk048/MLOps/hw8910/hw8910-broken/.venv/bin/python service.py --workspace .runtime/real --backend transformers --port 8091 --warmup-seconds 1.
-Nov 02 01:30:26 thinkbiba python[266581]: INFO:     Started server process [266581]
-Nov 02 01:30:26 thinkbiba python[266581]: INFO:     Waiting for application startup.
-Nov 02 01:30:26 thinkbiba python[266581]: INFO:     Application startup complete.
-Nov 02 01:30:26 thinkbiba python[266581]: INFO:     Uvicorn running on http://127.0.0.1:8091 (Press CTRL+C to quit)
-Nov 02 01:30:26 thinkbiba python[266581]: INFO:     127.0.0.1:51922 - "GET /health HTTP/1.1" 200 OK
-Nov 02 01:30:26 thinkbiba python[266581]: INFO:     127.0.0.1:51930 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:30:26 thinkbiba python[266581]: INFO:     127.0.0.1:51934 - "GET /health HTTP/1.1" 200 OK
-Nov 02 01:30:27 thinkbiba python[266581]: INFO:     127.0.0.1:51942 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:30:27 thinkbiba python[266581]: INFO:     127.0.0.1:51946 - "GET /health HTTP/1.1" 200 OK
-Nov 02 01:30:27 thinkbiba python[266581]: INFO:     127.0.0.1:51954 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:30:27 thinkbiba python[266581]: INFO:     127.0.0.1:51960 - "GET /health HTTP/1.1" 200 OK
-Nov 02 01:30:27 thinkbiba python[266581]: INFO:     127.0.0.1:51968 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:30:28 thinkbiba python[266581]: INFO:     127.0.0.1:51976 - "GET /health HTTP/1.1" 200 OK
-Nov 02 01:30:28 thinkbiba python[266581]: INFO:     127.0.0.1:51992 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:30:28 thinkbiba python[266581]: INFO:     127.0.0.1:52002 - "GET /health HTTP/1.1" 200 OK
-Nov 02 01:30:28 thinkbiba python[266581]: INFO:     127.0.0.1:52004 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:30:28 thinkbiba python[266581]: INFO:     127.0.0.1:52010 - "GET /health HTTP/1.1" 200 OK
-Nov 02 01:30:28 thinkbiba python[266581]: INFO:     127.0.0.1:52020 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:30:29 thinkbiba python[266581]: INFO:     127.0.0.1:52034 - "GET /health HTTP/1.1" 200 OK
-Nov 02 01:30:29 thinkbiba python[266581]: INFO:     127.0.0.1:52042 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:30:29 thinkbiba python[266581]: INFO:     127.0.0.1:52052 - "GET /health HTTP/1.1" 200 OK
-Nov 02 01:30:29 thinkbiba python[266581]: INFO:     127.0.0.1:52066 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:30:29 thinkbiba python[266581]: INFO:     127.0.0.1:52072 - "GET /health HTTP/1.1" 200 OK
-Nov 02 01:30:29 thinkbiba python[266581]: INFO:     127.0.0.1:52084 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:30:29 thinkbiba python[266581]: INFO:     127.0.0.1:52100 - "GET /health HTTP/1.1" 200 OK
-Nov 02 01:30:29 thinkbiba python[266581]: INFO:     127.0.0.1:52102 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:30:30 thinkbiba python[266581]: INFO:     127.0.0.1:52116 - "GET /health HTTP/1.1" 200 OK
-Nov 02 01:30:30 thinkbiba python[266581]: INFO:     127.0.0.1:52128 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:30:30 thinkbiba python[266581]: INFO:     127.0.0.1:52142 - "GET /health HTTP/1.1" 200 OK
-Nov 02 01:30:30 thinkbiba python[266581]: INFO:     127.0.0.1:52150 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:30:30 thinkbiba python[266581]: INFO:     127.0.0.1:52166 - "GET /health HTTP/1.1" 200 OK
-Nov 02 01:30:30 thinkbiba python[266581]: INFO:     127.0.0.1:52180 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:30:30 thinkbiba python[266581]: INFO:     127.0.0.1:52188 - "GET /health HTTP/1.1" 200 OK
-Nov 02 01:30:30 thinkbiba python[266581]: INFO:     127.0.0.1:52196 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:30:31 thinkbiba python[266581]: INFO:     127.0.0.1:52198 - "GET /health HTTP/1.1" 200 OK
-Nov 02 01:30:31 thinkbiba python[266581]: INFO:     127.0.0.1:52210 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:30:31 thinkbiba python[266581]: INFO:     127.0.0.1:52220 - "GET /health HTTP/1.1" 200 OK
-Nov 02 01:30:31 thinkbiba python[266581]: INFO:     127.0.0.1:52226 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:30:31 thinkbiba python[266581]: INFO:     127.0.0.1:52238 - "GET /health HTTP/1.1" 200 OK
-Nov 02 01:30:31 thinkbiba python[266581]: INFO:     127.0.0.1:52244 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:30:32 thinkbiba python[266581]: INFO:     127.0.0.1:52254 - "GET /health HTTP/1.1" 200 OK
-Nov 02 01:30:32 thinkbiba python[266581]: INFO:     127.0.0.1:52258 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:30:32 thinkbiba python[266581]: INFO:     127.0.0.1:52274 - "GET /health HTTP/1.1" 200 OK
-Nov 02 01:30:32 thinkbiba python[266581]: INFO:     127.0.0.1:52280 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:30:32 thinkbiba python[266581]: INFO:     127.0.0.1:52286 - "GET /health HTTP/1.1" 200 OK
-Nov 02 01:30:32 thinkbiba python[266581]: INFO:     127.0.0.1:52294 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:30:32 thinkbiba python[266581]: INFO:     127.0.0.1:52300 - "GET /health HTTP/1.1" 200 OK
-Nov 02 01:30:32 thinkbiba python[266581]: INFO:     127.0.0.1:52304 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:30:33 thinkbiba python[266581]: INFO:     127.0.0.1:52318 - "GET /health HTTP/1.1" 200 OK
-Nov 02 01:30:33 thinkbiba python[266581]: INFO:     127.0.0.1:52332 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:30:33 thinkbiba python[266581]: INFO:     127.0.0.1:52344 - "GET /health HTTP/1.1" 200 OK
-Nov 02 01:30:33 thinkbiba python[266581]: INFO:     127.0.0.1:52348 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:30:34 thinkbiba python[266581]: INFO:     127.0.0.1:52358 - "GET /health HTTP/1.1" 200 OK
-Nov 02 01:30:34 thinkbiba python[266581]: INFO:     127.0.0.1:52368 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:30:34 thinkbiba python[266581]: [114B blob data]
-Nov 02 01:30:34 thinkbiba python[266581]: INFO:     127.0.0.1:42274 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:30:34 thinkbiba python[266581]: INFO:     127.0.0.1:42278 - "GET /health HTTP/1.1" 200 OK
-Nov 02 01:30:34 thinkbiba python[266581]: INFO:     127.0.0.1:42280 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:30:35 thinkbiba python[266581]: [122B blob data]
-Nov 02 01:30:35 thinkbiba python[266581]: INFO:     127.0.0.1:42290 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:30:35 thinkbiba python[266581]: [133B blob data]
-Nov 02 01:30:35 thinkbiba python[266581]: INFO:     127.0.0.1:42312 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:30:35 thinkbiba python[266581]: [135B blob data]
-Nov 02 01:30:35 thinkbiba python[266581]: INFO:     127.0.0.1:42332 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:30:36 thinkbiba python[266581]: [139B blob data]
-Nov 02 01:30:36 thinkbiba python[266581]: INFO:     127.0.0.1:42348 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:30:36 thinkbiba python[266581]: [311B blob data]
-Nov 02 01:30:36 thinkbiba python[266581]: INFO:     127.0.0.1:42372 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:30:36 thinkbiba python[266581]: [176B blob data]
-Nov 02 01:30:36 thinkbiba python[266581]: INFO:     127.0.0.1:42384 - "GET /health HTTP/1.1" 200 OK
-Nov 02 01:30:36 thinkbiba python[266581]: INFO:     127.0.0.1:42394 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:30:42 thinkbiba python[266581]: INFO:     127.0.0.1:42396 - "GET /health HTTP/1.1" 200 OK
-Nov 02 01:30:42 thinkbiba python[266581]: INFO:     127.0.0.1:42410 - "GET /health HTTP/1.1" 200 OK
-Nov 02 01:30:42 thinkbiba python[266581]: INFO:     127.0.0.1:42414 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:30:42 thinkbiba python[266581]: INFO:     127.0.0.1:42430 - "GET /health HTTP/1.1" 200 OK
-Nov 02 01:30:42 thinkbiba python[266581]: INFO:     127.0.0.1:42444 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:30:42 thinkbiba python[266581]: INFO:     127.0.0.1:42454 - "GET /health HTTP/1.1" 200 OK
-Nov 02 01:30:42 thinkbiba python[266581]: INFO:     127.0.0.1:42458 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:30:42 thinkbiba python[266581]: INFO:     127.0.0.1:42474 - "GET /health HTTP/1.1" 200 OK
-Nov 02 01:30:42 thinkbiba python[266581]: INFO:     127.0.0.1:42480 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:30:43 thinkbiba python[266581]: INFO:     127.0.0.1:42490 - "GET /health HTTP/1.1" 200 OK
-Nov 02 01:30:43 thinkbiba python[266581]: INFO:     127.0.0.1:42496 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:30:43 thinkbiba python[266581]: INFO:     127.0.0.1:42502 - "GET /health HTTP/1.1" 200 OK
-Nov 02 01:30:43 thinkbiba python[266581]: INFO:     127.0.0.1:42508 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:30:43 thinkbiba python[266581]: INFO:     127.0.0.1:42522 - "GET /health HTTP/1.1" 200 OK
-Nov 02 01:30:43 thinkbiba python[266581]: INFO:     127.0.0.1:42538 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:30:43 thinkbiba python[266581]: INFO:     127.0.0.1:42550 - "GET /health HTTP/1.1" 200 OK
-Nov 02 01:30:43 thinkbiba python[266581]: INFO:     127.0.0.1:42562 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:30:44 thinkbiba python[266581]: INFO:     127.0.0.1:42568 - "GET /health HTTP/1.1" 200 OK
-Nov 02 01:30:44 thinkbiba python[266581]: INFO:     127.0.0.1:42576 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:30:44 thinkbiba python[266581]: INFO:     127.0.0.1:46734 - "GET /health HTTP/1.1" 200 OK
-Nov 02 01:30:44 thinkbiba python[266581]: INFO:     127.0.0.1:46746 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:30:44 thinkbiba python[266581]: INFO:     127.0.0.1:46754 - "GET /health HTTP/1.1" 200 OK
-Nov 02 01:30:44 thinkbiba python[266581]: INFO:     127.0.0.1:46770 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:30:45 thinkbiba python[266581]: INFO:     127.0.0.1:46782 - "GET /health HTTP/1.1" 200 OK
-Nov 02 01:30:45 thinkbiba python[266581]: INFO:     127.0.0.1:46792 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:30:45 thinkbiba python[266581]: INFO:     127.0.0.1:46800 - "GET /health HTTP/1.1" 200 OK
-Nov 02 01:30:45 thinkbiba python[266581]: INFO:     127.0.0.1:46804 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:30:45 thinkbiba python[266581]: INFO:     127.0.0.1:46814 - "GET /health HTTP/1.1" 200 OK
-Nov 02 01:30:45 thinkbiba python[266581]: INFO:     127.0.0.1:46822 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:30:45 thinkbiba python[266581]: INFO:     127.0.0.1:46830 - "GET /health HTTP/1.1" 200 OK
-Nov 02 01:30:45 thinkbiba python[266581]: INFO:     127.0.0.1:46832 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:30:46 thinkbiba python[266581]: INFO:     127.0.0.1:46844 - "GET /health HTTP/1.1" 200 OK
-Nov 02 01:30:46 thinkbiba python[266581]: INFO:     127.0.0.1:46852 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:30:46 thinkbiba python[266581]: INFO:     127.0.0.1:46862 - "GET /health HTTP/1.1" 200 OK
-Nov 02 01:30:46 thinkbiba python[266581]: INFO:     127.0.0.1:46874 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:30:46 thinkbiba python[266581]: INFO:     127.0.0.1:46880 - "GET /health HTTP/1.1" 200 OK
-Nov 02 01:30:46 thinkbiba python[266581]: INFO:     127.0.0.1:46890 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:30:46 thinkbiba python[266581]: INFO:     127.0.0.1:46894 - "GET /health HTTP/1.1" 200 OK
-Nov 02 01:30:46 thinkbiba python[266581]: INFO:     127.0.0.1:46902 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:30:47 thinkbiba python[266581]: INFO:     127.0.0.1:46910 - "GET /health HTTP/1.1" 200 OK
-Nov 02 01:30:47 thinkbiba python[266581]: INFO:     127.0.0.1:46920 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:30:47 thinkbiba python[266581]: INFO:     127.0.0.1:46930 - "GET /health HTTP/1.1" 200 OK
-Nov 02 01:30:47 thinkbiba python[266581]: INFO:     127.0.0.1:46944 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:30:47 thinkbiba python[266581]: INFO:     127.0.0.1:46950 - "GET /health HTTP/1.1" 200 OK
-Nov 02 01:30:47 thinkbiba python[266581]: INFO:     127.0.0.1:46964 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:30:48 thinkbiba python[266581]: INFO:     127.0.0.1:46978 - "GET /health HTTP/1.1" 200 OK
-Nov 02 01:30:48 thinkbiba python[266581]: INFO:     127.0.0.1:46988 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:30:48 thinkbiba python[266581]: INFO:     127.0.0.1:46990 - "GET /health HTTP/1.1" 200 OK
-Nov 02 01:30:48 thinkbiba python[266581]: INFO:     127.0.0.1:46998 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:30:48 thinkbiba python[266581]: INFO:     127.0.0.1:47002 - "GET /health HTTP/1.1" 200 OK
-Nov 02 01:30:48 thinkbiba python[266581]: INFO:     127.0.0.1:47010 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:30:48 thinkbiba python[266581]: INFO:     127.0.0.1:47022 - "GET /health HTTP/1.1" 200 OK
-Nov 02 01:30:48 thinkbiba python[266581]: INFO:     127.0.0.1:47030 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:30:49 thinkbiba python[266581]: INFO:     127.0.0.1:47046 - "GET /health HTTP/1.1" 200 OK
-Nov 02 01:30:49 thinkbiba python[266581]: INFO:     127.0.0.1:47062 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:30:49 thinkbiba python[266581]: INFO:     127.0.0.1:47078 - "GET /health HTTP/1.1" 200 OK
-Nov 02 01:30:49 thinkbiba python[266581]: INFO:     127.0.0.1:47084 - "GET /ready HTTP/1.1" 503 Service Unavailable
-Nov 02 01:30:49 thinkbiba python[266581]: INFO:     127.0.0.1:47092 - "GET /health HTTP/1.1" 200 OK
-Nov 02 01:30:49 thinkbiba python[266581]: INFO:     127.0.0.1:47094 - "GET /ready HTTP/1.1" 200 OK
-Nov 02 01:30:49 thinkbiba python[266581]: INFO:     127.0.0.1:47098 - "GET /debug HTTP/1.1" 200 OK
-Nov 02 01:30:49 thinkbiba python[266581]: INFO:     127.0.0.1:47110 - "POST /generate HTTP/1.1" 422 Unprocessable Entity
-Nov 02 01:30:49 thinkbiba python[266581]: INFO:     127.0.0.1:47114 - "GET /debug HTTP/1.1" 200 OK
-Nov 02 01:30:54 thinkbiba python[266581]: INFO:     127.0.0.1:47118 - "POST /generate HTTP/1.1" 200 OK
+Nov 02 01:56:36 thinkbiba systemd[3173]: Started [systemd-run] /home/beekfin/sna23mk048/MLOps/hw8910/hw8910-broken/.venv/bin/python service.py --workspace .runtime/real --backend transformers --port 8091 --warmup-seconds 1.
+Nov 02 01:56:36 thinkbiba python[322090]: INFO:     Started server process [322090]
+Nov 02 01:56:36 thinkbiba python[322090]: INFO:     Waiting for application startup.
+Nov 02 01:56:36 thinkbiba python[322090]: INFO:     Application startup complete.
+Nov 02 01:56:36 thinkbiba python[322090]: INFO:     Uvicorn running on http://127.0.0.1:8091 (Press CTRL+C to quit)
+Nov 02 01:56:36 thinkbiba python[322090]: INFO:     127.0.0.1:47788 - "GET /health HTTP/1.1" 200 OK
+Nov 02 01:56:36 thinkbiba python[322090]: INFO:     127.0.0.1:47790 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 01:56:37 thinkbiba python[322090]: INFO:     127.0.0.1:47806 - "GET /health HTTP/1.1" 200 OK
+Nov 02 01:56:37 thinkbiba python[322090]: INFO:     127.0.0.1:47818 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 01:56:37 thinkbiba python[322090]: INFO:     127.0.0.1:47828 - "GET /health HTTP/1.1" 200 OK
+Nov 02 01:56:37 thinkbiba python[322090]: INFO:     127.0.0.1:47842 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 01:56:38 thinkbiba python[322090]: INFO:     127.0.0.1:47844 - "GET /health HTTP/1.1" 200 OK
+Nov 02 01:56:38 thinkbiba python[322090]: INFO:     127.0.0.1:47854 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 01:56:38 thinkbiba python[322090]: INFO:     127.0.0.1:47866 - "GET /health HTTP/1.1" 200 OK
+Nov 02 01:56:38 thinkbiba python[322090]: INFO:     127.0.0.1:47868 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 01:56:38 thinkbiba python[322090]: INFO:     127.0.0.1:47872 - "GET /health HTTP/1.1" 200 OK
+Nov 02 01:56:38 thinkbiba python[322090]: INFO:     127.0.0.1:47884 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 01:56:38 thinkbiba python[322090]: INFO:     127.0.0.1:47900 - "GET /health HTTP/1.1" 200 OK
+Nov 02 01:56:39 thinkbiba python[322090]: INFO:     127.0.0.1:47906 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 01:56:39 thinkbiba python[322090]: INFO:     127.0.0.1:47920 - "GET /health HTTP/1.1" 200 OK
+Nov 02 01:56:39 thinkbiba python[322090]: INFO:     127.0.0.1:47926 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 01:56:39 thinkbiba python[322090]: INFO:     127.0.0.1:47938 - "GET /health HTTP/1.1" 200 OK
+Nov 02 01:56:39 thinkbiba python[322090]: INFO:     127.0.0.1:47946 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 01:56:39 thinkbiba python[322090]: INFO:     127.0.0.1:47958 - "GET /health HTTP/1.1" 200 OK
+Nov 02 01:56:39 thinkbiba python[322090]: INFO:     127.0.0.1:47962 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 01:56:40 thinkbiba python[322090]: INFO:     127.0.0.1:47964 - "GET /health HTTP/1.1" 200 OK
+Nov 02 01:56:40 thinkbiba python[322090]: INFO:     127.0.0.1:47970 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 01:56:40 thinkbiba python[322090]: INFO:     127.0.0.1:47978 - "GET /health HTTP/1.1" 200 OK
+Nov 02 01:56:40 thinkbiba python[322090]: INFO:     127.0.0.1:47986 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 01:56:40 thinkbiba python[322090]: INFO:     127.0.0.1:47994 - "GET /health HTTP/1.1" 200 OK
+Nov 02 01:56:40 thinkbiba python[322090]: INFO:     127.0.0.1:47998 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 01:56:40 thinkbiba python[322090]: INFO:     127.0.0.1:48006 - "GET /health HTTP/1.1" 200 OK
+Nov 02 01:56:40 thinkbiba python[322090]: INFO:     127.0.0.1:48014 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 01:56:41 thinkbiba python[322090]: INFO:     127.0.0.1:48016 - "GET /health HTTP/1.1" 200 OK
+Nov 02 01:56:41 thinkbiba python[322090]: INFO:     127.0.0.1:48020 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 01:56:41 thinkbiba python[322090]: INFO:     127.0.0.1:48030 - "GET /health HTTP/1.1" 200 OK
+Nov 02 01:56:41 thinkbiba python[322090]: INFO:     127.0.0.1:48044 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 01:56:41 thinkbiba python[322090]: INFO:     127.0.0.1:48046 - "GET /health HTTP/1.1" 200 OK
+Nov 02 01:56:41 thinkbiba python[322090]: INFO:     127.0.0.1:48048 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 01:56:41 thinkbiba python[322090]: INFO:     127.0.0.1:48064 - "GET /health HTTP/1.1" 200 OK
+Nov 02 01:56:41 thinkbiba python[322090]: INFO:     127.0.0.1:48080 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 01:56:42 thinkbiba python[322090]: INFO:     127.0.0.1:48094 - "GET /health HTTP/1.1" 200 OK
+Nov 02 01:56:42 thinkbiba python[322090]: INFO:     127.0.0.1:48100 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 01:56:42 thinkbiba python[322090]: INFO:     127.0.0.1:48102 - "GET /health HTTP/1.1" 200 OK
+Nov 02 01:56:42 thinkbiba python[322090]: INFO:     127.0.0.1:48104 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 01:56:42 thinkbiba python[322090]: INFO:     127.0.0.1:48112 - "GET /health HTTP/1.1" 200 OK
+Nov 02 01:56:42 thinkbiba python[322090]: INFO:     127.0.0.1:48126 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 01:56:43 thinkbiba python[322090]: INFO:     127.0.0.1:48134 - "GET /health HTTP/1.1" 200 OK
+Nov 02 01:56:43 thinkbiba python[322090]: INFO:     127.0.0.1:48136 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 01:56:43 thinkbiba python[322090]: INFO:     127.0.0.1:48148 - "GET /health HTTP/1.1" 200 OK
+Nov 02 01:56:43 thinkbiba python[322090]: INFO:     127.0.0.1:48160 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 01:56:44 thinkbiba python[322090]: [114B blob data]
+Nov 02 01:56:44 thinkbiba python[322090]: INFO:     127.0.0.1:48168 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 01:56:44 thinkbiba python[322090]: INFO:     127.0.0.1:46754 - "GET /health HTTP/1.1" 200 OK
+Nov 02 01:56:44 thinkbiba python[322090]: INFO:     127.0.0.1:46766 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 01:56:44 thinkbiba python[322090]: INFO:     127.0.0.1:46768 - "GET /health HTTP/1.1" 200 OK
+Nov 02 01:56:44 thinkbiba python[322090]: INFO:     127.0.0.1:46780 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 01:56:45 thinkbiba python[322090]: INFO:     127.0.0.1:46796 - "GET /health HTTP/1.1" 200 OK
+Nov 02 01:56:45 thinkbiba python[322090]: INFO:     127.0.0.1:46798 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 01:56:45 thinkbiba python[322090]: INFO:     127.0.0.1:46804 - "GET /health HTTP/1.1" 200 OK
+Nov 02 01:56:45 thinkbiba python[322090]: INFO:     127.0.0.1:46806 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 01:56:45 thinkbiba python[322090]: INFO:     127.0.0.1:46812 - "GET /health HTTP/1.1" 200 OK
+Nov 02 01:56:45 thinkbiba python[322090]: INFO:     127.0.0.1:46820 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 01:56:45 thinkbiba python[322090]: INFO:     127.0.0.1:46824 - "GET /health HTTP/1.1" 200 OK
+Nov 02 01:56:45 thinkbiba python[322090]: INFO:     127.0.0.1:46840 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 01:56:46 thinkbiba python[322090]: [197B blob data]
+Nov 02 01:56:46 thinkbiba python[322090]: INFO:     127.0.0.1:46848 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 01:56:46 thinkbiba python[322090]: INFO:     127.0.0.1:46852 - "GET /health HTTP/1.1" 200 OK
+Nov 02 01:56:46 thinkbiba python[322090]: INFO:     127.0.0.1:46858 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 01:56:46 thinkbiba python[322090]: INFO:     127.0.0.1:46862 - "GET /health HTTP/1.1" 200 OK
+Nov 02 01:56:46 thinkbiba python[322090]: INFO:     127.0.0.1:46864 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 01:56:47 thinkbiba python[322090]: [134B blob data]
+Nov 02 01:56:47 thinkbiba python[322090]: INFO:     127.0.0.1:46890 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 01:56:47 thinkbiba python[322090]: [217B blob data]
+Nov 02 01:56:47 thinkbiba python[322090]: INFO:     127.0.0.1:46906 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 01:56:47 thinkbiba python[322090]: [257B blob data]
+Nov 02 01:56:47 thinkbiba python[322090]: INFO:     127.0.0.1:46914 - "GET /health HTTP/1.1" 200 OK
+Nov 02 01:56:47 thinkbiba python[322090]: INFO:     127.0.0.1:46924 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 01:56:48 thinkbiba python[322090]: INFO:     127.0.0.1:46940 - "GET /health HTTP/1.1" 200 OK
+Nov 02 01:56:48 thinkbiba python[322090]: INFO:     127.0.0.1:46956 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 01:56:48 thinkbiba python[322090]: INFO:     127.0.0.1:46964 - "GET /health HTTP/1.1" 200 OK
+Nov 02 01:56:48 thinkbiba python[322090]: INFO:     127.0.0.1:46974 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 01:56:48 thinkbiba python[322090]: INFO:     127.0.0.1:46980 - "GET /health HTTP/1.1" 200 OK
+Nov 02 01:56:48 thinkbiba python[322090]: INFO:     127.0.0.1:46988 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 01:56:49 thinkbiba python[322090]: INFO:     127.0.0.1:46990 - "GET /health HTTP/1.1" 200 OK
+Nov 02 01:56:49 thinkbiba python[322090]: INFO:     127.0.0.1:47002 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 01:56:49 thinkbiba python[322090]: INFO:     127.0.0.1:47006 - "GET /health HTTP/1.1" 200 OK
+Nov 02 01:56:49 thinkbiba python[322090]: INFO:     127.0.0.1:47014 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 01:56:49 thinkbiba python[322090]: INFO:     127.0.0.1:47018 - "GET /health HTTP/1.1" 200 OK
+Nov 02 01:56:49 thinkbiba python[322090]: INFO:     127.0.0.1:47030 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 01:56:49 thinkbiba python[322090]: INFO:     127.0.0.1:47032 - "GET /health HTTP/1.1" 200 OK
+Nov 02 01:56:49 thinkbiba python[322090]: INFO:     127.0.0.1:47040 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 01:56:50 thinkbiba python[322090]: INFO:     127.0.0.1:47056 - "GET /health HTTP/1.1" 200 OK
+Nov 02 01:56:50 thinkbiba python[322090]: INFO:     127.0.0.1:47066 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 01:56:50 thinkbiba python[322090]: INFO:     127.0.0.1:47080 - "GET /health HTTP/1.1" 200 OK
+Nov 02 01:56:50 thinkbiba python[322090]: INFO:     127.0.0.1:47088 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 01:56:50 thinkbiba python[322090]: INFO:     127.0.0.1:47100 - "GET /health HTTP/1.1" 200 OK
+Nov 02 01:56:50 thinkbiba python[322090]: INFO:     127.0.0.1:47116 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 01:56:50 thinkbiba python[322090]: INFO:     127.0.0.1:47128 - "GET /health HTTP/1.1" 200 OK
+Nov 02 01:56:50 thinkbiba python[322090]: INFO:     127.0.0.1:47144 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 01:56:51 thinkbiba python[322090]: INFO:     127.0.0.1:47158 - "GET /health HTTP/1.1" 200 OK
+Nov 02 01:56:51 thinkbiba python[322090]: INFO:     127.0.0.1:47164 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 01:56:51 thinkbiba python[322090]: INFO:     127.0.0.1:47172 - "GET /health HTTP/1.1" 200 OK
+Nov 02 01:56:51 thinkbiba python[322090]: INFO:     127.0.0.1:47174 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 01:56:51 thinkbiba python[322090]: INFO:     127.0.0.1:47188 - "GET /health HTTP/1.1" 200 OK
+Nov 02 01:56:51 thinkbiba python[322090]: INFO:     127.0.0.1:47190 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 01:56:52 thinkbiba python[322090]: INFO:     127.0.0.1:47196 - "GET /health HTTP/1.1" 200 OK
+Nov 02 01:56:52 thinkbiba python[322090]: INFO:     127.0.0.1:47206 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 01:56:52 thinkbiba python[322090]: INFO:     127.0.0.1:47216 - "GET /health HTTP/1.1" 200 OK
+Nov 02 01:56:52 thinkbiba python[322090]: INFO:     127.0.0.1:47230 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 01:56:52 thinkbiba python[322090]: INFO:     127.0.0.1:47246 - "GET /health HTTP/1.1" 200 OK
+Nov 02 01:56:52 thinkbiba python[322090]: INFO:     127.0.0.1:47248 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 01:56:52 thinkbiba python[322090]: INFO:     127.0.0.1:47260 - "GET /health HTTP/1.1" 200 OK
+Nov 02 01:56:52 thinkbiba python[322090]: INFO:     127.0.0.1:47268 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 01:56:53 thinkbiba python[322090]: INFO:     127.0.0.1:47284 - "GET /health HTTP/1.1" 200 OK
+Nov 02 01:56:53 thinkbiba python[322090]: INFO:     127.0.0.1:47290 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 01:56:53 thinkbiba python[322090]: INFO:     127.0.0.1:47294 - "GET /health HTTP/1.1" 200 OK
+Nov 02 01:56:53 thinkbiba python[322090]: INFO:     127.0.0.1:47310 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 01:56:53 thinkbiba python[322090]: INFO:     127.0.0.1:47322 - "GET /health HTTP/1.1" 200 OK
+Nov 02 01:56:53 thinkbiba python[322090]: INFO:     127.0.0.1:47338 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 01:56:53 thinkbiba python[322090]: INFO:     127.0.0.1:47344 - "GET /health HTTP/1.1" 200 OK
+Nov 02 01:56:53 thinkbiba python[322090]: INFO:     127.0.0.1:47350 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 01:56:54 thinkbiba python[322090]: INFO:     127.0.0.1:47354 - "GET /health HTTP/1.1" 200 OK
+Nov 02 01:56:54 thinkbiba python[322090]: INFO:     127.0.0.1:47360 - "GET /ready HTTP/1.1" 200 OK
+Nov 02 01:56:54 thinkbiba python[322090]: INFO:     127.0.0.1:47362 - "GET /debug HTTP/1.1" 200 OK
+Nov 02 01:56:54 thinkbiba python[322090]: INFO:     127.0.0.1:47370 - "POST /generate HTTP/1.1" 422 Unprocessable Entity
+Nov 02 01:56:54 thinkbiba python[322090]: INFO:     127.0.0.1:47380 - "GET /debug HTTP/1.1" 200 OK
+Nov 02 01:56:56 thinkbiba python[322090]: INFO:     127.0.0.1:47392 - "POST /generate HTTP/1.1" 200 OK
+Nov 02 01:56:56 thinkbiba systemd[3173]: Stopping [systemd-run] /home/beekfin/sna23mk048/MLOps/hw8910/hw8910-broken/.venv/bin/python service.py --workspace .runtime/real --backend transformers --port 8091 --warmup-seconds 1...
+Nov 02 01:56:57 thinkbiba python[322090]: INFO:     Shutting down
+Nov 02 01:56:57 thinkbiba python[322090]: INFO:     Waiting for application shutdown.
+Nov 02 01:56:57 thinkbiba python[322090]: INFO:     Application shutdown complete.
+Nov 02 01:56:57 thinkbiba python[322090]: INFO:     Finished server process [322090]
+Nov 02 01:56:57 thinkbiba systemd[3173]: Stopped [systemd-run] /home/beekfin/sna23mk048/MLOps/hw8910/hw8910-broken/.venv/bin/python service.py --workspace .runtime/real --backend transformers --port 8091 --warmup-seconds 1.
+Nov 02 01:56:57 thinkbiba systemd[3173]: mlops-hw8910-serving.service: Consumed 34.727s CPU time over 20.891s wall clock time, 3.8G memory peak.
+Nov 02 02:01:30 thinkbiba systemd[3173]: Started [systemd-run] /home/beekfin/sna23mk048/MLOps/hw8910/hw8910-broken/.venv/bin/python service.py --workspace .runtime/real --backend transformers --port 8091 --warmup-seconds 1.
+Nov 02 02:01:31 thinkbiba python[333613]: INFO:     Started server process [333613]
+Nov 02 02:01:31 thinkbiba python[333613]: INFO:     Waiting for application startup.
+Nov 02 02:01:31 thinkbiba python[333613]: INFO:     Application startup complete.
+Nov 02 02:01:31 thinkbiba python[333613]: INFO:     Uvicorn running on http://127.0.0.1:8091 (Press CTRL+C to quit)
+Nov 02 02:01:31 thinkbiba python[333613]: INFO:     127.0.0.1:54952 - "GET /health HTTP/1.1" 200 OK
+Nov 02 02:01:31 thinkbiba python[333613]: INFO:     127.0.0.1:54966 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 02:01:31 thinkbiba python[333613]: INFO:     127.0.0.1:54968 - "GET /health HTTP/1.1" 200 OK
+Nov 02 02:01:31 thinkbiba python[333613]: INFO:     127.0.0.1:54978 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 02:01:32 thinkbiba python[333613]: INFO:     127.0.0.1:54990 - "GET /health HTTP/1.1" 200 OK
+Nov 02 02:01:32 thinkbiba python[333613]: INFO:     127.0.0.1:54992 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 02:01:32 thinkbiba python[333613]: INFO:     127.0.0.1:55002 - "GET /health HTTP/1.1" 200 OK
+Nov 02 02:01:32 thinkbiba python[333613]: INFO:     127.0.0.1:55004 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 02:01:33 thinkbiba python[333613]: INFO:     127.0.0.1:55012 - "GET /health HTTP/1.1" 200 OK
+Nov 02 02:01:33 thinkbiba python[333613]: INFO:     127.0.0.1:55014 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 02:01:33 thinkbiba python[333613]: INFO:     127.0.0.1:55016 - "GET /health HTTP/1.1" 200 OK
+Nov 02 02:01:33 thinkbiba python[333613]: INFO:     127.0.0.1:55026 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 02:01:33 thinkbiba python[333613]: INFO:     127.0.0.1:55034 - "GET /health HTTP/1.1" 200 OK
+Nov 02 02:01:33 thinkbiba python[333613]: INFO:     127.0.0.1:55038 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 02:01:33 thinkbiba python[333613]: INFO:     127.0.0.1:55044 - "GET /health HTTP/1.1" 200 OK
+Nov 02 02:01:33 thinkbiba python[333613]: INFO:     127.0.0.1:55056 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 02:01:34 thinkbiba python[333613]: INFO:     127.0.0.1:55060 - "GET /health HTTP/1.1" 200 OK
+Nov 02 02:01:34 thinkbiba python[333613]: INFO:     127.0.0.1:55062 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 02:01:34 thinkbiba python[333613]: INFO:     127.0.0.1:46170 - "GET /health HTTP/1.1" 200 OK
+Nov 02 02:01:34 thinkbiba python[333613]: INFO:     127.0.0.1:46184 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 02:01:34 thinkbiba python[333613]: INFO:     127.0.0.1:46198 - "GET /health HTTP/1.1" 200 OK
+Nov 02 02:01:34 thinkbiba python[333613]: INFO:     127.0.0.1:46208 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 02:01:34 thinkbiba python[333613]: INFO:     127.0.0.1:46218 - "GET /health HTTP/1.1" 200 OK
+Nov 02 02:01:34 thinkbiba python[333613]: INFO:     127.0.0.1:46224 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 02:01:35 thinkbiba python[333613]: INFO:     127.0.0.1:46238 - "GET /health HTTP/1.1" 200 OK
+Nov 02 02:01:35 thinkbiba python[333613]: INFO:     127.0.0.1:46240 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 02:01:35 thinkbiba python[333613]: INFO:     127.0.0.1:46244 - "GET /health HTTP/1.1" 200 OK
+Nov 02 02:01:35 thinkbiba python[333613]: INFO:     127.0.0.1:46258 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 02:01:35 thinkbiba python[333613]: INFO:     127.0.0.1:46268 - "GET /health HTTP/1.1" 200 OK
+Nov 02 02:01:35 thinkbiba python[333613]: INFO:     127.0.0.1:46278 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 02:01:35 thinkbiba python[333613]: INFO:     127.0.0.1:46292 - "GET /health HTTP/1.1" 200 OK
+Nov 02 02:01:35 thinkbiba python[333613]: INFO:     127.0.0.1:46300 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 02:01:36 thinkbiba python[333613]: INFO:     127.0.0.1:46302 - "GET /health HTTP/1.1" 200 OK
+Nov 02 02:01:36 thinkbiba python[333613]: INFO:     127.0.0.1:46316 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 02:01:36 thinkbiba python[333613]: INFO:     127.0.0.1:46332 - "GET /health HTTP/1.1" 200 OK
+Nov 02 02:01:36 thinkbiba python[333613]: INFO:     127.0.0.1:46346 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 02:01:36 thinkbiba python[333613]: INFO:     127.0.0.1:46350 - "GET /health HTTP/1.1" 200 OK
+Nov 02 02:01:36 thinkbiba python[333613]: INFO:     127.0.0.1:46364 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 02:01:37 thinkbiba python[333613]: INFO:     127.0.0.1:46374 - "GET /health HTTP/1.1" 200 OK
+Nov 02 02:01:37 thinkbiba python[333613]: INFO:     127.0.0.1:46388 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 02:01:37 thinkbiba python[333613]: INFO:     127.0.0.1:46402 - "GET /health HTTP/1.1" 200 OK
+Nov 02 02:01:37 thinkbiba python[333613]: INFO:     127.0.0.1:46404 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 02:01:38 thinkbiba python[333613]: [114B blob data]
+Nov 02 02:01:38 thinkbiba python[333613]: INFO:     127.0.0.1:46418 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 02:01:38 thinkbiba python[333613]: INFO:     127.0.0.1:46426 - "GET /health HTTP/1.1" 200 OK
+Nov 02 02:01:38 thinkbiba python[333613]: INFO:     127.0.0.1:46442 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 02:01:38 thinkbiba python[333613]: INFO:     127.0.0.1:46456 - "GET /health HTTP/1.1" 200 OK
+Nov 02 02:01:38 thinkbiba python[333613]: INFO:     127.0.0.1:46470 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 02:01:38 thinkbiba python[333613]: INFO:     127.0.0.1:46480 - "GET /health HTTP/1.1" 200 OK
+Nov 02 02:01:39 thinkbiba python[333613]: INFO:     127.0.0.1:46494 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 02:01:39 thinkbiba python[333613]: INFO:     127.0.0.1:46498 - "GET /health HTTP/1.1" 200 OK
+Nov 02 02:01:39 thinkbiba python[333613]: INFO:     127.0.0.1:46508 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 02:01:39 thinkbiba python[333613]: INFO:     127.0.0.1:46514 - "GET /health HTTP/1.1" 200 OK
+Nov 02 02:01:39 thinkbiba python[333613]: INFO:     127.0.0.1:46522 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 02:01:39 thinkbiba python[333613]: INFO:     127.0.0.1:46532 - "GET /health HTTP/1.1" 200 OK
+Nov 02 02:01:39 thinkbiba python[333613]: [138B blob data]
+Nov 02 02:01:40 thinkbiba python[333613]: [134B blob data]
+Nov 02 02:01:40 thinkbiba python[333613]: INFO:     127.0.0.1:46564 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 02:01:40 thinkbiba python[333613]: [225B blob data]
+Nov 02 02:01:40 thinkbiba python[333613]: INFO:     127.0.0.1:46574 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 02:01:40 thinkbiba python[333613]: [176B blob data]
+Nov 02 02:01:40 thinkbiba python[333613]: INFO:     127.0.0.1:46590 - "GET /health HTTP/1.1" 200 OK
+Nov 02 02:01:40 thinkbiba python[333613]: INFO:     127.0.0.1:46596 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 02:01:41 thinkbiba python[333613]: INFO:     127.0.0.1:46608 - "GET /health HTTP/1.1" 200 OK
+Nov 02 02:01:41 thinkbiba python[333613]: INFO:     127.0.0.1:46614 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 02:01:41 thinkbiba python[333613]: INFO:     127.0.0.1:46628 - "GET /health HTTP/1.1" 200 OK
+Nov 02 02:01:41 thinkbiba python[333613]: INFO:     127.0.0.1:46636 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 02:01:42 thinkbiba python[333613]: INFO:     127.0.0.1:46650 - "GET /health HTTP/1.1" 200 OK
+Nov 02 02:01:42 thinkbiba python[333613]: INFO:     127.0.0.1:46660 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 02:01:42 thinkbiba python[333613]: INFO:     127.0.0.1:46664 - "GET /health HTTP/1.1" 200 OK
+Nov 02 02:01:42 thinkbiba python[333613]: INFO:     127.0.0.1:46678 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 02:01:42 thinkbiba python[333613]: INFO:     127.0.0.1:46688 - "GET /health HTTP/1.1" 200 OK
+Nov 02 02:01:42 thinkbiba python[333613]: INFO:     127.0.0.1:46698 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 02:01:42 thinkbiba python[333613]: INFO:     127.0.0.1:46710 - "GET /health HTTP/1.1" 200 OK
+Nov 02 02:01:42 thinkbiba python[333613]: INFO:     127.0.0.1:46718 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 02:01:43 thinkbiba python[333613]: INFO:     127.0.0.1:46728 - "GET /health HTTP/1.1" 200 OK
+Nov 02 02:01:43 thinkbiba python[333613]: INFO:     127.0.0.1:46744 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 02:01:43 thinkbiba python[333613]: INFO:     127.0.0.1:46756 - "GET /health HTTP/1.1" 200 OK
+Nov 02 02:01:43 thinkbiba python[333613]: INFO:     127.0.0.1:46766 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 02:01:43 thinkbiba python[333613]: INFO:     127.0.0.1:46772 - "GET /health HTTP/1.1" 200 OK
+Nov 02 02:01:43 thinkbiba python[333613]: INFO:     127.0.0.1:46782 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 02:01:43 thinkbiba python[333613]: INFO:     127.0.0.1:46796 - "GET /health HTTP/1.1" 200 OK
+Nov 02 02:01:43 thinkbiba python[333613]: INFO:     127.0.0.1:46810 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 02:01:44 thinkbiba python[333613]: INFO:     127.0.0.1:46826 - "GET /health HTTP/1.1" 200 OK
+Nov 02 02:01:44 thinkbiba python[333613]: INFO:     127.0.0.1:46838 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 02:01:44 thinkbiba python[333613]: INFO:     127.0.0.1:39642 - "GET /health HTTP/1.1" 200 OK
+Nov 02 02:01:44 thinkbiba python[333613]: INFO:     127.0.0.1:39648 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 02:01:44 thinkbiba python[333613]: INFO:     127.0.0.1:39664 - "GET /health HTTP/1.1" 200 OK
+Nov 02 02:01:44 thinkbiba python[333613]: INFO:     127.0.0.1:39666 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 02:01:44 thinkbiba python[333613]: INFO:     127.0.0.1:39682 - "GET /health HTTP/1.1" 200 OK
+Nov 02 02:01:44 thinkbiba python[333613]: INFO:     127.0.0.1:39690 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 02:01:45 thinkbiba python[333613]: INFO:     127.0.0.1:39700 - "GET /health HTTP/1.1" 200 OK
+Nov 02 02:01:45 thinkbiba python[333613]: INFO:     127.0.0.1:39704 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 02:01:45 thinkbiba python[333613]: INFO:     127.0.0.1:39712 - "GET /health HTTP/1.1" 200 OK
+Nov 02 02:01:45 thinkbiba python[333613]: INFO:     127.0.0.1:39726 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 02:01:45 thinkbiba python[333613]: INFO:     127.0.0.1:39732 - "GET /health HTTP/1.1" 200 OK
+Nov 02 02:01:45 thinkbiba python[333613]: INFO:     127.0.0.1:39736 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 02:01:46 thinkbiba python[333613]: INFO:     127.0.0.1:39750 - "GET /health HTTP/1.1" 200 OK
+Nov 02 02:01:46 thinkbiba python[333613]: INFO:     127.0.0.1:39754 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 02:01:46 thinkbiba python[333613]: INFO:     127.0.0.1:39770 - "GET /health HTTP/1.1" 200 OK
+Nov 02 02:01:46 thinkbiba python[333613]: INFO:     127.0.0.1:39780 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 02:01:46 thinkbiba python[333613]: INFO:     127.0.0.1:39782 - "GET /health HTTP/1.1" 200 OK
+Nov 02 02:01:46 thinkbiba python[333613]: INFO:     127.0.0.1:39796 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 02:01:46 thinkbiba python[333613]: INFO:     127.0.0.1:39802 - "GET /health HTTP/1.1" 200 OK
+Nov 02 02:01:46 thinkbiba python[333613]: INFO:     127.0.0.1:39808 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 02:01:47 thinkbiba python[333613]: INFO:     127.0.0.1:39818 - "GET /health HTTP/1.1" 200 OK
+Nov 02 02:01:47 thinkbiba python[333613]: INFO:     127.0.0.1:39822 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 02:01:47 thinkbiba python[333613]: INFO:     127.0.0.1:39832 - "GET /health HTTP/1.1" 200 OK
+Nov 02 02:01:47 thinkbiba python[333613]: INFO:     127.0.0.1:39846 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 02:01:47 thinkbiba python[333613]: INFO:     127.0.0.1:39858 - "GET /health HTTP/1.1" 200 OK
+Nov 02 02:01:47 thinkbiba python[333613]: INFO:     127.0.0.1:39862 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 02:01:47 thinkbiba python[333613]: INFO:     127.0.0.1:39874 - "GET /health HTTP/1.1" 200 OK
+Nov 02 02:01:47 thinkbiba python[333613]: INFO:     127.0.0.1:39886 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 02:01:48 thinkbiba python[333613]: INFO:     127.0.0.1:39890 - "GET /health HTTP/1.1" 200 OK
+Nov 02 02:01:48 thinkbiba python[333613]: INFO:     127.0.0.1:39898 - "GET /ready HTTP/1.1" 200 OK
+Nov 02 02:01:48 thinkbiba python[333613]: INFO:     127.0.0.1:39910 - "GET /debug HTTP/1.1" 200 OK
+Nov 02 02:01:48 thinkbiba python[333613]: INFO:     127.0.0.1:39926 - "POST /generate HTTP/1.1" 422 Unprocessable Entity
+Nov 02 02:01:48 thinkbiba python[333613]: INFO:     127.0.0.1:39938 - "GET /debug HTTP/1.1" 200 OK
+Nov 02 02:01:52 thinkbiba python[333613]: INFO:     127.0.0.1:39944 - "POST /generate HTTP/1.1" 200 OK
+Nov 02 02:01:52 thinkbiba systemd[3173]: Stopping [systemd-run] /home/beekfin/sna23mk048/MLOps/hw8910/hw8910-broken/.venv/bin/python service.py --workspace .runtime/real --backend transformers --port 8091 --warmup-seconds 1...
+Nov 02 02:01:52 thinkbiba python[333613]: INFO:     Shutting down
+Nov 02 02:01:52 thinkbiba python[333613]: INFO:     Waiting for application shutdown.
+Nov 02 02:01:52 thinkbiba python[333613]: INFO:     Application shutdown complete.
+Nov 02 02:01:52 thinkbiba python[333613]: INFO:     Finished server process [333613]
+Nov 02 02:01:52 thinkbiba systemd[3173]: Stopped [systemd-run] /home/beekfin/sna23mk048/MLOps/hw8910/hw8910-broken/.venv/bin/python service.py --workspace .runtime/real --backend transformers --port 8091 --warmup-seconds 1.
+Nov 02 02:01:52 thinkbiba systemd[3173]: mlops-hw8910-serving.service: Consumed 37.053s CPU time over 21.504s wall clock time, 3.5G memory peak.
+Nov 02 02:10:40 thinkbiba systemd[3173]: Started [systemd-run] /home/beekfin/sna23mk048/MLOps/hw8910/hw8910-broken/.venv/bin/python service.py --workspace .runtime/real --backend transformers --port 8091 --warmup-seconds 1.
+Nov 02 02:10:40 thinkbiba python[350822]: INFO:     Started server process [350822]
+Nov 02 02:10:40 thinkbiba python[350822]: INFO:     Waiting for application startup.
+Nov 02 02:10:40 thinkbiba python[350822]: INFO:     Application startup complete.
+Nov 02 02:10:40 thinkbiba python[350822]: INFO:     Uvicorn running on http://127.0.0.1:8091 (Press CTRL+C to quit)
+Nov 02 02:10:40 thinkbiba python[350822]: INFO:     127.0.0.1:36682 - "GET /health HTTP/1.1" 200 OK
+Nov 02 02:10:40 thinkbiba python[350822]: INFO:     127.0.0.1:36694 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 02:10:41 thinkbiba python[350822]: INFO:     127.0.0.1:36704 - "GET /health HTTP/1.1" 200 OK
+Nov 02 02:10:41 thinkbiba python[350822]: INFO:     127.0.0.1:36718 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 02:10:41 thinkbiba python[350822]: INFO:     127.0.0.1:36726 - "GET /health HTTP/1.1" 200 OK
+Nov 02 02:10:42 thinkbiba python[350822]: INFO:     127.0.0.1:36732 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 02:10:42 thinkbiba python[350822]: INFO:     127.0.0.1:36734 - "GET /health HTTP/1.1" 200 OK
+Nov 02 02:10:42 thinkbiba python[350822]: INFO:     127.0.0.1:36738 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 02:10:42 thinkbiba python[350822]: INFO:     127.0.0.1:36742 - "GET /health HTTP/1.1" 200 OK
+Nov 02 02:10:42 thinkbiba python[350822]: INFO:     127.0.0.1:36744 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 02:10:42 thinkbiba python[350822]: INFO:     127.0.0.1:36748 - "GET /health HTTP/1.1" 200 OK
+Nov 02 02:10:42 thinkbiba python[350822]: INFO:     127.0.0.1:36756 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 02:10:43 thinkbiba python[350822]: INFO:     127.0.0.1:36760 - "GET /health HTTP/1.1" 200 OK
+Nov 02 02:10:43 thinkbiba python[350822]: INFO:     127.0.0.1:36766 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 02:10:43 thinkbiba python[350822]: INFO:     127.0.0.1:36772 - "GET /health HTTP/1.1" 200 OK
+Nov 02 02:10:43 thinkbiba python[350822]: INFO:     127.0.0.1:36780 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 02:10:43 thinkbiba python[350822]: INFO:     127.0.0.1:36794 - "GET /health HTTP/1.1" 200 OK
+Nov 02 02:10:43 thinkbiba python[350822]: INFO:     127.0.0.1:36802 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 02:10:44 thinkbiba python[350822]: INFO:     127.0.0.1:36818 - "GET /health HTTP/1.1" 200 OK
+Nov 02 02:10:44 thinkbiba python[350822]: INFO:     127.0.0.1:36830 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 02:10:44 thinkbiba python[350822]: INFO:     127.0.0.1:52406 - "GET /health HTTP/1.1" 200 OK
+Nov 02 02:10:44 thinkbiba python[350822]: INFO:     127.0.0.1:52414 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 02:10:44 thinkbiba python[350822]: INFO:     127.0.0.1:52416 - "GET /health HTTP/1.1" 200 OK
+Nov 02 02:10:44 thinkbiba python[350822]: INFO:     127.0.0.1:52432 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 02:10:44 thinkbiba python[350822]: INFO:     127.0.0.1:52434 - "GET /health HTTP/1.1" 200 OK
+Nov 02 02:10:44 thinkbiba python[350822]: INFO:     127.0.0.1:52444 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 02:10:45 thinkbiba python[350822]: INFO:     127.0.0.1:52454 - "GET /health HTTP/1.1" 200 OK
+Nov 02 02:10:45 thinkbiba python[350822]: INFO:     127.0.0.1:52470 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 02:10:45 thinkbiba python[350822]: INFO:     127.0.0.1:52480 - "GET /health HTTP/1.1" 200 OK
+Nov 02 02:10:45 thinkbiba python[350822]: INFO:     127.0.0.1:52494 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 02:10:45 thinkbiba python[350822]: INFO:     127.0.0.1:52504 - "GET /health HTTP/1.1" 200 OK
+Nov 02 02:10:45 thinkbiba python[350822]: INFO:     127.0.0.1:52518 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 02:10:45 thinkbiba python[350822]: INFO:     127.0.0.1:52520 - "GET /health HTTP/1.1" 200 OK
+Nov 02 02:10:45 thinkbiba python[350822]: INFO:     127.0.0.1:52524 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 02:10:46 thinkbiba python[350822]: INFO:     127.0.0.1:52530 - "GET /health HTTP/1.1" 200 OK
+Nov 02 02:10:46 thinkbiba python[350822]: INFO:     127.0.0.1:52544 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 02:10:46 thinkbiba python[350822]: INFO:     127.0.0.1:52552 - "GET /health HTTP/1.1" 200 OK
+Nov 02 02:10:46 thinkbiba python[350822]: INFO:     127.0.0.1:52564 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 02:10:46 thinkbiba python[350822]: INFO:     127.0.0.1:52566 - "GET /health HTTP/1.1" 200 OK
+Nov 02 02:10:46 thinkbiba python[350822]: INFO:     127.0.0.1:52574 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 02:10:47 thinkbiba python[350822]: INFO:     127.0.0.1:52586 - "GET /health HTTP/1.1" 200 OK
+Nov 02 02:10:47 thinkbiba python[350822]: INFO:     127.0.0.1:52600 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 02:10:47 thinkbiba python[350822]: INFO:     127.0.0.1:52616 - "GET /health HTTP/1.1" 200 OK
+Nov 02 02:10:47 thinkbiba python[350822]: INFO:     127.0.0.1:52632 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 02:10:47 thinkbiba python[350822]: INFO:     127.0.0.1:52636 - "GET /health HTTP/1.1" 200 OK
+Nov 02 02:10:47 thinkbiba python[350822]: INFO:     127.0.0.1:52646 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 02:10:47 thinkbiba python[350822]: INFO:     127.0.0.1:52658 - "GET /health HTTP/1.1" 200 OK
+Nov 02 02:10:47 thinkbiba python[350822]: INFO:     127.0.0.1:52664 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 02:10:48 thinkbiba python[350822]: INFO:     127.0.0.1:52680 - "GET /health HTTP/1.1" 200 OK
+Nov 02 02:10:48 thinkbiba python[350822]: INFO:     127.0.0.1:52696 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 02:10:48 thinkbiba python[350822]: INFO:     127.0.0.1:52708 - "GET /health HTTP/1.1" 200 OK
+Nov 02 02:10:48 thinkbiba python[350822]: INFO:     127.0.0.1:52712 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 02:10:49 thinkbiba python[350822]: INFO:     127.0.0.1:52718 - "GET /health HTTP/1.1" 200 OK
+Nov 02 02:10:49 thinkbiba python[350822]: INFO:     127.0.0.1:52720 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 02:10:49 thinkbiba python[350822]: [114B blob data]
+Nov 02 02:10:49 thinkbiba python[350822]: INFO:     127.0.0.1:52750 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 02:10:49 thinkbiba python[350822]: INFO:     127.0.0.1:52764 - "GET /health HTTP/1.1" 200 OK
+Nov 02 02:10:49 thinkbiba python[350822]: INFO:     127.0.0.1:52776 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 02:10:50 thinkbiba python[350822]: INFO:     127.0.0.1:52786 - "GET /health HTTP/1.1" 200 OK
+Nov 02 02:10:50 thinkbiba python[350822]: INFO:     127.0.0.1:52802 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 02:10:50 thinkbiba python[350822]: INFO:     127.0.0.1:52814 - "GET /health HTTP/1.1" 200 OK
+Nov 02 02:10:50 thinkbiba python[350822]: INFO:     127.0.0.1:52816 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 02:10:50 thinkbiba python[350822]: [122B blob data]
+Nov 02 02:10:50 thinkbiba python[350822]: INFO:     127.0.0.1:52828 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 02:10:51 thinkbiba python[350822]: [133B blob data]
+Nov 02 02:10:51 thinkbiba python[350822]: INFO:     127.0.0.1:52846 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 02:10:51 thinkbiba python[350822]: INFO:     127.0.0.1:52862 - "GET /health HTTP/1.1" 200 OK
+Nov 02 02:10:51 thinkbiba python[350822]: INFO:     127.0.0.1:52868 - "GET /ready HTTP/1.1" 503 Service Unavailable
+Nov 02 02:11:01 thinkbiba systemd[3173]: mlops-hw8910-serving.service: The kernel OOM killer killed some processes in this unit.
+Nov 02 02:11:01 thinkbiba python[350822]: [82B blob data]
+Nov 02 02:11:01 thinkbiba systemd[3173]: mlops-hw8910-serving.service: Main process exited, code=killed, status=9/KILL
+Nov 02 02:11:01 thinkbiba systemd[3173]: mlops-hw8910-serving.service: Failed with result 'oom-kill'.
+Nov 02 02:11:01 thinkbiba systemd[3173]: mlops-hw8910-serving.service: Consumed 16.532s CPU time over 21.569s wall clock time, 2.8G memory peak.

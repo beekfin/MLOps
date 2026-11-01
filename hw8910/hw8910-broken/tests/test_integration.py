@@ -170,5 +170,34 @@ class IntegrationTests(unittest.TestCase):
         self.assertNotEqual(self.cli('run').returncode, 0)
         self.assertEqual((self.root / 'accepted.json').read_bytes(), before)
 
+    def test_fixture_name_does_not_bypass_real_evaluation(self):
+        import hashlib
+        before = (self.root / 'accepted.json').read_bytes()
+        manifest = self.read('manifest-B.json')
+        report = self.read('report-B.json')
+        # Даже с именем fixture-B настоящий артефакт требует полного eval.
+        manifest['synthetic'] = False
+        report['synthetic'] = False
+        (self.root / 'manifest-B.json').write_text(json.dumps(manifest))
+        (self.root / 'report-B.json').write_text(json.dumps(report))
+        result = self.cli('run')
+        self.assertNotEqual(result.returncode, 0, result.stdout)
+        self.assertEqual((self.root / 'accepted.json').read_bytes(), before)
+
+        # Объявление каталога весов фикстурой также не разрешает выпуск.
+        folder = self.root / 'pretend-adapter'; folder.mkdir()
+        for name in ['adapter_model.safetensors','adapter_config.json','manifest.json']:
+            (folder / name).write_text('Synthetic negative fixture, not model weights')
+        manifest['synthetic'] = report['synthetic'] = True
+        manifest['artifact_uri'] = folder.name
+        manifest['file_hashes'] = {p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in folder.iterdir()}
+        canonical = json.dumps(manifest['file_hashes'],sort_keys=True,separators=(',',':'),ensure_ascii=False,allow_nan=False).encode()
+        manifest['model_sha256'] = report['model_sha256'] = hashlib.sha256(canonical).hexdigest()
+        (self.root / 'manifest-B.json').write_text(json.dumps(manifest))
+        (self.root / 'report-B.json').write_text(json.dumps(report))
+        result = self.cli('run')
+        self.assertNotEqual(result.returncode, 0, result.stdout)
+        self.assertEqual((self.root / 'accepted.json').read_bytes(), before)
+
 
 if __name__ == '__main__': unittest.main(verbosity=2)

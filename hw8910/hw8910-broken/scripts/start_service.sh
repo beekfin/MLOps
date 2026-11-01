@@ -6,6 +6,11 @@ if systemctl --user is-active --quiet "$unit.service"; then
   echo 'Сервис уже запущен. После смены accepted.json: systemctl --user restart mlops-hw8910-serving.service'
   exit 0
 fi
+available_kib=$(awk '/^MemAvailable:/ {print $2}' /proc/meminfo)
+if (( available_kib < 5 * 1024 * 1024 )); then
+  echo 'Для загрузки модели освободите хотя бы 5 ГиБ доступной памяти. Предел службы не резервирует память у других программ.' >&2
+  exit 1
+fi
 systemd-run --user --collect --unit="$unit" \
   --property=MemoryMax=3900M --property=MemoryHigh=3900M \
   --property=MemorySwapMax=0 --property=CPUQuota=250% \

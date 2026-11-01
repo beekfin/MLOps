@@ -1,0 +1,9 @@
+{
+  "successful_restart_snapshot_commit": "9399f12",
+  "current_manifest_load": "audit-real-api.json",
+  "additional_cold_start": "failed because system memory was exhausted",
+  "failure_log": "audit-restart-resource-failure.log",
+  "failure_http": "audit-failed-restart-http.json",
+  "generation_runtime_changed": false,
+  "new_launcher_minimum_available_gib": 5
+}

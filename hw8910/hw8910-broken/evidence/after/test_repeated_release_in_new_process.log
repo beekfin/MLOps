@@ -1,13 +1,13 @@
-$ ['/home/beekfin/sna23mk048/MLOps/hw8910/hw8910-broken/.venv/bin/python', '/home/beekfin/sna23mk048/MLOps/hw8910/hw8910-broken/lab.py', '--workspace', '/tmp/tmpgm9u0v6i/workspace', 'init']
+$ ['/home/beekfin/sna23mk048/MLOps/hw8910/hw8910-broken/.venv/bin/python', '/home/beekfin/sna23mk048/MLOps/hw8910/hw8910-broken/lab.py', '--workspace', '/tmp/tmpxj3tfv1b/workspace', 'init']
 exit=0
-Создан синтетический стенд: /tmp/tmpgm9u0v6i/workspace
+Создан синтетический стенд: /tmp/tmpxj3tfv1b/workspace
 
-$ ['/home/beekfin/sna23mk048/MLOps/hw8910/hw8910-broken/.venv/bin/python', '/home/beekfin/sna23mk048/MLOps/hw8910/hw8910-broken/lab.py', '--workspace', '/tmp/tmpgm9u0v6i/workspace', 'run']
+$ ['/home/beekfin/sna23mk048/MLOps/hw8910/hw8910-broken/.venv/bin/python', '/home/beekfin/sna23mk048/MLOps/hw8910/hw8910-broken/lab.py', '--workspace', '/tmp/tmpxj3tfv1b/workspace', 'run']
 exit=0
 PREPARED 88bbd559a04a7a432693a1c611ef2704bb711ac17dd5e22203ee9e5020f59fd4
 PUBLISHED fixture-B
 
-$ ['/home/beekfin/sna23mk048/MLOps/hw8910/hw8910-broken/.venv/bin/python', '/home/beekfin/sna23mk048/MLOps/hw8910/hw8910-broken/lab.py', '--workspace', '/tmp/tmpgm9u0v6i/workspace', 'run']
+$ ['/home/beekfin/sna23mk048/MLOps/hw8910/hw8910-broken/.venv/bin/python', '/home/beekfin/sna23mk048/MLOps/hw8910/hw8910-broken/lab.py', '--workspace', '/tmp/tmpxj3tfv1b/workspace', 'run']
 exit=0
 CACHE_HIT 88bbd559a04a7a432693a1c611ef2704bb711ac17dd5e22203ee9e5020f59fd4
 ALREADY_PUBLISHED fixture-B

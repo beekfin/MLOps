@@ -1,28 +1,28 @@
-$ ['/home/beekfin/sna23mk048/MLOps/hw8910/hw8910-broken/.venv/bin/python', '/tmp/hw8910-original-0boov5op/lab.py', '--workspace', '/tmp/tmpwr9q6_3t/workspace', 'init']
+$ ['/home/beekfin/sna23mk048/MLOps/hw8910/hw8910-broken/.venv/bin/python', '/tmp/hw8910-original-i2qn84bv/lab.py', '--workspace', '/tmp/tmp7w5zxdc3/workspace', 'init']
 exit=0
-Создан синтетический стенд: /tmp/tmpwr9q6_3t/workspace
+Создан синтетический стенд: /tmp/tmp7w5zxdc3/workspace
 
-$ ['/home/beekfin/sna23mk048/MLOps/hw8910/hw8910-broken/.venv/bin/python', '/tmp/hw8910-original-0boov5op/lab.py', '--workspace', '/tmp/tmpwr9q6_3t/workspace', 'run', '--fail-after-prepare']
+$ ['/home/beekfin/sna23mk048/MLOps/hw8910/hw8910-broken/.venv/bin/python', '/tmp/hw8910-original-i2qn84bv/lab.py', '--workspace', '/tmp/tmp7w5zxdc3/workspace', 'run', '--fail-after-prepare']
 exit=1
 PREPARED 88bbd559a04a7a432693a1c611ef2704bb711ac17dd5e22203ee9e5020f59fd4
 Traceback (most recent call last):
-  File "/tmp/hw8910-original-0boov5op/lab.py", line 84, in <module>
+  File "/tmp/hw8910-original-i2qn84bv/lab.py", line 84, in <module>
     if __name__=='__main__':main()
                             ^^^^^^
-  File "/tmp/hw8910-original-0boov5op/lab.py", line 81, in main
+  File "/tmp/hw8910-original-i2qn84bv/lab.py", line 81, in main
     else:run(args.workspace,args.report,args.fail_after_prepare)
          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/tmp/hw8910-original-0boov5op/lab.py", line 67, in run
+  File "/tmp/hw8910-original-i2qn84bv/lab.py", line 67, in run
     if fail_after_prepare:raise RuntimeError('Инъекция сбоя после подготовки')
                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 RuntimeError: Инъекция сбоя после подготовки
 
-$ ['/home/beekfin/sna23mk048/MLOps/hw8910/hw8910-broken/.venv/bin/python', '/tmp/hw8910-original-0boov5op/lab.py', '--workspace', '/tmp/tmpwr9q6_3t/workspace', 'run']
+$ ['/home/beekfin/sna23mk048/MLOps/hw8910/hw8910-broken/.venv/bin/python', '/tmp/hw8910-original-i2qn84bv/lab.py', '--workspace', '/tmp/tmp7w5zxdc3/workspace', 'run']
 exit=0
 CACHE_HIT 88bbd559a04a7a432693a1c611ef2704bb711ac17dd5e22203ee9e5020f59fd4
 PUBLISHED fixture-B
 
-$ ['/home/beekfin/sna23mk048/MLOps/hw8910/hw8910-broken/.venv/bin/python', '/tmp/hw8910-original-0boov5op/lab.py', '--workspace', '/tmp/tmpwr9q6_3t/workspace', 'run']
+$ ['/home/beekfin/sna23mk048/MLOps/hw8910/hw8910-broken/.venv/bin/python', '/tmp/hw8910-original-i2qn84bv/lab.py', '--workspace', '/tmp/tmp7w5zxdc3/workspace', 'run']
 exit=0
 CACHE_HIT 88bbd559a04a7a432693a1c611ef2704bb711ac17dd5e22203ee9e5020f59fd4
 PUBLISHED fixture-B

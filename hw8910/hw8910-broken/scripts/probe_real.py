@@ -24,7 +24,7 @@ def main():
                 if ready['status']==200:break
             except (OSError,error.URLError):pass
             time.sleep(.25)
-        else:raise RuntimeError('Сервис не готов за 150 секунд')
+        else:raise RuntimeError('Сервис не готов за 240 секунд')
         before=call('/debug')['body']['calls']
         bad=call('/generate',{'prompt':'Hello','max_new_tokens':100000})
         after=call('/debug')['body']['calls']

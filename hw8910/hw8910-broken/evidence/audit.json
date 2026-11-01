@@ -1,8 +1,8 @@
 {
   "provided_tests": 13,
-  "own_tests": 8,
+  "own_tests": 9,
   "hw67_tests": 24,
-  "regressions_before": "all eight detect violations",
+  "regressions_before": "all nine detect violations",
   "gate": "PASS from original HW67 score and quality_gate",
   "model_id": "my-qwen-adapter/1@0381294b884b46ea90076356c9e8db4f",
   "runtime_sha256": "279e20f7112eb90f9fe4bb330cf9dcf84b45c16cbfa3a631d6984f1decf47b3f",
@@ -16,5 +16,9 @@
     "fixture-A"
   ],
   "real_publication_events": 1,
-  "negative_pointer_unchanged": true
+  "negative_pointer_unchanged": true,
+  "all_cold_starts_succeeded": false,
+  "resource_failure_documented": "audit-startup-attempts.json",
+  "accepted_artifacts_preserved_on_failed_prepare": true,
+  "release_artifact_binding_verified": true
 }

@@ -1,11 +1,12 @@
-01:33:12.500 | INFO    | prefect - Starting temporary server on http://127.0.0.1:8892
+.venv/bin/python pipeline.py --workspace .runtime/real --manifest manifest-model.json --report release-report.json
+01:59:13.346 | INFO    | prefect - Starting temporary server on http://127.0.0.1:8778
 See https://www.prefect.io/docs/v3/concepts/server#how-to-guides for more information on running a dedicated Prefect server.
-01:33:16.545 | INFO    | Flow run 'pearl-peacock' - Beginning flow run 'pearl-peacock' for flow 'hw8910-release'
-01:33:16.702 | INFO    | Task run 'prepare_input-7b3' - Finished in state Cached(type=COMPLETED)
-01:33:16.752 | INFO    | Task run 'obtain_artifact-139' - Читаем существующий training run 0381294b884b46ea90076356c9e8db4f; обучения здесь нет
-01:33:16.756 | INFO    | Task run 'obtain_artifact-139' - Finished in state Completed()
-01:33:17.071 | INFO    | Task run 'evaluate_admission-345' - Finished in state Completed()
-01:33:17.225 | INFO    | Task run 'publish_accepted-e35' - ALREADY_PUBLISHED my-qwen-adapter/1@0381294b884b46ea90076356c9e8db4f
-01:33:17.229 | INFO    | Task run 'publish_accepted-e35' - Finished in state Completed()
-01:33:17.558 | INFO    | Flow run 'pearl-peacock' - Finished in state Completed()
-01:33:17.591 | INFO    | prefect - Stopping temporary server on http://127.0.0.1:8892
+01:59:16.540 | INFO    | Flow run 'horned-ermine' - Beginning flow run 'horned-ermine' for flow 'hw8910-release'
+01:59:16.676 | INFO    | Task run 'prepare_input-190' - Finished in state Cached(type=COMPLETED)
+01:59:16.723 | INFO    | Task run 'obtain_artifact-c57' - Читаем существующий training run 0381294b884b46ea90076356c9e8db4f; обучения здесь нет
+01:59:16.724 | INFO    | Task run 'obtain_artifact-c57' - Finished in state Completed()
+01:59:17.029 | INFO    | Task run 'evaluate_admission-e4b' - Finished in state Completed()
+01:59:17.480 | INFO    | Task run 'publish_accepted-ddb' - ALREADY_PUBLISHED my-qwen-adapter/1@0381294b884b46ea90076356c9e8db4f
+01:59:17.482 | INFO    | Task run 'publish_accepted-ddb' - Finished in state Completed()
+01:59:17.550 | INFO    | Flow run 'horned-ermine' - Finished in state Completed()
+01:59:17.568 | INFO    | prefect - Stopping temporary server on http://127.0.0.1:8778

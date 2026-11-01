@@ -53,9 +53,9 @@ class ServiceState:
             release.verify_files(manifest, self.root)
             if release.digest(release.canonical(manifest['runtime'])) != manifest['runtime_sha256']:
                 raise ValueError('Не совпадает хеш runtime')
-            if self.backend_factory is StubBackend and not manifest['model_id'].startswith('fixture-'):
+            if self.backend_factory is StubBackend and manifest['synthetic'] is not True:
                 raise ValueError('Настоящая модель требует --backend transformers')
-            if not manifest['model_id'].startswith('fixture-'):
+            if manifest['synthetic'] is False:
                 import lab
                 lab.validate_bound(self.root, manifest, 'release-report.json')
             self.manifest = manifest

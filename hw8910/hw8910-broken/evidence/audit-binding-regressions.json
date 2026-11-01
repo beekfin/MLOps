@@ -1,0 +1,18 @@
+[
+  {
+    "case": "changed_artifact_dtype",
+    "old_commit": "9399f12",
+    "old_passed": true,
+    "fixed_rejected": true,
+    "reason": "Файлы отличаются от артефакта оценённого training run: нужна новая оценка",
+    "note": "Только временная копия; исходные веса, оценка и принятая модель не изменены"
+  },
+  {
+    "case": "different_json_generation_type",
+    "old_commit": "9399f12",
+    "old_passed": true,
+    "fixed_rejected": true,
+    "reason": "Изменены условия генерации",
+    "note": "Только временная копия; исходные веса, оценка и принятая модель не изменены"
+  }
+]

@@ -1,131 +1,128 @@
-INFO:     Started server process [260507]
+INFO:     Started server process [323275]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
-INFO:     Uvicorn running on http://127.0.0.1:42963 (Press CTRL+C to quit)
-INFO:     127.0.0.1:56284 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56290 - "GET /ready HTTP/1.1" 503 Service Unavailable
-INFO:     127.0.0.1:56298 - "GET /ready HTTP/1.1" 503 Service Unavailable
-INFO:     127.0.0.1:56312 - "GET /ready HTTP/1.1" 503 Service Unavailable
-INFO:     127.0.0.1:56314 - "GET /ready HTTP/1.1" 503 Service Unavailable
-INFO:     127.0.0.1:56326 - "GET /ready HTTP/1.1" 503 Service Unavailable
-INFO:     127.0.0.1:56340 - "GET /ready HTTP/1.1" 503 Service Unavailable
-INFO:     127.0.0.1:56344 - "GET /ready HTTP/1.1" 503 Service Unavailable
-INFO:     127.0.0.1:56346 - "GET /ready HTTP/1.1" 503 Service Unavailable
-INFO:     127.0.0.1:56362 - "GET /ready HTTP/1.1" 503 Service Unavailable
-INFO:     127.0.0.1:56368 - "GET /ready HTTP/1.1" 503 Service Unavailable
-INFO:     127.0.0.1:56382 - "GET /ready HTTP/1.1" 503 Service Unavailable
-INFO:     127.0.0.1:56392 - "GET /ready HTTP/1.1" 503 Service Unavailable
-INFO:     127.0.0.1:56396 - "GET /ready HTTP/1.1" 503 Service Unavailable
-INFO:     127.0.0.1:56408 - "GET /ready HTTP/1.1" 503 Service Unavailable
-INFO:     127.0.0.1:56416 - "GET /ready HTTP/1.1" 503 Service Unavailable
-INFO:     127.0.0.1:56418 - "GET /ready HTTP/1.1" 503 Service Unavailable
-INFO:     127.0.0.1:56432 - "GET /ready HTTP/1.1" 503 Service Unavailable
-INFO:     127.0.0.1:56440 - "GET /ready HTTP/1.1" 503 Service Unavailable
-INFO:     127.0.0.1:56456 - "GET /ready HTTP/1.1" 503 Service Unavailable
-INFO:     127.0.0.1:56472 - "GET /ready HTTP/1.1" 503 Service Unavailable
-INFO:     127.0.0.1:56484 - "GET /ready HTTP/1.1" 503 Service Unavailable
-INFO:     127.0.0.1:56496 - "GET /ready HTTP/1.1" 503 Service Unavailable
-INFO:     127.0.0.1:56500 - "GET /ready HTTP/1.1" 503 Service Unavailable
-INFO:     127.0.0.1:56506 - "GET /ready HTTP/1.1" 503 Service Unavailable
-INFO:     127.0.0.1:56522 - "GET /ready HTTP/1.1" 503 Service Unavailable
-INFO:     127.0.0.1:56530 - "GET /ready HTTP/1.1" 503 Service Unavailable
-INFO:     127.0.0.1:56546 - "GET /ready HTTP/1.1" 503 Service Unavailable
-INFO:     127.0.0.1:56560 - "GET /ready HTTP/1.1" 503 Service Unavailable
-INFO:     127.0.0.1:56570 - "GET /ready HTTP/1.1" 503 Service Unavailable
-INFO:     127.0.0.1:56580 - "GET /ready HTTP/1.1" 503 Service Unavailable
-INFO:     127.0.0.1:56594 - "GET /ready HTTP/1.1" 503 Service Unavailable
-INFO:     127.0.0.1:56610 - "GET /ready HTTP/1.1" 503 Service Unavailable
-INFO:     127.0.0.1:56618 - "GET /ready HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56628 - "POST /generate HTTP/1.1" 200 OK
-INFO:     127.0.0.1:56638 - "POST /generate HTTP/1.1" 200 OK
+INFO:     Uvicorn running on http://127.0.0.1:34151 (Press CTRL+C to quit)
+INFO:     127.0.0.1:44394 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44406 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:44416 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:44430 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:44444 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:44452 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:44468 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:44478 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:44490 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:44496 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:44510 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:44520 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:44528 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:44534 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:44546 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:44550 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:44552 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:44562 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:44564 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:44578 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:44580 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:44586 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:44594 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:44608 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:44610 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:44622 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:44628 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:44636 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:44646 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:44650 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:44660 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:44676 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:44688 - "GET /ready HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44702 - "POST /generate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:44704 - "POST /generate HTTP/1.1" 200 OK
 INFO:     Shutting down
 INFO:     Waiting for application shutdown.
 INFO:     Application shutdown complete.
-INFO:     Finished server process [260507]
-INFO:     Started server process [260555]
+INFO:     Finished server process [323275]
+INFO:     Started server process [323353]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
-INFO:     Uvicorn running on http://127.0.0.1:44675 (Press CTRL+C to quit)
-INFO:     127.0.0.1:55054 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55056 - "GET /ready HTTP/1.1" 503 Service Unavailable
-INFO:     127.0.0.1:55068 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     Uvicorn running on http://127.0.0.1:59967 (Press CTRL+C to quit)
+INFO:     127.0.0.1:54806 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54822 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:54838 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:54846 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:54854 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:54856 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:54858 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:54874 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:54880 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:54882 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:54888 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:54902 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:54918 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:54924 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:54928 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:54944 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:54952 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:54956 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:54962 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:54978 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:54984 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:54998 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:55006 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:55012 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:55018 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:55032 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:55038 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:55052 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:55060 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:55066 - "GET /ready HTTP/1.1" 503 Service Unavailable
 INFO:     127.0.0.1:55082 - "GET /ready HTTP/1.1" 503 Service Unavailable
-INFO:     127.0.0.1:55084 - "GET /ready HTTP/1.1" 503 Service Unavailable
-INFO:     127.0.0.1:55096 - "GET /ready HTTP/1.1" 503 Service Unavailable
-INFO:     127.0.0.1:55108 - "GET /ready HTTP/1.1" 503 Service Unavailable
-INFO:     127.0.0.1:55110 - "GET /ready HTTP/1.1" 503 Service Unavailable
-INFO:     127.0.0.1:55126 - "GET /ready HTTP/1.1" 503 Service Unavailable
-INFO:     127.0.0.1:55132 - "GET /ready HTTP/1.1" 503 Service Unavailable
-INFO:     127.0.0.1:55146 - "GET /ready HTTP/1.1" 503 Service Unavailable
-INFO:     127.0.0.1:55156 - "GET /ready HTTP/1.1" 503 Service Unavailable
-INFO:     127.0.0.1:55170 - "GET /ready HTTP/1.1" 503 Service Unavailable
-INFO:     127.0.0.1:55174 - "GET /ready HTTP/1.1" 503 Service Unavailable
-INFO:     127.0.0.1:55180 - "GET /ready HTTP/1.1" 503 Service Unavailable
-INFO:     127.0.0.1:55190 - "GET /ready HTTP/1.1" 503 Service Unavailable
-INFO:     127.0.0.1:55204 - "GET /ready HTTP/1.1" 503 Service Unavailable
-INFO:     127.0.0.1:55216 - "GET /ready HTTP/1.1" 503 Service Unavailable
-INFO:     127.0.0.1:55218 - "GET /ready HTTP/1.1" 503 Service Unavailable
-INFO:     127.0.0.1:55224 - "GET /ready HTTP/1.1" 503 Service Unavailable
-INFO:     127.0.0.1:55226 - "GET /ready HTTP/1.1" 503 Service Unavailable
-INFO:     127.0.0.1:55240 - "GET /ready HTTP/1.1" 503 Service Unavailable
-INFO:     127.0.0.1:55248 - "GET /ready HTTP/1.1" 503 Service Unavailable
-INFO:     127.0.0.1:55264 - "GET /ready HTTP/1.1" 503 Service Unavailable
-INFO:     127.0.0.1:55276 - "GET /ready HTTP/1.1" 503 Service Unavailable
-INFO:     127.0.0.1:55278 - "GET /ready HTTP/1.1" 503 Service Unavailable
-INFO:     127.0.0.1:55292 - "GET /ready HTTP/1.1" 503 Service Unavailable
-INFO:     127.0.0.1:55298 - "GET /ready HTTP/1.1" 503 Service Unavailable
-INFO:     127.0.0.1:55314 - "GET /ready HTTP/1.1" 503 Service Unavailable
-INFO:     127.0.0.1:55328 - "GET /ready HTTP/1.1" 503 Service Unavailable
-INFO:     127.0.0.1:55336 - "GET /ready HTTP/1.1" 503 Service Unavailable
-INFO:     127.0.0.1:55340 - "GET /ready HTTP/1.1" 503 Service Unavailable
-INFO:     127.0.0.1:55352 - "GET /ready HTTP/1.1" 503 Service Unavailable
-INFO:     127.0.0.1:55360 - "GET /ready HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55362 - "POST /generate HTTP/1.1" 200 OK
-INFO:     127.0.0.1:55374 - "POST /generate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55088 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:55102 - "GET /ready HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55118 - "POST /generate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55126 - "POST /generate HTTP/1.1" 200 OK
 INFO:     Shutting down
 INFO:     Waiting for application shutdown.
 INFO:     Application shutdown complete.
-INFO:     Finished server process [260555]
-INFO:     Started server process [260632]
+INFO:     Finished server process [323353]
+INFO:     Started server process [323387]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
-INFO:     Uvicorn running on http://127.0.0.1:43265 (Press CTRL+C to quit)
-INFO:     127.0.0.1:40208 - "GET /health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:40210 - "GET /ready HTTP/1.1" 503 Service Unavailable
-INFO:     127.0.0.1:40224 - "GET /ready HTTP/1.1" 503 Service Unavailable
-INFO:     127.0.0.1:40226 - "GET /ready HTTP/1.1" 503 Service Unavailable
-INFO:     127.0.0.1:40236 - "GET /ready HTTP/1.1" 503 Service Unavailable
-INFO:     127.0.0.1:40252 - "GET /ready HTTP/1.1" 503 Service Unavailable
-INFO:     127.0.0.1:40266 - "GET /ready HTTP/1.1" 503 Service Unavailable
-INFO:     127.0.0.1:40274 - "GET /ready HTTP/1.1" 503 Service Unavailable
-INFO:     127.0.0.1:40282 - "GET /ready HTTP/1.1" 503 Service Unavailable
-INFO:     127.0.0.1:40296 - "GET /ready HTTP/1.1" 503 Service Unavailable
-INFO:     127.0.0.1:40310 - "GET /ready HTTP/1.1" 503 Service Unavailable
-INFO:     127.0.0.1:40312 - "GET /ready HTTP/1.1" 503 Service Unavailable
-INFO:     127.0.0.1:40316 - "GET /ready HTTP/1.1" 503 Service Unavailable
-INFO:     127.0.0.1:40324 - "GET /ready HTTP/1.1" 503 Service Unavailable
-INFO:     127.0.0.1:40326 - "GET /ready HTTP/1.1" 503 Service Unavailable
-INFO:     127.0.0.1:40338 - "GET /ready HTTP/1.1" 503 Service Unavailable
-INFO:     127.0.0.1:40352 - "GET /ready HTTP/1.1" 503 Service Unavailable
-INFO:     127.0.0.1:40358 - "GET /ready HTTP/1.1" 503 Service Unavailable
-INFO:     127.0.0.1:40362 - "GET /ready HTTP/1.1" 503 Service Unavailable
-INFO:     127.0.0.1:40374 - "GET /ready HTTP/1.1" 503 Service Unavailable
-INFO:     127.0.0.1:40388 - "GET /ready HTTP/1.1" 503 Service Unavailable
-INFO:     127.0.0.1:40394 - "GET /ready HTTP/1.1" 503 Service Unavailable
-INFO:     127.0.0.1:40398 - "GET /ready HTTP/1.1" 503 Service Unavailable
-INFO:     127.0.0.1:40402 - "GET /ready HTTP/1.1" 503 Service Unavailable
-INFO:     127.0.0.1:40412 - "GET /ready HTTP/1.1" 503 Service Unavailable
-INFO:     127.0.0.1:40424 - "GET /ready HTTP/1.1" 503 Service Unavailable
-INFO:     127.0.0.1:40436 - "GET /ready HTTP/1.1" 503 Service Unavailable
-INFO:     127.0.0.1:40448 - "GET /ready HTTP/1.1" 503 Service Unavailable
-INFO:     127.0.0.1:40462 - "GET /ready HTTP/1.1" 503 Service Unavailable
-INFO:     127.0.0.1:40468 - "GET /ready HTTP/1.1" 503 Service Unavailable
-INFO:     127.0.0.1:40476 - "GET /ready HTTP/1.1" 503 Service Unavailable
-INFO:     127.0.0.1:40486 - "GET /ready HTTP/1.1" 503 Service Unavailable
-INFO:     127.0.0.1:40502 - "GET /ready HTTP/1.1" 503 Service Unavailable
-INFO:     127.0.0.1:40504 - "GET /ready HTTP/1.1" 200 OK
-INFO:     127.0.0.1:40520 - "POST /generate HTTP/1.1" 200 OK
+INFO:     Uvicorn running on http://127.0.0.1:51421 (Press CTRL+C to quit)
+INFO:     127.0.0.1:35996 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36010 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:36014 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:36024 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:36026 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:36042 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:36052 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:36064 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:36078 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:36084 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:36086 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:36098 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:36100 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:36106 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:36112 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:36122 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:36124 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:36134 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:36138 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:36154 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:36158 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:36160 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:36164 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:36166 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:36168 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:36178 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:36180 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:36194 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:36208 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:36212 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:36228 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:36240 - "GET /ready HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:36248 - "GET /ready HTTP/1.1" 200 OK
+INFO:     127.0.0.1:36254 - "POST /generate HTTP/1.1" 200 OK
 INFO:     Shutting down
 INFO:     Waiting for application shutdown.
 INFO:     Application shutdown complete.
-INFO:     Finished server process [260632]
+INFO:     Finished server process [323387]

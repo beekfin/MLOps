@@ -57,7 +57,7 @@ def main():
  proof=read('regression-proof.json');m=read('manifest.json');gate=read('release-report.json')
  api=read('real-api.json');restart=read('real-api-restart.json');bench=read('benchmark.json')
  raw=log('check.log')
- assert re.search(r'Ran 21 tests',raw) and re.search(r'Ran 24 tests',raw)
+ assert re.search(r'Ran 22 tests',raw) and re.search(r'Ran 24 tests',raw)
  assert proof['before']['exit_code']!=0 and proof['after']['exit_code']==0
  assert gate['passed'] is True and api['matches_saved_evaluation'] and restart['matches_saved_evaluation']
  assert len([json.loads(s) for s in (E/'requests.jsonl').read_text().splitlines()])==16
@@ -65,7 +65,7 @@ def main():
  def add(title,source,values,duration,n=23,mono=False):scenes.append((title,source,values,duration,n,mono))
  add('От принятой модели до работающего API','единая работа по методичке к лекциям 8–9–10',[
   'Готовая модель ДЗ67 → полный допуск → accepted.json → загрузка и прогрев → ответы API.',
-  'Семь причин ошибок исправлены. Восемь собственных проверок показаны до и после.',
+  'Семь причин ошибок исправлены. Девять собственных проверок показаны до и после.',
   'Prefect выполняет четыре стадии. FastAPI обслуживает настоящую модель.',
   'Нового обучения нет: используется сохранённый адаптер Qwen3-0.6B.',
   'CPU / float32. После прогрева: 8 запросов при одном клиенте и 8 при двух.'
@@ -81,15 +81,15 @@ def main():
    if name not in names:names.append(name)
  add('Собственные проверки обнаруживают дефекты','make prove · один файл тестов для обеих версий',[
   'Исходный прототип: exit='+str(proof['before']['exit_code']),*names,
-  'Восемь тестов не проходят по нарушениям поведения, без ошибок импорта.',
-  'Три — реальный HTTP. Четыре — выпуск через отдельные процессы.',
+  'Девять тестов не проходят по нарушениям поведения, без ошибок импорта.',
+  'Три — реальный HTTP. Пять — выпуск через отдельные процессы.',
   'Подробные команды и ответы: evidence/before/.'
  ],24,n=21,mono=True)
  add('Быстрые проверки проходят','make check · веса не загружаются',[
   'Исходные тесты ДЗ8–10: 09bd65e6b886',
   'Сохранённые тесты ДЗ67: c42ac7788026',
-  *[line for line in raw.splitlines() if re.match(r'Ran (21|24) tests',line)],
-  '13 исходных + 8 собственных + 24 из ДЗ67 = 45 проверок.',
+  *[line for line in raw.splitlines() if re.match(r'Ran (22|24) tests',line)],
+  '13 исходных + 9 собственных + 24 из ДЗ67 = 46 проверок.',
   'Результаты двух наборов: OK.',
   'make check-negative: намеренно сломанный ключ кеша → exit=1.',
   'Поломка выполнялась во временной копии; рабочий код восстановлен.'
@@ -121,7 +121,7 @@ def main():
   'CPU / float32; тот же токенизатор, шаблон и библиотеки.',
   'Одна system-инструкция, seed 42, do_sample=False, max_new_tokens=32.',
   *json.dumps(selected,ensure_ascii=False,indent=2).splitlines(),
-  'Хеши файлов пересчитываются до публикации и перед загрузкой.'
+  'Хеши сверяются с артефактом оценённого training run до выпуска и загрузки.'
  ],32,n=22,mono=True)
  neg=read('negative-publication.json')
  add('Отказ сохраняет прежнюю принятую версию','неполный / чужой / отклонённый отчёт, NaN и ошибка замены',[
@@ -161,10 +161,11 @@ def main():
   'После прогрева: ready=200.',
   'Чрезмерный max_new_tokens: HTTP '+str(api['invalid_status']),
   f"Calls до/после неверного запроса: {api['calls_before_invalid']} / {api['calls_after_invalid']}",
-  'После настоящего перезапуска снова загружен тот же manifest.',
+  'Сохранённый успешный перезапуск подтвердил ту же версию и runtime.',
   'Совпадение с сохранённой оценкой после перезапуска: '+str(restart['matches_saved_evaluation']),
   'До 8192 символов / 2048 токенов входа; 32 новых токена.',
-  'Предел памяти службы: 3900 МиБ. После замера служба остановлена.'
+  'Предел службы — 3900 МиБ; запуск требует 5 ГиБ свободной RAM.',
+  'Дополнительный холодный старт при нехватке памяти не прошёл; журнал сохранён.'
  ],28,n=26)
  add('Одинаковые восемь запросов при 1 и 2 клиентах','benchmark.csv · requests.jsonl · после прогрева',[
   'Клиенты | n | успех/ошибка | пакет, с | успехов/с | средняя, с | максимум, с',

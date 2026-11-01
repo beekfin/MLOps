@@ -4,6 +4,7 @@
 .venv/bin/python -m unittest discover -s tests -v
 test_atomic_write_error_preserves_pointer (test_integration.IntegrationTests.test_atomic_write_error_preserves_pointer) ... ok
 test_cache_recovery_and_changed_input (test_integration.IntegrationTests.test_cache_recovery_and_changed_input) ... ok
+test_fixture_name_does_not_bypass_real_evaluation (test_integration.IntegrationTests.test_fixture_name_does_not_bypass_real_evaluation) ... ok
 test_http_invalid_request_does_not_call_backend (test_integration.IntegrationTests.test_http_invalid_request_does_not_call_backend) ... ok
 test_http_loaded_version_restart_and_rollback (test_integration.IntegrationTests.test_http_loaded_version_restart_and_rollback) ... ok
 test_http_readiness_waits_for_warmup (test_integration.IntegrationTests.test_http_readiness_waits_for_warmup) ... ok
@@ -25,7 +26,7 @@ test_report_binding_mismatch_rejected (test_release.ReleaseContractTests.test_re
 test_runtime_change_with_stale_hash_rejected (test_release.ReleaseContractTests.test_runtime_change_with_stale_hash_rejected) ... ok
 
 ----------------------------------------------------------------------
-Ran 21 tests in 4.971s
+Ran 22 tests in 5.638s
 
 OK
 cd ../../hw67 && ../hw8910/hw8910-broken/.venv/bin/python -m unittest discover -s tests -p 'test_*.py' -v
@@ -55,7 +56,7 @@ test_protocol_or_raw_changes_rejected (test_pipeline.PipelineContract.test_proto
 test_refused_candidate_keeps_alias (test_pipeline.PipelineContract.test_refused_candidate_keeps_alias) ... ok
 
 ----------------------------------------------------------------------
-Ran 24 tests in 0.042s
+Ran 24 tests in 0.052s
 
 OK
 Отчёты и сырые ответы сохранены. Далее: make eval; только после PASS - make promote

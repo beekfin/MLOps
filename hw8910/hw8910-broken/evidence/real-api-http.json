@@ -849,96 +849,6 @@
   },
   {
     "path": "/ready",
-    "status": 503,
-    "body": {
-      "detail": "Загрузка или прогрев"
-    }
-  },
-  {
-    "path": "/health",
-    "status": 200,
-    "body": {
-      "alive": true,
-      "backend": "transformers+peft"
-    }
-  },
-  {
-    "path": "/ready",
-    "status": 503,
-    "body": {
-      "detail": "Загрузка или прогрев"
-    }
-  },
-  {
-    "path": "/health",
-    "status": 200,
-    "body": {
-      "alive": true,
-      "backend": "transformers+peft"
-    }
-  },
-  {
-    "path": "/ready",
-    "status": 503,
-    "body": {
-      "detail": "Загрузка или прогрев"
-    }
-  },
-  {
-    "path": "/health",
-    "status": 200,
-    "body": {
-      "alive": true,
-      "backend": "transformers+peft"
-    }
-  },
-  {
-    "path": "/ready",
-    "status": 503,
-    "body": {
-      "detail": "Загрузка или прогрев"
-    }
-  },
-  {
-    "path": "/health",
-    "status": 200,
-    "body": {
-      "alive": true,
-      "backend": "transformers+peft"
-    }
-  },
-  {
-    "path": "/ready",
-    "status": 503,
-    "body": {
-      "detail": "Загрузка или прогрев"
-    }
-  },
-  {
-    "path": "/health",
-    "status": 200,
-    "body": {
-      "alive": true,
-      "backend": "transformers+peft"
-    }
-  },
-  {
-    "path": "/ready",
-    "status": 503,
-    "body": {
-      "detail": "Загрузка или прогрев"
-    }
-  },
-  {
-    "path": "/health",
-    "status": 200,
-    "body": {
-      "alive": true,
-      "backend": "transformers+peft"
-    }
-  },
-  {
-    "path": "/ready",
     "status": 200,
     "body": {
       "ready": true,
@@ -981,10 +891,10 @@
       "output_tokens": 6,
       "model_id": "my-qwen-adapter/1@0381294b884b46ea90076356c9e8db4f",
       "runtime_sha256": "279e20f7112eb90f9fe4bb330cf9dcf84b45c16cbfa3a631d6984f1decf47b3f",
-      "request_id": "2c422c76-6d66-4415-8a7d-3a2aee7a2f75",
-      "generation_seconds": 4.789560359000461,
-      "queue_seconds": 1.0267001925967634e-05,
-      "server_seconds": 4.7897172380035045
+      "request_id": "36cd826e-0424-4e96-a2ee-017887f3e0f4",
+      "generation_seconds": 3.841360660997452,
+      "queue_seconds": 4.839996108785272e-06,
+      "server_seconds": 3.8414565150014823
     }
   }
 ]
