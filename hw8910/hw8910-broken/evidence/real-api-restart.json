@@ -1,0 +1,24 @@
+{
+  "ready": true,
+  "loaded_model_id": "my-qwen-adapter/1@0381294b884b46ea90076356c9e8db4f",
+  "runtime_sha256": "279e20f7112eb90f9fe4bb330cf9dcf84b45c16cbfa3a631d6984f1decf47b3f",
+  "invalid_status": 422,
+  "calls_before_invalid": 1,
+  "calls_after_invalid": 1,
+  "real_response": {
+    "path": "/generate",
+    "status": 200,
+    "body": {
+      "answer": "{\"answer\":\"A\"}",
+      "output_tokens": 6,
+      "model_id": "my-qwen-adapter/1@0381294b884b46ea90076356c9e8db4f",
+      "runtime_sha256": "279e20f7112eb90f9fe4bb330cf9dcf84b45c16cbfa3a631d6984f1decf47b3f",
+      "request_id": "9a6ec059-6ee5-4cb2-b1e6-7bec8dbfa52d",
+      "generation_seconds": 5.14338611101266,
+      "queue_seconds": 1.1054988135583699e-05,
+      "server_seconds": 5.143499671990867
+    }
+  },
+  "matches_saved_evaluation": true,
+  "elapsed_seconds": 29.181056854999042
+}

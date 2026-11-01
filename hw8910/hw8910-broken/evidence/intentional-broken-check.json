@@ -1,0 +1,6 @@
+{
+  "exit_code": 1,
+  "mutation": "cache_key always zero",
+  "isolated_copy": true,
+  "working_code_unchanged": true
+}

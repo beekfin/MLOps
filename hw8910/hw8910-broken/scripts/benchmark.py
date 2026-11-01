@@ -16,7 +16,8 @@ def main():
     with output.open('w') as stream:
         for concurrency in (1,2):
             def call(row):
-                started=time.perf_counter();item={'id':row['id'],'concurrency':concurrency,'max_new_tokens':32,'error':None}
+                started=time.perf_counter();item={'id':row['id'],'concurrency':concurrency,'max_new_tokens':32,'error':None,
+                    'model_id':None,'generation_seconds':None,'queue_seconds':None,'output_tokens':None,'request_id':None}
                 try:
                     req=Request(args.url+'/generate',data=json.dumps({'prompt':row['input'],'max_new_tokens':32}).encode(),
                                 headers={'Content-Type':'application/json'})
@@ -49,5 +50,6 @@ def main():
     with (ROOT/'evidence/benchmark.csv').open('w') as f:
         writer=csv.DictWriter(f,fieldnames=list(summaries[0]));writer.writeheader();writer.writerows(summaries)
     print(json.dumps(summaries,ensure_ascii=False,indent=2))
+    if any(s['errors'] for s in summaries):raise SystemExit(1)
 
 if __name__=='__main__':main()

@@ -1,0 +1,14 @@
+$ ['/home/beekfin/sna23mk048/MLOps/hw8910/hw8910-broken/.venv/bin/python', 'pipeline.py', '--workspace', '/home/beekfin/sna23mk048/MLOps/hw8910/hw8910-broken/.runtime/experiments/1e90e6e1/cache']
+exit=0
+01:33:57.977 | INFO    | prefect - Starting temporary server on http://127.0.0.1:8393
+See https://www.prefect.io/docs/v3/concepts/server#how-to-guides for more information on running a dedicated Prefect server.
+01:34:02.231 | INFO    | Flow run 'papaya-leech' - Beginning flow run 'papaya-leech' for flow 'hw8910-release'
+01:34:02.391 | INFO    | Task run 'prepare_input-f33' - PREPARED d18546842ff18885a685a9d6f315b9adcfa2e65d7872ebf3726603ace925e5e3
+01:34:02.396 | INFO    | Task run 'prepare_input-f33' - Finished in state Completed()
+01:34:02.400 | INFO    | Task run 'obtain_artifact-858' - Читаем существующий training run STUB ONLY; обучения здесь нет
+01:34:02.402 | INFO    | Task run 'obtain_artifact-858' - Finished in state Completed()
+01:34:02.407 | INFO    | Task run 'evaluate_admission-415' - Finished in state Completed()
+01:34:02.424 | INFO    | Task run 'publish_accepted-8b8' - ALREADY_PUBLISHED fixture-B
+01:34:02.427 | INFO    | Task run 'publish_accepted-8b8' - Finished in state Completed()
+01:34:03.245 | INFO    | Flow run 'papaya-leech' - Finished in state Completed()
+01:34:03.280 | INFO    | prefect - Stopping temporary server on http://127.0.0.1:8393

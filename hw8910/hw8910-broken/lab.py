@@ -53,8 +53,12 @@ def initialize(root):
     print('Создан синтетический стенд:',root)
 
 
+def preparation_config(root):
+    return {**read(root/'config.json'), 'implementation_sha256': digest(Path(__file__).read_bytes())}
+
+
 def prepare(root):
-    config=read(root/'config.json');key=release.cache_key(root/'input.txt',config)
+    config=preparation_config(root);key=release.cache_key(root/'input.txt',config)
     cache=root/'cache';cache.mkdir(exist_ok=True);entry=cache/(key+'.json')
     if entry.exists():
         result=read(entry);print('CACHE_HIT',result['input_sha256']);return result

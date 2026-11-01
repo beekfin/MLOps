@@ -1,0 +1,6 @@
+MainPID=266581
+MemoryPeak=4089450496
+CPUQuotaPerSecUSec=2.500000s
+MemoryHigh=4089446400
+MemoryMax=4089446400
+MemorySwapMax=0

@@ -1,0 +1,13 @@
+$ ['/home/beekfin/sna23mk048/MLOps/hw8910/hw8910-broken/.venv/bin/python', 'pipeline.py', '--workspace', '/home/beekfin/sna23mk048/MLOps/hw8910/hw8910-broken/.runtime/experiments/1e90e6e1/cache']
+exit=0
+01:33:38.898 | INFO    | prefect - Starting temporary server on http://127.0.0.1:8387
+See https://www.prefect.io/docs/v3/concepts/server#how-to-guides for more information on running a dedicated Prefect server.
+01:33:43.715 | INFO    | Flow run 'teal-prawn' - Beginning flow run 'teal-prawn' for flow 'hw8910-release'
+01:33:43.904 | INFO    | Task run 'prepare_input-327' - Finished in state Cached(type=COMPLETED)
+01:33:43.917 | INFO    | Task run 'obtain_artifact-449' - Читаем существующий training run STUB ONLY; обучения здесь нет
+01:33:43.923 | INFO    | Task run 'obtain_artifact-449' - Finished in state Completed()
+01:33:43.933 | INFO    | Task run 'evaluate_admission-812' - Finished in state Completed()
+01:33:43.960 | INFO    | Task run 'publish_accepted-0b2' - ALREADY_PUBLISHED fixture-B
+01:33:43.963 | INFO    | Task run 'publish_accepted-0b2' - Finished in state Completed()
+01:33:44.728 | INFO    | Flow run 'teal-prawn' - Finished in state Completed()
+01:33:44.783 | INFO    | prefect - Stopping temporary server on http://127.0.0.1:8387

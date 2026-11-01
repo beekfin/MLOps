@@ -1,0 +1,320 @@
+[
+  {
+    "id": "golden-askubuntu-573791",
+    "raw": "{\n  \"answer\": \"A\"\n}",
+    "error": null,
+    "latency_seconds": 9.891697136001312
+  },
+  {
+    "id": "golden-askubuntu-1154282",
+    "raw": "```json\n{\n  \"answer\": \"A\"\n}\n```",
+    "error": null,
+    "latency_seconds": 6.094762546999846
+  },
+  {
+    "id": "golden-askubuntu-700840",
+    "raw": "{\n  \"answer\": \"C\"\n}",
+    "error": null,
+    "latency_seconds": 4.411492298000667
+  },
+  {
+    "id": "golden-askubuntu-150141",
+    "raw": "{\n  \"answer\": \"A\"\n}",
+    "error": null,
+    "latency_seconds": 4.083255263998581
+  },
+  {
+    "id": "golden-askubuntu-898826",
+    "raw": "```json\n{\n  \"answer\": \"B\"\n}\n```",
+    "error": null,
+    "latency_seconds": 5.7541839920013444
+  },
+  {
+    "id": "golden-askubuntu-799289",
+    "raw": "```json\n{\n  \"answer\": \"C\"\n}\n```",
+    "error": null,
+    "latency_seconds": 5.742661647997011
+  },
+  {
+    "id": "golden-askubuntu-909071",
+    "raw": "{\n  \"answer\": \"A\"\n}",
+    "error": null,
+    "latency_seconds": 4.911153806002403
+  },
+  {
+    "id": "golden-askubuntu-356217",
+    "raw": "```json\n{\n  \"answer\": \"B\"\n}\n```",
+    "error": null,
+    "latency_seconds": 5.9802664700000605
+  },
+  {
+    "id": "golden-askubuntu-1250779",
+    "raw": "{\n  \"answer\": \"C\"\n}",
+    "error": null,
+    "latency_seconds": 4.873991353000747
+  },
+  {
+    "id": "golden-askubuntu-589248",
+    "raw": "{\n  \"answer\": \"A\"\n}",
+    "error": null,
+    "latency_seconds": 4.951519176996953
+  },
+  {
+    "id": "golden-askubuntu-323868",
+    "raw": "{\n  \"answer\": \"B\"\n}",
+    "error": null,
+    "latency_seconds": 4.7808799170015845
+  },
+  {
+    "id": "golden-askubuntu-1091959",
+    "raw": "{\n  \"answer\": \"C\"\n}",
+    "error": null,
+    "latency_seconds": 4.592193530999793
+  },
+  {
+    "id": "golden-askubuntu-1278507",
+    "raw": "{\n  \"answer\": \"A\"\n}",
+    "error": null,
+    "latency_seconds": 4.9765177160006715
+  },
+  {
+    "id": "golden-askubuntu-1134691",
+    "raw": "{\n  \"answer\": \"B\"\n}",
+    "error": null,
+    "latency_seconds": 4.946047446999728
+  },
+  {
+    "id": "golden-askubuntu-921949",
+    "raw": "{\n  \"answer\": \"C\"\n}",
+    "error": null,
+    "latency_seconds": 5.208151467999414
+  },
+  {
+    "id": "golden-askubuntu-1111784",
+    "raw": "{\n  \"answer\": \"A\"\n}",
+    "error": null,
+    "latency_seconds": 5.458808890998625
+  },
+  {
+    "id": "golden-askubuntu-1140575",
+    "raw": "{\n  \"answer\": \"B\"\n}",
+    "error": null,
+    "latency_seconds": 5.567437177000102
+  },
+  {
+    "id": "golden-askubuntu-522263",
+    "raw": "```json\n{\n  \"answer\": \"C\"\n}\n```",
+    "error": null,
+    "latency_seconds": 5.535059719000856
+  },
+  {
+    "id": "golden-askubuntu-1306915",
+    "raw": "```json\n{\n  \"answer\": \"A\"\n}\n```",
+    "error": null,
+    "latency_seconds": 5.490847581000708
+  },
+  {
+    "id": "golden-askubuntu-49557",
+    "raw": "{\n  \"answer\": \"C\"\n}",
+    "error": null,
+    "latency_seconds": 4.632948923997901
+  },
+  {
+    "id": "golden-askubuntu-810202",
+    "raw": "{\n  \"answer\": \"C\"\n}",
+    "error": null,
+    "latency_seconds": 4.900975810996897
+  },
+  {
+    "id": "golden-askubuntu-158660",
+    "raw": "{\n  \"answer\": \"A\"\n}",
+    "error": null,
+    "latency_seconds": 4.693481170997984
+  },
+  {
+    "id": "golden-askubuntu-1278272",
+    "raw": "{\n  \"answer\": \"B\"\n}",
+    "error": null,
+    "latency_seconds": 5.255424209997727
+  },
+  {
+    "id": "golden-askubuntu-1052917",
+    "raw": "```json\n{\n  \"answer\": \"C\"\n}\n```",
+    "error": null,
+    "latency_seconds": 6.219638066002517
+  },
+  {
+    "id": "golden-askubuntu-1199334",
+    "raw": "{\n  \"answer\": \"A\"\n}",
+    "error": null,
+    "latency_seconds": 5.104849199000455
+  },
+  {
+    "id": "golden-askubuntu-1087912",
+    "raw": "{\n  \"answer\": \"A\"\n}",
+    "error": null,
+    "latency_seconds": 4.798151093000342
+  },
+  {
+    "id": "golden-askubuntu-20916",
+    "raw": "```json\n{\n  \"answer\": \"C\"\n}\n```",
+    "error": null,
+    "latency_seconds": 6.188864603998809
+  },
+  {
+    "id": "golden-askubuntu-1163684",
+    "raw": "{\n  \"answer\": \"A\"\n}",
+    "error": null,
+    "latency_seconds": 5.234328825998091
+  },
+  {
+    "id": "golden-askubuntu-705671",
+    "raw": "{\n  \"answer\": \"B\"\n}",
+    "error": null,
+    "latency_seconds": 4.686141935002524
+  },
+  {
+    "id": "golden-askubuntu-1215020",
+    "raw": "```json\n{\n  \"answer\": \"C\"\n}\n```",
+    "error": null,
+    "latency_seconds": 7.061632640001335
+  },
+  {
+    "id": "golden-askubuntu-887389",
+    "raw": "{\n  \"answer\": \"A\"\n}",
+    "error": null,
+    "latency_seconds": 4.455277652999939
+  },
+  {
+    "id": "golden-askubuntu-1188290",
+    "raw": "{\n  \"answer\": \"B\"\n}",
+    "error": null,
+    "latency_seconds": 5.446072612001444
+  },
+  {
+    "id": "golden-askubuntu-707001",
+    "raw": "{\n  \"answer\": \"C\"\n}",
+    "error": null,
+    "latency_seconds": 4.904391083000519
+  },
+  {
+    "id": "golden-askubuntu-746791",
+    "raw": "{\n  \"answer\": \"A\"\n}",
+    "error": null,
+    "latency_seconds": 4.693919628000003
+  },
+  {
+    "id": "golden-askubuntu-1109128",
+    "raw": "{\n  \"answer\": \"B\"\n}",
+    "error": null,
+    "latency_seconds": 5.65594899899952
+  },
+  {
+    "id": "golden-askubuntu-744709",
+    "raw": "{\n  \"answer\": \"C\"\n}",
+    "error": null,
+    "latency_seconds": 5.145508080000582
+  },
+  {
+    "id": "golden-askubuntu-799824",
+    "raw": "{\n  \"answer\": \"A\"\n}",
+    "error": null,
+    "latency_seconds": 5.12686635999853
+  },
+  {
+    "id": "golden-askubuntu-1005843",
+    "raw": "```json\n{\n  \"answer\": \"B\"\n}\n```",
+    "error": null,
+    "latency_seconds": 6.537314233999496
+  },
+  {
+    "id": "golden-askubuntu-1217043",
+    "raw": "```json\n{\n  \"answer\": \"C\"\n}\n```",
+    "error": null,
+    "latency_seconds": 6.271080886999698
+  },
+  {
+    "id": "golden-askubuntu-1118796",
+    "raw": "{\n  \"answer\": \"A\"\n}",
+    "error": null,
+    "latency_seconds": 5.271399940000265
+  },
+  {
+    "id": "golden-askubuntu-1530465",
+    "raw": "{\n  \"answer\": \"B\"\n}",
+    "error": null,
+    "latency_seconds": 4.852229211999656
+  },
+  {
+    "id": "golden-askubuntu-1187236",
+    "raw": "{\n  \"answer\": \"C\"\n}",
+    "error": null,
+    "latency_seconds": 4.49932747099956
+  },
+  {
+    "id": "golden-askubuntu-930854",
+    "raw": "{\n  \"answer\": \"A\"\n}",
+    "error": null,
+    "latency_seconds": 5.5511858930003655
+  },
+  {
+    "id": "golden-askubuntu-268705",
+    "raw": "```json\n{\n  \"answer\": \"B\"\n}\n```",
+    "error": null,
+    "latency_seconds": 6.131187112998305
+  },
+  {
+    "id": "golden-askubuntu-1241781",
+    "raw": "```json\n{\n  \"answer\": \"C\"\n}\n```",
+    "error": null,
+    "latency_seconds": 6.030345221999596
+  },
+  {
+    "id": "golden-askubuntu-636722",
+    "raw": "{\n  \"answer\": \"A\"\n}",
+    "error": null,
+    "latency_seconds": 4.592467703998409
+  },
+  {
+    "id": "golden-askubuntu-211354",
+    "raw": "{\n  \"answer\": \"B\"\n}",
+    "error": null,
+    "latency_seconds": 4.954530650000379
+  },
+  {
+    "id": "golden-askubuntu-534661",
+    "raw": "```json\n{\n  \"answer\": \"C\"\n}\n```",
+    "error": null,
+    "latency_seconds": 6.326258247001533
+  },
+  {
+    "id": "golden-askubuntu-237017",
+    "raw": "{\n  \"answer\": \"A\"\n}",
+    "error": null,
+    "latency_seconds": 4.8207149369991384
+  },
+  {
+    "id": "golden-askubuntu-1382362",
+    "raw": "{\n  \"answer\": \"B\"\n}",
+    "error": null,
+    "latency_seconds": 5.680945871001313
+  },
+  {
+    "id": "behavior-format",
+    "raw": "{\n  \"answer\": \"A\"\n}",
+    "error": null,
+    "latency_seconds": 6.088833636000345
+  },
+  {
+    "id": "behavior-paraphrase",
+    "raw": "{\n  \"answer\": \"A\"\n}",
+    "error": null,
+    "latency_seconds": 5.6310308250031085
+  },
+  {
+    "id": "behavior-refusal",
+    "raw": "{\"answer\": \"REFUSE\"}",
+    "error": null,
+    "latency_seconds": 3.260129190999578
+  }
+]

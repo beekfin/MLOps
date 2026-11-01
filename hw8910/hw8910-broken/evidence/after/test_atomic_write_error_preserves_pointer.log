@@ -1,0 +1,5 @@
+$ ['/home/beekfin/sna23mk048/MLOps/hw8910/hw8910-broken/.venv/bin/python', '/home/beekfin/sna23mk048/MLOps/hw8910/hw8910-broken/lab.py', '--workspace', '/tmp/tmpu5t85x0y/workspace', 'init']
+exit=0
+Создан синтетический стенд: /tmp/tmpu5t85x0y/workspace
+
+os.replace failure: old bytes retained; no temporary files

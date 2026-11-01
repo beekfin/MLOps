@@ -19,7 +19,7 @@ import release
 def input_key(context, parameters):
     root = Path(parameters['workspace'])
     return release.digest(release.canonical({'workspace': str(root.resolve()),
-        'input_key': release.cache_key(root/'input.txt', lab.read(root/'config.json')),
+        'input_key': release.cache_key(root/'input.txt', lab.preparation_config(root)),
         'implementation': release.digest(Path(lab.__file__).read_bytes())}))
 
 
@@ -36,9 +36,16 @@ def obtain_artifact(workspace, manifest_name, prepared, fail_after_prepare=False
     saved = Path(prepared['uri'])
     if not saved.is_file() or lab.read(saved) != prepared:
         raise ValueError('Сохранённый результат подготовки отсутствует или изменён')
-    if prepared['cache_key'] != release.cache_key(root/'input.txt', lab.read(root/'config.json')):
+    if prepared['cache_key'] != release.cache_key(root/'input.txt', lab.preparation_config(root)):
         raise ValueError('Подготовка не соответствует текущему входу')
     manifest = lab.artifact(root, manifest_name)
+    if not manifest['model_id'].startswith('fixture-'):
+        if prepared['input_sha256'] != release.digest((root/'hw67-evidence/data/eval/golden.jsonl').read_bytes()):
+            raise ValueError('Подготовленные данные изменились: нужна согласованная новая оценка')
+        config = prepared['config']; runtime = manifest['runtime']
+        if (config['tokenizer_revision'],config['tokenizer_sha256'],config['template_sha256'],config['max_length']) != (
+                runtime['base_revision'],runtime['tokenizer_sha256'],runtime['template_sha256'],2048):
+            raise ValueError('Подготовка использовала другие условия токенизации')
     get_run_logger().info('Читаем существующий training run %s; обучения здесь нет',
                           manifest.get('training_run_id', 'STUB ONLY'))
     return {'manifest': manifest_name, 'model_id': manifest['model_id'],

@@ -1,0 +1,3 @@
+$ ['/home/beekfin/sna23mk048/MLOps/hw8910/hw8910-broken/.venv/bin/python', '/tmp/hw8910-original-0boov5op/lab.py', '--workspace', '/tmp/tmpp270mcnb/workspace', 'init']
+exit=0
+Создан синтетический стенд: /tmp/tmpp270mcnb/workspace

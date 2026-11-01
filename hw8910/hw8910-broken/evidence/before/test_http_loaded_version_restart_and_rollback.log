@@ -1,0 +1,18 @@
+$ ['/home/beekfin/sna23mk048/MLOps/hw8910/hw8910-broken/.venv/bin/python', '/tmp/hw8910-original-0boov5op/lab.py', '--workspace', '/tmp/tmpc7thxmiq/workspace', 'init']
+exit=0
+Создан синтетический стенд: /tmp/tmpc7thxmiq/workspace
+
+HTTP /health None -> 200 {'alive': True, 'backend': 'STUB ONLY'}
+HTTP /ready None -> 200 {'ready': True}
+HTTP /generate {'prompt': 'Before'} -> 200 {'answer': 'STUB ONLY: fixture-A', 'output_tokens': 1, 'model_id': 'fixture-A', 'runtime_sha256': 'bc7bd5a4806e2e0e3b8569666b251d6c59a8d8e01e37fc37bf95b534023ca547', 'request_id': '4cc33e93-0328-4a3a-9836-339e22eb7335', 'generation_seconds': 0.010288557998137549}
+$ ['/home/beekfin/sna23mk048/MLOps/hw8910/hw8910-broken/.venv/bin/python', '/tmp/hw8910-original-0boov5op/lab.py', '--workspace', '/tmp/tmpc7thxmiq/workspace', 'run']
+exit=0
+PREPARED 88bbd559a04a7a432693a1c611ef2704bb711ac17dd5e22203ee9e5020f59fd4
+PUBLISHED fixture-B
+
+HTTP /generate {'prompt': 'After publication'} -> 200 {'answer': 'STUB ONLY: fixture-A', 'output_tokens': 1, 'model_id': 'fixture-B', 'runtime_sha256': 'bc7bd5a4806e2e0e3b8569666b251d6c59a8d8e01e37fc37bf95b534023ca547', 'request_id': 'd5800f68-8b80-45f4-beeb-71ab6b0e96d7', 'generation_seconds': 0.01022870400629472}
+STUB ONLY: http://127.0.0.1:58561
+127.0.0.1 - - [02/Nov/2026 01:33:00] "GET /health HTTP/1.1" 200 -
+127.0.0.1 - - [02/Nov/2026 01:33:00] "GET /ready HTTP/1.1" 200 -
+127.0.0.1 - - [02/Nov/2026 01:33:00] "POST /generate HTTP/1.1" 200 -
+127.0.0.1 - - [02/Nov/2026 01:33:00] "POST /generate HTTP/1.1" 200 -

@@ -1,0 +1,738 @@
+{
+  "overall": {
+    "n": 50,
+    "correct": 34,
+    "valid": 36,
+    "errors": 0,
+    "accuracy": 0.68,
+    "format_rate": 0.72
+  },
+  "slices": {
+    "configuration": {
+      "n": 16,
+      "correct": 11,
+      "valid": 11,
+      "errors": 0,
+      "accuracy": 0.6875,
+      "format_rate": 0.6875
+    },
+    "installation": {
+      "n": 21,
+      "correct": 14,
+      "valid": 16,
+      "errors": 0,
+      "accuracy": 0.6666666666666666,
+      "format_rate": 0.7619047619047619
+    },
+    "troubleshooting": {
+      "n": 13,
+      "correct": 9,
+      "valid": 9,
+      "errors": 0,
+      "accuracy": 0.6923076923076923,
+      "format_rate": 0.6923076923076923
+    }
+  },
+  "per_item": [
+    {
+      "id": "golden-askubuntu-573791",
+      "raw": "{\n  \"answer\": \"A\"\n}",
+      "parsed": {
+        "answer": "A"
+      },
+      "valid": true,
+      "correct": true,
+      "error": null,
+      "slices": [
+        "installation"
+      ]
+    },
+    {
+      "id": "golden-askubuntu-1154282",
+      "raw": "```json\n{\n  \"answer\": \"A\"\n}\n```",
+      "parsed": null,
+      "valid": false,
+      "correct": false,
+      "error": null,
+      "slices": [
+        "installation"
+      ]
+    },
+    {
+      "id": "golden-askubuntu-700840",
+      "raw": "{\n  \"answer\": \"C\"\n}",
+      "parsed": {
+        "answer": "C"
+      },
+      "valid": true,
+      "correct": true,
+      "error": null,
+      "slices": [
+        "installation"
+      ]
+    },
+    {
+      "id": "golden-askubuntu-150141",
+      "raw": "{\n  \"answer\": \"A\"\n}",
+      "parsed": {
+        "answer": "A"
+      },
+      "valid": true,
+      "correct": true,
+      "error": null,
+      "slices": [
+        "configuration"
+      ]
+    },
+    {
+      "id": "golden-askubuntu-898826",
+      "raw": "```json\n{\n  \"answer\": \"B\"\n}\n```",
+      "parsed": null,
+      "valid": false,
+      "correct": false,
+      "error": null,
+      "slices": [
+        "installation"
+      ]
+    },
+    {
+      "id": "golden-askubuntu-799289",
+      "raw": "```json\n{\n  \"answer\": \"C\"\n}\n```",
+      "parsed": null,
+      "valid": false,
+      "correct": false,
+      "error": null,
+      "slices": [
+        "configuration"
+      ]
+    },
+    {
+      "id": "golden-askubuntu-909071",
+      "raw": "{\n  \"answer\": \"A\"\n}",
+      "parsed": {
+        "answer": "A"
+      },
+      "valid": true,
+      "correct": true,
+      "error": null,
+      "slices": [
+        "installation"
+      ]
+    },
+    {
+      "id": "golden-askubuntu-356217",
+      "raw": "```json\n{\n  \"answer\": \"B\"\n}\n```",
+      "parsed": null,
+      "valid": false,
+      "correct": false,
+      "error": null,
+      "slices": [
+        "troubleshooting"
+      ]
+    },
+    {
+      "id": "golden-askubuntu-1250779",
+      "raw": "{\n  \"answer\": \"C\"\n}",
+      "parsed": {
+        "answer": "C"
+      },
+      "valid": true,
+      "correct": true,
+      "error": null,
+      "slices": [
+        "installation"
+      ]
+    },
+    {
+      "id": "golden-askubuntu-589248",
+      "raw": "{\n  \"answer\": \"A\"\n}",
+      "parsed": {
+        "answer": "A"
+      },
+      "valid": true,
+      "correct": true,
+      "error": null,
+      "slices": [
+        "configuration"
+      ]
+    },
+    {
+      "id": "golden-askubuntu-323868",
+      "raw": "{\n  \"answer\": \"B\"\n}",
+      "parsed": {
+        "answer": "B"
+      },
+      "valid": true,
+      "correct": true,
+      "error": null,
+      "slices": [
+        "installation"
+      ]
+    },
+    {
+      "id": "golden-askubuntu-1091959",
+      "raw": "{\n  \"answer\": \"C\"\n}",
+      "parsed": {
+        "answer": "C"
+      },
+      "valid": true,
+      "correct": true,
+      "error": null,
+      "slices": [
+        "installation"
+      ]
+    },
+    {
+      "id": "golden-askubuntu-1278507",
+      "raw": "{\n  \"answer\": \"A\"\n}",
+      "parsed": {
+        "answer": "A"
+      },
+      "valid": true,
+      "correct": true,
+      "error": null,
+      "slices": [
+        "troubleshooting"
+      ]
+    },
+    {
+      "id": "golden-askubuntu-1134691",
+      "raw": "{\n  \"answer\": \"B\"\n}",
+      "parsed": {
+        "answer": "B"
+      },
+      "valid": true,
+      "correct": true,
+      "error": null,
+      "slices": [
+        "installation"
+      ]
+    },
+    {
+      "id": "golden-askubuntu-921949",
+      "raw": "{\n  \"answer\": \"C\"\n}",
+      "parsed": {
+        "answer": "C"
+      },
+      "valid": true,
+      "correct": true,
+      "error": null,
+      "slices": [
+        "troubleshooting"
+      ]
+    },
+    {
+      "id": "golden-askubuntu-1111784",
+      "raw": "{\n  \"answer\": \"A\"\n}",
+      "parsed": {
+        "answer": "A"
+      },
+      "valid": true,
+      "correct": true,
+      "error": null,
+      "slices": [
+        "installation"
+      ]
+    },
+    {
+      "id": "golden-askubuntu-1140575",
+      "raw": "{\n  \"answer\": \"B\"\n}",
+      "parsed": {
+        "answer": "B"
+      },
+      "valid": true,
+      "correct": true,
+      "error": null,
+      "slices": [
+        "installation"
+      ]
+    },
+    {
+      "id": "golden-askubuntu-522263",
+      "raw": "```json\n{\n  \"answer\": \"C\"\n}\n```",
+      "parsed": null,
+      "valid": false,
+      "correct": false,
+      "error": null,
+      "slices": [
+        "installation"
+      ]
+    },
+    {
+      "id": "golden-askubuntu-1306915",
+      "raw": "```json\n{\n  \"answer\": \"A\"\n}\n```",
+      "parsed": null,
+      "valid": false,
+      "correct": false,
+      "error": null,
+      "slices": [
+        "installation"
+      ]
+    },
+    {
+      "id": "golden-askubuntu-49557",
+      "raw": "{\n  \"answer\": \"C\"\n}",
+      "parsed": {
+        "answer": "C"
+      },
+      "valid": true,
+      "correct": false,
+      "error": null,
+      "slices": [
+        "installation"
+      ]
+    },
+    {
+      "id": "golden-askubuntu-810202",
+      "raw": "{\n  \"answer\": \"C\"\n}",
+      "parsed": {
+        "answer": "C"
+      },
+      "valid": true,
+      "correct": true,
+      "error": null,
+      "slices": [
+        "troubleshooting"
+      ]
+    },
+    {
+      "id": "golden-askubuntu-158660",
+      "raw": "{\n  \"answer\": \"A\"\n}",
+      "parsed": {
+        "answer": "A"
+      },
+      "valid": true,
+      "correct": true,
+      "error": null,
+      "slices": [
+        "troubleshooting"
+      ]
+    },
+    {
+      "id": "golden-askubuntu-1278272",
+      "raw": "{\n  \"answer\": \"B\"\n}",
+      "parsed": {
+        "answer": "B"
+      },
+      "valid": true,
+      "correct": true,
+      "error": null,
+      "slices": [
+        "installation"
+      ]
+    },
+    {
+      "id": "golden-askubuntu-1052917",
+      "raw": "```json\n{\n  \"answer\": \"C\"\n}\n```",
+      "parsed": null,
+      "valid": false,
+      "correct": false,
+      "error": null,
+      "slices": [
+        "troubleshooting"
+      ]
+    },
+    {
+      "id": "golden-askubuntu-1199334",
+      "raw": "{\n  \"answer\": \"A\"\n}",
+      "parsed": {
+        "answer": "A"
+      },
+      "valid": true,
+      "correct": true,
+      "error": null,
+      "slices": [
+        "configuration"
+      ]
+    },
+    {
+      "id": "golden-askubuntu-1087912",
+      "raw": "{\n  \"answer\": \"A\"\n}",
+      "parsed": {
+        "answer": "A"
+      },
+      "valid": true,
+      "correct": false,
+      "error": null,
+      "slices": [
+        "installation"
+      ]
+    },
+    {
+      "id": "golden-askubuntu-20916",
+      "raw": "```json\n{\n  \"answer\": \"C\"\n}\n```",
+      "parsed": null,
+      "valid": false,
+      "correct": false,
+      "error": null,
+      "slices": [
+        "configuration"
+      ]
+    },
+    {
+      "id": "golden-askubuntu-1163684",
+      "raw": "{\n  \"answer\": \"A\"\n}",
+      "parsed": {
+        "answer": "A"
+      },
+      "valid": true,
+      "correct": true,
+      "error": null,
+      "slices": [
+        "configuration"
+      ]
+    },
+    {
+      "id": "golden-askubuntu-705671",
+      "raw": "{\n  \"answer\": \"B\"\n}",
+      "parsed": {
+        "answer": "B"
+      },
+      "valid": true,
+      "correct": true,
+      "error": null,
+      "slices": [
+        "installation"
+      ]
+    },
+    {
+      "id": "golden-askubuntu-1215020",
+      "raw": "```json\n{\n  \"answer\": \"C\"\n}\n```",
+      "parsed": null,
+      "valid": false,
+      "correct": false,
+      "error": null,
+      "slices": [
+        "troubleshooting"
+      ]
+    },
+    {
+      "id": "golden-askubuntu-887389",
+      "raw": "{\n  \"answer\": \"A\"\n}",
+      "parsed": {
+        "answer": "A"
+      },
+      "valid": true,
+      "correct": true,
+      "error": null,
+      "slices": [
+        "installation"
+      ]
+    },
+    {
+      "id": "golden-askubuntu-1188290",
+      "raw": "{\n  \"answer\": \"B\"\n}",
+      "parsed": {
+        "answer": "B"
+      },
+      "valid": true,
+      "correct": true,
+      "error": null,
+      "slices": [
+        "troubleshooting"
+      ]
+    },
+    {
+      "id": "golden-askubuntu-707001",
+      "raw": "{\n  \"answer\": \"C\"\n}",
+      "parsed": {
+        "answer": "C"
+      },
+      "valid": true,
+      "correct": true,
+      "error": null,
+      "slices": [
+        "installation"
+      ]
+    },
+    {
+      "id": "golden-askubuntu-746791",
+      "raw": "{\n  \"answer\": \"A\"\n}",
+      "parsed": {
+        "answer": "A"
+      },
+      "valid": true,
+      "correct": true,
+      "error": null,
+      "slices": [
+        "configuration"
+      ]
+    },
+    {
+      "id": "golden-askubuntu-1109128",
+      "raw": "{\n  \"answer\": \"B\"\n}",
+      "parsed": {
+        "answer": "B"
+      },
+      "valid": true,
+      "correct": true,
+      "error": null,
+      "slices": [
+        "troubleshooting"
+      ]
+    },
+    {
+      "id": "golden-askubuntu-744709",
+      "raw": "{\n  \"answer\": \"C\"\n}",
+      "parsed": {
+        "answer": "C"
+      },
+      "valid": true,
+      "correct": true,
+      "error": null,
+      "slices": [
+        "troubleshooting"
+      ]
+    },
+    {
+      "id": "golden-askubuntu-799824",
+      "raw": "{\n  \"answer\": \"A\"\n}",
+      "parsed": {
+        "answer": "A"
+      },
+      "valid": true,
+      "correct": true,
+      "error": null,
+      "slices": [
+        "troubleshooting"
+      ]
+    },
+    {
+      "id": "golden-askubuntu-1005843",
+      "raw": "```json\n{\n  \"answer\": \"B\"\n}\n```",
+      "parsed": null,
+      "valid": false,
+      "correct": false,
+      "error": null,
+      "slices": [
+        "configuration"
+      ]
+    },
+    {
+      "id": "golden-askubuntu-1217043",
+      "raw": "```json\n{\n  \"answer\": \"C\"\n}\n```",
+      "parsed": null,
+      "valid": false,
+      "correct": false,
+      "error": null,
+      "slices": [
+        "configuration"
+      ]
+    },
+    {
+      "id": "golden-askubuntu-1118796",
+      "raw": "{\n  \"answer\": \"A\"\n}",
+      "parsed": {
+        "answer": "A"
+      },
+      "valid": true,
+      "correct": true,
+      "error": null,
+      "slices": [
+        "installation"
+      ]
+    },
+    {
+      "id": "golden-askubuntu-1530465",
+      "raw": "{\n  \"answer\": \"B\"\n}",
+      "parsed": {
+        "answer": "B"
+      },
+      "valid": true,
+      "correct": true,
+      "error": null,
+      "slices": [
+        "configuration"
+      ]
+    },
+    {
+      "id": "golden-askubuntu-1187236",
+      "raw": "{\n  \"answer\": \"C\"\n}",
+      "parsed": {
+        "answer": "C"
+      },
+      "valid": true,
+      "correct": true,
+      "error": null,
+      "slices": [
+        "configuration"
+      ]
+    },
+    {
+      "id": "golden-askubuntu-930854",
+      "raw": "{\n  \"answer\": \"A\"\n}",
+      "parsed": {
+        "answer": "A"
+      },
+      "valid": true,
+      "correct": true,
+      "error": null,
+      "slices": [
+        "configuration"
+      ]
+    },
+    {
+      "id": "golden-askubuntu-268705",
+      "raw": "```json\n{\n  \"answer\": \"B\"\n}\n```",
+      "parsed": null,
+      "valid": false,
+      "correct": false,
+      "error": null,
+      "slices": [
+        "installation"
+      ]
+    },
+    {
+      "id": "golden-askubuntu-1241781",
+      "raw": "```json\n{\n  \"answer\": \"C\"\n}\n```",
+      "parsed": null,
+      "valid": false,
+      "correct": false,
+      "error": null,
+      "slices": [
+        "troubleshooting"
+      ]
+    },
+    {
+      "id": "golden-askubuntu-636722",
+      "raw": "{\n  \"answer\": \"A\"\n}",
+      "parsed": {
+        "answer": "A"
+      },
+      "valid": true,
+      "correct": true,
+      "error": null,
+      "slices": [
+        "troubleshooting"
+      ]
+    },
+    {
+      "id": "golden-askubuntu-211354",
+      "raw": "{\n  \"answer\": \"B\"\n}",
+      "parsed": {
+        "answer": "B"
+      },
+      "valid": true,
+      "correct": true,
+      "error": null,
+      "slices": [
+        "configuration"
+      ]
+    },
+    {
+      "id": "golden-askubuntu-534661",
+      "raw": "```json\n{\n  \"answer\": \"C\"\n}\n```",
+      "parsed": null,
+      "valid": false,
+      "correct": false,
+      "error": null,
+      "slices": [
+        "configuration"
+      ]
+    },
+    {
+      "id": "golden-askubuntu-237017",
+      "raw": "{\n  \"answer\": \"A\"\n}",
+      "parsed": {
+        "answer": "A"
+      },
+      "valid": true,
+      "correct": true,
+      "error": null,
+      "slices": [
+        "configuration"
+      ]
+    },
+    {
+      "id": "golden-askubuntu-1382362",
+      "raw": "{\n  \"answer\": \"B\"\n}",
+      "parsed": {
+        "answer": "B"
+      },
+      "valid": true,
+      "correct": true,
+      "error": null,
+      "slices": [
+        "configuration"
+      ]
+    }
+  ],
+  "status": "complete",
+  "model": {
+    "kind": "base",
+    "name": "Qwen/Qwen3-0.6B",
+    "revision": "c1899de289a04d12100db370d81485cdf75e47ca"
+  },
+  "protocol_sha256": "1f078ab87d773a3601d3f020091e12555540631385d31b7e33ad7a18f66337f2",
+  "golden_sha256": "a59082a7375e6434fcdc01ee61c7697b3e0d68d7048a5705b16e1ffe515ab7d4",
+  "baseline_spec_sha256": "f71269b95f6b4e1e160fa25e9af6c973517cfebad15880b75b56c8184680b163",
+  "behavioral": {
+    "overall": {
+      "n": 3,
+      "correct": 3,
+      "valid": 3,
+      "errors": 0,
+      "accuracy": 1.0,
+      "format_rate": 1.0
+    },
+    "slices": {
+      "behavior": {
+        "n": 3,
+        "correct": 3,
+        "valid": 3,
+        "errors": 0,
+        "accuracy": 1.0,
+        "format_rate": 1.0
+      }
+    },
+    "per_item": [
+      {
+        "id": "behavior-format",
+        "raw": "{\n  \"answer\": \"A\"\n}",
+        "parsed": {
+          "answer": "A"
+        },
+        "valid": true,
+        "correct": true,
+        "error": null,
+        "slices": [
+          "behavior"
+        ]
+      },
+      {
+        "id": "behavior-paraphrase",
+        "raw": "{\n  \"answer\": \"A\"\n}",
+        "parsed": {
+          "answer": "A"
+        },
+        "valid": true,
+        "correct": true,
+        "error": null,
+        "slices": [
+          "behavior"
+        ]
+      },
+      {
+        "id": "behavior-refusal",
+        "raw": "{\"answer\": \"REFUSE\"}",
+        "parsed": {
+          "answer": "REFUSE"
+        },
+        "valid": true,
+        "correct": true,
+        "error": null,
+        "slices": [
+          "behavior"
+        ]
+      }
+    ]
+  },
+  "leakage": {
+    "exact_or_group_intersections": 0,
+    "n_train_index": 2211,
+    "n_golden": 50,
+    "n_behavioral": 3
+  },
+  "outputs_sha256": "7fd476617ec777f017be05a5efab3de658c6e72e10deb623732963a46ffe2079",
+  "evaluation_run_id": "d3853ed2e2b7481389bd11c0a12c6715"
+}

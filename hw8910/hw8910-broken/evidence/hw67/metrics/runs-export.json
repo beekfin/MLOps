@@ -1,0 +1,604 @@
+{
+  "parent_run_id": "b917d6fd31964303b9218066274a5a21",
+  "parent_status": "FINISHED",
+  "parent_start_time": 1793025941018,
+  "parent_end_time": 1793027414322,
+  "parent_seconds": 1473.304,
+  "runs": [
+    {
+      "name": "qv-r4-low",
+      "run_id": "6871d1eec61440f986955d71f10a5c21",
+      "status": "FINISHED",
+      "url": "http://127.0.0.1:5006/#/experiments/1/runs/6871d1eec61440f986955d71f10a5c21",
+      "params": {
+        "r": "4",
+        "lr": "0.0001",
+        "target_modules": "q_proj,v_proj",
+        "train.seed": "42",
+        "train.max_steps": "4",
+        "train.train_limit": "32",
+        "train.val_limit": "8",
+        "train.batch_size": "1",
+        "train.grad_accum": "2",
+        "train.eval_every": "2",
+        "train.gradient_checkpointing": "True",
+        "model": "Qwen/Qwen3-0.6B",
+        "dtype": "float32",
+        "alpha_over_r": "2",
+        "dropout": "0.05"
+      },
+      "tags": {
+        "mlflow.user": "beekfin",
+        "mlflow.source.name": "/home/beekfin/sna23mk048/MLOps/hw67/src/sweep.py",
+        "mlflow.source.type": "LOCAL",
+        "mlflow.source.git.commit": "35e08a38e56302d1d673ef9ce660f25b688f8a23",
+        "mlflow.parentRunId": "b917d6fd31964303b9218066274a5a21",
+        "mlflow.runName": "qv-r4-low",
+        "git_sha": "35e08a38e56302d1d673ef9ce660f25b688f8a23",
+        "git_dirty": "False",
+        "code_sha256": "7a6b566a5dda7322191d695dd0bf1464fe834d4dd51af338491c0afdfd9931c4",
+        "data_train_sha256": "a9f206c235a8830c69950378263c1885b4c1b1d15f2339b52437f9f1e88847ad",
+        "data_val_sha256": "bb6994df63e84d0bced0c7357e8a757ffc0e1c3bf1a9c153cdcc855d288e4489",
+        "config_sha256": "e675b45f35d3721367da0872696af0851a28a937dda0f80bdb628d79df4222fb",
+        "kind": "candidate",
+        "candidate": "qv-r4-low",
+        "mlflow.loggedArtifacts": "[{\"path\": \"samples.json\", \"type\": \"table\"}]",
+        "base_revision": "c1899de289a04d12100db370d81485cdf75e47ca",
+        "device": "cpu",
+        "memory_metric": "RSS процесса",
+        "train_rows": "32",
+        "val_rows": "8",
+        "mlflow.log-model.history": "[{\"run_id\": \"6871d1eec61440f986955d71f10a5c21\", \"artifact_path\": \"model\", \"utc_time_created\": \"2026-10-26 14:49:15.619867\", \"model_uuid\": \"f7267d4961434f3f882d35578e9d720c\", \"flavors\": {\"python_function\": {\"streamable\": false, \"cloudpickle_version\": \"3.1.2\", \"artifacts\": {\"adapter\": {\"path\": \"artifacts/adapter\", \"uri\": \"/tmp/hw6-train-gxt30uy4/adapter\"}}, \"loader_module\": \"mlflow.pyfunc.loaders.code_model\", \"python_version\": \"3.12.13\", \"env\": {\"conda\": \"conda.yaml\", \"virtualenv\": \"python_env.yaml\"}, \"model_code_path\": \"/home/beekfin/sna23mk048/MLOps/hw67/src/model.py\", \"code\": null}}}]"
+      },
+      "metrics": {
+        "train_loss": 2.125374138355255,
+        "val_loss": 2.399655471296392,
+        "base_val_loss": 2.43960580153343,
+        "final_val_loss": 2.399655471296392,
+        "seconds": 201.9962391650006,
+        "steps": 4.0,
+        "peak_memory_mb": 3090.7578125,
+        "trainable_params": 573440.0,
+        "adapter_mb": 13.106181144714355
+      },
+      "history": {
+        "train_loss": [
+          {
+            "step": 1,
+            "value": 2.7639594078063965,
+            "timestamp": 1793026027548
+          },
+          {
+            "step": 2,
+            "value": 3.4763222336769104,
+            "timestamp": 1793026077415
+          },
+          {
+            "step": 3,
+            "value": 3.445407211780548,
+            "timestamp": 1793026091911
+          },
+          {
+            "step": 4,
+            "value": 2.125374138355255,
+            "timestamp": 1793026147748
+          }
+        ],
+        "val_loss": [
+          {
+            "step": 0,
+            "value": 2.43960580153343,
+            "timestamp": 1793025983132
+          },
+          {
+            "step": 2,
+            "value": 2.4189475279587964,
+            "timestamp": 1793026077415
+          },
+          {
+            "step": 4,
+            "value": 2.399655471296392,
+            "timestamp": 1793026147748
+          }
+        ]
+      }
+    },
+    {
+      "name": "qv-r4-high",
+      "run_id": "cbb0fd8a758b4d4e90110b9531f9ca56",
+      "status": "FINISHED",
+      "url": "http://127.0.0.1:5006/#/experiments/1/runs/cbb0fd8a758b4d4e90110b9531f9ca56",
+      "params": {
+        "r": "4",
+        "lr": "0.0003",
+        "target_modules": "q_proj,v_proj",
+        "train.seed": "42",
+        "train.max_steps": "4",
+        "train.train_limit": "32",
+        "train.val_limit": "8",
+        "train.batch_size": "1",
+        "train.grad_accum": "2",
+        "train.eval_every": "2",
+        "train.gradient_checkpointing": "True",
+        "model": "Qwen/Qwen3-0.6B",
+        "dtype": "float32",
+        "alpha_over_r": "2",
+        "dropout": "0.05"
+      },
+      "tags": {
+        "base_revision": "c1899de289a04d12100db370d81485cdf75e47ca",
+        "device": "cpu",
+        "memory_metric": "RSS процесса",
+        "train_rows": "32",
+        "val_rows": "8",
+        "mlflow.user": "beekfin",
+        "mlflow.source.name": "/home/beekfin/sna23mk048/MLOps/hw67/src/sweep.py",
+        "mlflow.source.type": "LOCAL",
+        "mlflow.source.git.commit": "35e08a38e56302d1d673ef9ce660f25b688f8a23",
+        "mlflow.parentRunId": "b917d6fd31964303b9218066274a5a21",
+        "mlflow.runName": "qv-r4-high",
+        "git_sha": "35e08a38e56302d1d673ef9ce660f25b688f8a23",
+        "git_dirty": "False",
+        "code_sha256": "7a6b566a5dda7322191d695dd0bf1464fe834d4dd51af338491c0afdfd9931c4",
+        "data_train_sha256": "a9f206c235a8830c69950378263c1885b4c1b1d15f2339b52437f9f1e88847ad",
+        "data_val_sha256": "bb6994df63e84d0bced0c7357e8a757ffc0e1c3bf1a9c153cdcc855d288e4489",
+        "config_sha256": "e675b45f35d3721367da0872696af0851a28a937dda0f80bdb628d79df4222fb",
+        "kind": "candidate",
+        "candidate": "qv-r4-high",
+        "mlflow.loggedArtifacts": "[{\"path\": \"samples.json\", \"type\": \"table\"}]",
+        "mlflow.log-model.history": "[{\"run_id\": \"cbb0fd8a758b4d4e90110b9531f9ca56\", \"artifact_path\": \"model\", \"utc_time_created\": \"2026-10-26 14:53:03.276716\", \"model_uuid\": \"7ec36ab411294cb5a6f1097abe02106b\", \"flavors\": {\"python_function\": {\"streamable\": false, \"cloudpickle_version\": \"3.1.2\", \"artifacts\": {\"adapter\": {\"path\": \"artifacts/adapter\", \"uri\": \"/tmp/hw6-train-mbdt63s_/adapter\"}}, \"loader_module\": \"mlflow.pyfunc.loaders.code_model\", \"python_version\": \"3.12.13\", \"env\": {\"conda\": \"conda.yaml\", \"virtualenv\": \"python_env.yaml\"}, \"model_code_path\": \"/home/beekfin/sna23mk048/MLOps/hw67/src/model.py\", \"code\": null}}}]"
+      },
+      "metrics": {
+        "train_loss": 2.071185380220413,
+        "val_loss": 2.318396763448362,
+        "base_val_loss": 2.43960580153343,
+        "final_val_loss": 2.318396763448362,
+        "seconds": 205.9230264680009,
+        "steps": 4.0,
+        "peak_memory_mb": 3087.29296875,
+        "trainable_params": 573440.0,
+        "adapter_mb": 13.106182098388672
+      },
+      "history": {
+        "train_loss": [
+          {
+            "step": 1,
+            "value": 2.7639594078063965,
+            "timestamp": 1793026253932
+          },
+          {
+            "step": 2,
+            "value": 3.4362159371376038,
+            "timestamp": 1793026303504
+          },
+          {
+            "step": 3,
+            "value": 3.3813950419425964,
+            "timestamp": 1793026318223
+          },
+          {
+            "step": 4,
+            "value": 2.071185380220413,
+            "timestamp": 1793026375449
+          }
+        ],
+        "val_loss": [
+          {
+            "step": 0,
+            "value": 2.43960580153343,
+            "timestamp": 1793026204937
+          },
+          {
+            "step": 2,
+            "value": 2.3780751487128753,
+            "timestamp": 1793026303504
+          },
+          {
+            "step": 4,
+            "value": 2.318396763448362,
+            "timestamp": 1793026375449
+          }
+        ]
+      }
+    },
+    {
+      "name": "qv-r8-low",
+      "run_id": "061da23055324e46aa4d8931ff845d90",
+      "status": "FINISHED",
+      "url": "http://127.0.0.1:5006/#/experiments/1/runs/061da23055324e46aa4d8931ff845d90",
+      "params": {
+        "r": "8",
+        "lr": "0.0001",
+        "target_modules": "q_proj,v_proj",
+        "train.seed": "42",
+        "train.max_steps": "4",
+        "train.train_limit": "32",
+        "train.val_limit": "8",
+        "train.batch_size": "1",
+        "train.grad_accum": "2",
+        "train.eval_every": "2",
+        "train.gradient_checkpointing": "True",
+        "model": "Qwen/Qwen3-0.6B",
+        "dtype": "float32",
+        "alpha_over_r": "2",
+        "dropout": "0.05"
+      },
+      "tags": {
+        "mlflow.user": "beekfin",
+        "mlflow.source.name": "/home/beekfin/sna23mk048/MLOps/hw67/src/sweep.py",
+        "mlflow.source.type": "LOCAL",
+        "mlflow.source.git.commit": "35e08a38e56302d1d673ef9ce660f25b688f8a23",
+        "mlflow.parentRunId": "b917d6fd31964303b9218066274a5a21",
+        "mlflow.runName": "qv-r8-low",
+        "git_sha": "35e08a38e56302d1d673ef9ce660f25b688f8a23",
+        "git_dirty": "False",
+        "code_sha256": "7a6b566a5dda7322191d695dd0bf1464fe834d4dd51af338491c0afdfd9931c4",
+        "data_train_sha256": "a9f206c235a8830c69950378263c1885b4c1b1d15f2339b52437f9f1e88847ad",
+        "data_val_sha256": "bb6994df63e84d0bced0c7357e8a757ffc0e1c3bf1a9c153cdcc855d288e4489",
+        "config_sha256": "e675b45f35d3721367da0872696af0851a28a937dda0f80bdb628d79df4222fb",
+        "kind": "candidate",
+        "candidate": "qv-r8-low",
+        "base_revision": "c1899de289a04d12100db370d81485cdf75e47ca",
+        "device": "cpu",
+        "memory_metric": "RSS процесса",
+        "train_rows": "32",
+        "val_rows": "8",
+        "mlflow.loggedArtifacts": "[{\"path\": \"samples.json\", \"type\": \"table\"}]",
+        "mlflow.log-model.history": "[{\"run_id\": \"061da23055324e46aa4d8931ff845d90\", \"artifact_path\": \"model\", \"utc_time_created\": \"2026-10-26 14:57:03.409447\", \"model_uuid\": \"ee7cc7ca971d45f79619edd7fbe88c56\", \"flavors\": {\"python_function\": {\"streamable\": false, \"cloudpickle_version\": \"3.1.2\", \"artifacts\": {\"adapter\": {\"path\": \"artifacts/adapter\", \"uri\": \"/tmp/hw6-train-x1jmfln2/adapter\"}}, \"loader_module\": \"mlflow.pyfunc.loaders.code_model\", \"python_version\": \"3.12.13\", \"env\": {\"conda\": \"conda.yaml\", \"virtualenv\": \"python_env.yaml\"}, \"model_code_path\": \"/home/beekfin/sna23mk048/MLOps/hw67/src/model.py\", \"code\": null}}}]"
+      },
+      "metrics": {
+        "train_loss": 2.1015113592147827,
+        "val_loss": 2.364367562685257,
+        "base_val_loss": 2.43960580153343,
+        "final_val_loss": 2.364367562685257,
+        "seconds": 218.77834840300056,
+        "steps": 4.0,
+        "peak_memory_mb": 3101.5859375,
+        "trainable_params": 1146880.0,
+        "adapter_mb": 15.29373550415039
+      },
+      "history": {
+        "train_loss": [
+          {
+            "step": 1,
+            "value": 2.7639594078063965,
+            "timestamp": 1793026481433
+          },
+          {
+            "step": 2,
+            "value": 3.4568493962287903,
+            "timestamp": 1793026539330
+          },
+          {
+            "step": 3,
+            "value": 3.4185789227485657,
+            "timestamp": 1793026555736
+          },
+          {
+            "step": 4,
+            "value": 2.1015113592147827,
+            "timestamp": 1793026615585
+          }
+        ],
+        "val_loss": [
+          {
+            "step": 0,
+            "value": 2.43960580153343,
+            "timestamp": 1793026432745
+          },
+          {
+            "step": 2,
+            "value": 2.399472593989467,
+            "timestamp": 1793026539330
+          },
+          {
+            "step": 4,
+            "value": 2.364367562685257,
+            "timestamp": 1793026615585
+          }
+        ]
+      }
+    },
+    {
+      "name": "qv-r8-high",
+      "run_id": "b936bf1d17474892acb31f7dcf0e1ff8",
+      "status": "FINISHED",
+      "url": "http://127.0.0.1:5006/#/experiments/1/runs/b936bf1d17474892acb31f7dcf0e1ff8",
+      "params": {
+        "r": "8",
+        "lr": "0.0003",
+        "target_modules": "q_proj,v_proj",
+        "train.seed": "42",
+        "train.max_steps": "4",
+        "train.train_limit": "32",
+        "train.val_limit": "8",
+        "train.batch_size": "1",
+        "train.grad_accum": "2",
+        "train.eval_every": "2",
+        "train.gradient_checkpointing": "True",
+        "model": "Qwen/Qwen3-0.6B",
+        "dtype": "float32",
+        "alpha_over_r": "2",
+        "dropout": "0.05"
+      },
+      "tags": {
+        "mlflow.user": "beekfin",
+        "mlflow.source.name": "/home/beekfin/sna23mk048/MLOps/hw67/src/sweep.py",
+        "mlflow.source.type": "LOCAL",
+        "mlflow.source.git.commit": "35e08a38e56302d1d673ef9ce660f25b688f8a23",
+        "mlflow.parentRunId": "b917d6fd31964303b9218066274a5a21",
+        "mlflow.runName": "qv-r8-high",
+        "git_sha": "35e08a38e56302d1d673ef9ce660f25b688f8a23",
+        "git_dirty": "False",
+        "code_sha256": "7a6b566a5dda7322191d695dd0bf1464fe834d4dd51af338491c0afdfd9931c4",
+        "data_train_sha256": "a9f206c235a8830c69950378263c1885b4c1b1d15f2339b52437f9f1e88847ad",
+        "data_val_sha256": "bb6994df63e84d0bced0c7357e8a757ffc0e1c3bf1a9c153cdcc855d288e4489",
+        "config_sha256": "e675b45f35d3721367da0872696af0851a28a937dda0f80bdb628d79df4222fb",
+        "kind": "candidate",
+        "candidate": "qv-r8-high",
+        "base_revision": "c1899de289a04d12100db370d81485cdf75e47ca",
+        "device": "cpu",
+        "memory_metric": "RSS процесса",
+        "train_rows": "32",
+        "val_rows": "8",
+        "mlflow.loggedArtifacts": "[{\"path\": \"samples.json\", \"type\": \"table\"}]",
+        "mlflow.log-model.history": "[{\"run_id\": \"b936bf1d17474892acb31f7dcf0e1ff8\", \"artifact_path\": \"model\", \"utc_time_created\": \"2026-10-26 15:01:07.002427\", \"model_uuid\": \"676be7d964a64c7bba0d814dfbea9bb4\", \"flavors\": {\"python_function\": {\"streamable\": false, \"cloudpickle_version\": \"3.1.2\", \"artifacts\": {\"adapter\": {\"path\": \"artifacts/adapter\", \"uri\": \"/tmp/hw6-train-3tcrshhz/adapter\"}}, \"loader_module\": \"mlflow.pyfunc.loaders.code_model\", \"python_version\": \"3.12.13\", \"env\": {\"conda\": \"conda.yaml\", \"virtualenv\": \"python_env.yaml\"}, \"model_code_path\": \"/home/beekfin/sna23mk048/MLOps/hw67/src/model.py\", \"code\": null}}}]"
+      },
+      "metrics": {
+        "train_loss": 2.013010621070862,
+        "val_loss": 2.2371781173255028,
+        "base_val_loss": 2.43960580153343,
+        "final_val_loss": 2.2371781173255028,
+        "seconds": 220.8819569110019,
+        "steps": 4.0,
+        "peak_memory_mb": 3094.203125,
+        "trainable_params": 1146880.0,
+        "adapter_mb": 15.293736457824707
+      },
+      "history": {
+        "train_loss": [
+          {
+            "step": 1,
+            "value": 2.7639594078063965,
+            "timestamp": 1793026729987
+          },
+          {
+            "step": 2,
+            "value": 3.381376802921295,
+            "timestamp": 1793026786031
+          },
+          {
+            "step": 3,
+            "value": 3.3126962780952454,
+            "timestamp": 1793026802433
+          },
+          {
+            "step": 4,
+            "value": 2.013010621070862,
+            "timestamp": 1793026858988
+          }
+        ],
+        "val_loss": [
+          {
+            "step": 0,
+            "value": 2.43960580153343,
+            "timestamp": 1793026682529
+          },
+          {
+            "step": 2,
+            "value": 2.3263819327041975,
+            "timestamp": 1793026786031
+          },
+          {
+            "step": 4,
+            "value": 2.2371781173255028,
+            "timestamp": 1793026858988
+          }
+        ]
+      }
+    },
+    {
+      "name": "all-r8-low",
+      "run_id": "d712bbb9cfd94063b3d69b80413a4d75",
+      "status": "FINISHED",
+      "url": "http://127.0.0.1:5006/#/experiments/1/runs/d712bbb9cfd94063b3d69b80413a4d75",
+      "params": {
+        "r": "8",
+        "lr": "0.0001",
+        "target_modules": "q_proj,k_proj,v_proj,o_proj,gate_proj,up_proj,down_proj",
+        "train.seed": "42",
+        "train.max_steps": "4",
+        "train.train_limit": "32",
+        "train.val_limit": "8",
+        "train.batch_size": "1",
+        "train.grad_accum": "2",
+        "train.eval_every": "2",
+        "train.gradient_checkpointing": "True",
+        "model": "Qwen/Qwen3-0.6B",
+        "dtype": "float32",
+        "alpha_over_r": "2",
+        "dropout": "0.05"
+      },
+      "tags": {
+        "mlflow.loggedArtifacts": "[{\"path\": \"samples.json\", \"type\": \"table\"}]",
+        "mlflow.log-model.history": "[{\"run_id\": \"d712bbb9cfd94063b3d69b80413a4d75\", \"artifact_path\": \"model\", \"utc_time_created\": \"2026-10-26 15:05:39.938449\", \"model_uuid\": \"7470afe75bf24d058dcbbefde47d475a\", \"flavors\": {\"python_function\": {\"streamable\": false, \"cloudpickle_version\": \"3.1.2\", \"artifacts\": {\"adapter\": {\"path\": \"artifacts/adapter\", \"uri\": \"/tmp/hw6-train-b0it_3_w/adapter\"}}, \"loader_module\": \"mlflow.pyfunc.loaders.code_model\", \"python_version\": \"3.12.13\", \"env\": {\"conda\": \"conda.yaml\", \"virtualenv\": \"python_env.yaml\"}, \"model_code_path\": \"/home/beekfin/sna23mk048/MLOps/hw67/src/model.py\", \"code\": null}}}]",
+        "mlflow.user": "beekfin",
+        "mlflow.source.name": "/home/beekfin/sna23mk048/MLOps/hw67/src/sweep.py",
+        "mlflow.source.type": "LOCAL",
+        "mlflow.source.git.commit": "35e08a38e56302d1d673ef9ce660f25b688f8a23",
+        "mlflow.parentRunId": "b917d6fd31964303b9218066274a5a21",
+        "mlflow.runName": "all-r8-low",
+        "git_sha": "35e08a38e56302d1d673ef9ce660f25b688f8a23",
+        "git_dirty": "False",
+        "code_sha256": "7a6b566a5dda7322191d695dd0bf1464fe834d4dd51af338491c0afdfd9931c4",
+        "data_train_sha256": "a9f206c235a8830c69950378263c1885b4c1b1d15f2339b52437f9f1e88847ad",
+        "data_val_sha256": "bb6994df63e84d0bced0c7357e8a757ffc0e1c3bf1a9c153cdcc855d288e4489",
+        "config_sha256": "e675b45f35d3721367da0872696af0851a28a937dda0f80bdb628d79df4222fb",
+        "kind": "candidate",
+        "candidate": "all-r8-low",
+        "base_revision": "c1899de289a04d12100db370d81485cdf75e47ca",
+        "device": "cpu",
+        "memory_metric": "RSS процесса",
+        "train_rows": "32",
+        "val_rows": "8"
+      },
+      "metrics": {
+        "train_loss": 2.0301432013511658,
+        "val_loss": 2.268848062308765,
+        "base_val_loss": 2.43960580153343,
+        "final_val_loss": 2.268848062308765,
+        "seconds": 250.88741504800055,
+        "steps": 4.0,
+        "peak_memory_mb": 3158.2890625,
+        "trainable_params": 5046272.0,
+        "adapter_mb": 30.203850746154785
+      },
+      "history": {
+        "train_loss": [
+          {
+            "step": 2,
+            "value": 3.3958495259284973,
+            "timestamp": 1793027043107
+          },
+          {
+            "step": 3,
+            "value": 3.3298563361167908,
+            "timestamp": 1793027063938
+          },
+          {
+            "step": 1,
+            "value": 2.7639594078063965,
+            "timestamp": 1793026983095
+          },
+          {
+            "step": 4,
+            "value": 2.0301432013511658,
+            "timestamp": 1793027131548
+          }
+        ],
+        "val_loss": [
+          {
+            "step": 0,
+            "value": 2.43960580153343,
+            "timestamp": 1793026923804
+          },
+          {
+            "step": 2,
+            "value": 2.343356679919099,
+            "timestamp": 1793027043107
+          },
+          {
+            "step": 4,
+            "value": 2.268848062308765,
+            "timestamp": 1793027131548
+          }
+        ]
+      }
+    },
+    {
+      "name": "all-r8-high",
+      "run_id": "0381294b884b46ea90076356c9e8db4f",
+      "status": "FINISHED",
+      "url": "http://127.0.0.1:5006/#/experiments/1/runs/0381294b884b46ea90076356c9e8db4f",
+      "params": {
+        "r": "8",
+        "lr": "0.0003",
+        "target_modules": "q_proj,k_proj,v_proj,o_proj,gate_proj,up_proj,down_proj",
+        "train.seed": "42",
+        "train.max_steps": "4",
+        "train.train_limit": "32",
+        "train.val_limit": "8",
+        "train.batch_size": "1",
+        "train.grad_accum": "2",
+        "train.eval_every": "2",
+        "train.gradient_checkpointing": "True",
+        "model": "Qwen/Qwen3-0.6B",
+        "dtype": "float32",
+        "alpha_over_r": "2",
+        "dropout": "0.05"
+      },
+      "tags": {
+        "mlflow.user": "beekfin",
+        "mlflow.source.name": "/home/beekfin/sna23mk048/MLOps/hw67/src/sweep.py",
+        "mlflow.source.type": "LOCAL",
+        "mlflow.source.git.commit": "35e08a38e56302d1d673ef9ce660f25b688f8a23",
+        "mlflow.parentRunId": "b917d6fd31964303b9218066274a5a21",
+        "mlflow.runName": "all-r8-high",
+        "git_sha": "35e08a38e56302d1d673ef9ce660f25b688f8a23",
+        "git_dirty": "False",
+        "code_sha256": "7a6b566a5dda7322191d695dd0bf1464fe834d4dd51af338491c0afdfd9931c4",
+        "data_train_sha256": "a9f206c235a8830c69950378263c1885b4c1b1d15f2339b52437f9f1e88847ad",
+        "data_val_sha256": "bb6994df63e84d0bced0c7357e8a757ffc0e1c3bf1a9c153cdcc855d288e4489",
+        "config_sha256": "e675b45f35d3721367da0872696af0851a28a937dda0f80bdb628d79df4222fb",
+        "kind": "candidate",
+        "candidate": "all-r8-high",
+        "base_revision": "c1899de289a04d12100db370d81485cdf75e47ca",
+        "device": "cpu",
+        "memory_metric": "RSS процесса",
+        "train_rows": "32",
+        "val_rows": "8",
+        "mlflow.log-model.history": "[{\"run_id\": \"0381294b884b46ea90076356c9e8db4f\", \"artifact_path\": \"model\", \"utc_time_created\": \"2026-10-26 15:10:06.889100\", \"model_uuid\": \"1692265c654340dea34bc4db1467836a\", \"flavors\": {\"python_function\": {\"streamable\": false, \"cloudpickle_version\": \"3.1.2\", \"artifacts\": {\"adapter\": {\"path\": \"artifacts/adapter\", \"uri\": \"/tmp/hw6-train-lf5t8hf1/adapter\"}}, \"loader_module\": \"mlflow.pyfunc.loaders.code_model\", \"python_version\": \"3.12.13\", \"env\": {\"conda\": \"conda.yaml\", \"virtualenv\": \"python_env.yaml\"}, \"model_code_path\": \"/home/beekfin/sna23mk048/MLOps/hw67/src/model.py\", \"code\": null}}}]",
+        "mlflow.loggedArtifacts": "[{\"path\": \"samples.json\", \"type\": \"table\"}]"
+      },
+      "metrics": {
+        "train_loss": 1.898408591747284,
+        "val_loss": 2.1292723600001757,
+        "base_val_loss": 2.43960580153343,
+        "final_val_loss": 2.1292723600001757,
+        "seconds": 247.1410789170004,
+        "steps": 4.0,
+        "peak_memory_mb": 3168.64453125,
+        "trainable_params": 5046272.0,
+        "adapter_mb": 30.2038516998291
+      },
+      "history": {
+        "train_loss": [
+          {
+            "step": 1,
+            "value": 2.7639594078063965,
+            "timestamp": 1793027252407
+          },
+          {
+            "step": 4,
+            "value": 1.898408591747284,
+            "timestamp": 1793027401049
+          },
+          {
+            "step": 2,
+            "value": 3.2243951559066772,
+            "timestamp": 1793027312907
+          },
+          {
+            "step": 3,
+            "value": 3.1137658953666687,
+            "timestamp": 1793027333507
+          }
+        ],
+        "val_loss": [
+          {
+            "step": 4,
+            "value": 2.1292723600001757,
+            "timestamp": 1793027401049
+          },
+          {
+            "step": 0,
+            "value": 2.43960580153343,
+            "timestamp": 1793027193564
+          },
+          {
+            "step": 2,
+            "value": 2.208247001354511,
+            "timestamp": 1793027312907
+          }
+        ]
+      }
+    }
+  ],
+  "registered_model": {
+    "name": "my-qwen-adapter",
+    "aliases": {
+      "candidate": "1",
+      "champion": "1"
+    }
+  }
+}

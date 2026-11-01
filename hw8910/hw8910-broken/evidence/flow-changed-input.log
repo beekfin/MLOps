@@ -1,0 +1,14 @@
+$ ['/home/beekfin/sna23mk048/MLOps/hw8910/hw8910-broken/.venv/bin/python', 'pipeline.py', '--workspace', '/home/beekfin/sna23mk048/MLOps/hw8910/hw8910-broken/.runtime/experiments/1e90e6e1/cache']
+exit=0
+01:33:49.016 | INFO    | prefect - Starting temporary server on http://127.0.0.1:8963
+See https://www.prefect.io/docs/v3/concepts/server#how-to-guides for more information on running a dedicated Prefect server.
+01:33:53.195 | INFO    | Flow run 'faithful-pony' - Beginning flow run 'faithful-pony' for flow 'hw8910-release'
+01:33:53.374 | INFO    | Task run 'prepare_input-4a7' - PREPARED d18546842ff18885a685a9d6f315b9adcfa2e65d7872ebf3726603ace925e5e3
+01:33:53.379 | INFO    | Task run 'prepare_input-4a7' - Finished in state Completed()
+01:33:53.385 | INFO    | Task run 'obtain_artifact-045' - Читаем существующий training run STUB ONLY; обучения здесь нет
+01:33:53.388 | INFO    | Task run 'obtain_artifact-045' - Finished in state Completed()
+01:33:53.395 | INFO    | Task run 'evaluate_admission-0ea' - Finished in state Completed()
+01:33:53.413 | INFO    | Task run 'publish_accepted-6d7' - ALREADY_PUBLISHED fixture-B
+01:33:53.417 | INFO    | Task run 'publish_accepted-6d7' - Finished in state Completed()
+01:33:54.206 | INFO    | Flow run 'faithful-pony' - Finished in state Completed()
+01:33:54.237 | INFO    | prefect - Stopping temporary server on http://127.0.0.1:8963

@@ -1,0 +1,23 @@
+{
+  "sources": [
+    {
+      "path": "/home/beekfin/Downloads/Telegram Desktop/homework8-9-10.html",
+      "sha256": "91920c4cf39d56155d8d95eb29d322b8bd47a0267606bced60a501be7302d9a2"
+    },
+    {
+      "path": "/home/beekfin/Downloads/Telegram Desktop/lecture8-9-10-slides.html",
+      "sha256": "6ff1343b1be409d5e897f8d4a4e16ca0ad955d8ea057dbab60038ba903f7e08f"
+    },
+    {
+      "path": "/home/beekfin/Downloads/Telegram Desktop/lecture8-9-10.mp4",
+      "sha256": "cd0e1c77ae4e2cb965618e0929dbc0ce8b41a2e06414ea36a8205a0aa44c7d43"
+    }
+  ],
+  "lecture_seconds": 2700,
+  "transcript_segments": 672,
+  "studied": [
+    "methodical task",
+    "15 slides and embedded screenshots",
+    "full local automatic lecture transcript"
+  ]
+}

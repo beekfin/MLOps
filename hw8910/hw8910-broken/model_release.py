@@ -9,7 +9,7 @@ import release
 
 PROJECT = Path(__file__).resolve().parent
 SOURCE = PROJECT.parents[1] / 'hw67'
-if not (SOURCE/'data/eval/golden.jsonl').is_file():
+if not ((SOURCE/'data/eval/golden.jsonl').is_file() and (SOURCE/'metrics/candidate-eval.json').is_file()):
     SOURCE = PROJECT/'evidence/hw67'
 EVAL_LIBRARIES = {'torch':'2.14.0','transformers':'5.17.0','peft':'0.21.0',
                   'tokenizers':'0.23.2','numpy':'2.5.3','accelerate':'1.15.0',
@@ -142,9 +142,10 @@ def prepare(root):
                'template_sha256':file_hash(artifact/'chat_template.jinja'),'generation':generation,
                'libraries':EVAL_LIBRARIES}
     files = {name:file_hash(artifact/name) for name in ['adapter_config.json','adapter_model.safetensors','manifest.json']}
-    manifest = {'schema_version':1,'model_id':'my-qwen-adapter/1@'+candidate['model']['run_id'],
+    spec = candidate['model']
+    manifest = {'schema_version':1,'model_id':f"{spec['name']}/{spec['version']}@{spec['run_id']}",
         'artifact_uri':candidate['model']['uri'],'artifact_path':'artifact', 'synthetic':False,
-        'training_run_id':candidate['model']['run_id'],'registry_version':'1',
+        'training_run_id':candidate['model']['run_id'],'registry_version':str(spec['version']),
         'model_sha256':fingerprint(files),'file_hashes':files,
         'runtime_file_hashes':{**token_files,'chat_template.jinja':runtime['template_sha256']},
         'protocol_sha256':candidate['protocol_sha256'],'golden_sha256':candidate['golden_sha256'],

@@ -1,0 +1,1 @@
+STUB ONLY: A → publish B / still A → restart B → rollback A / still B → restart A

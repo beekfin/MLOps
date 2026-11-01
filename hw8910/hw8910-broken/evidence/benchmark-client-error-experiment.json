@@ -1,0 +1,110 @@
+{
+  "note": "Локальный закрытый порт: проверка сохранения ошибок клиента, не замер модели",
+  "exit_code": 1,
+  "attempts": [
+    {
+      "id": "golden-askubuntu-573791",
+      "concurrency": 1,
+      "max_new_tokens": 32,
+      "error": "URLError: <urlopen error [Errno 111] Connection refused>",
+      "model_id": null,
+      "generation_seconds": null,
+      "queue_seconds": null,
+      "output_tokens": null,
+      "request_id": null,
+      "status": null,
+      "client_seconds": 0.006061127001885325
+    },
+    {
+      "id": "golden-askubuntu-1154282",
+      "concurrency": 1,
+      "max_new_tokens": 32,
+      "error": "URLError: <urlopen error [Errno 111] Connection refused>",
+      "model_id": null,
+      "generation_seconds": null,
+      "queue_seconds": null,
+      "output_tokens": null,
+      "request_id": null,
+      "status": null,
+      "client_seconds": 0.00028662099794019014
+    },
+    {
+      "id": "golden-askubuntu-700840",
+      "concurrency": 1,
+      "max_new_tokens": 32,
+      "error": "URLError: <urlopen error [Errno 111] Connection refused>",
+      "model_id": null,
+      "generation_seconds": null,
+      "queue_seconds": null,
+      "output_tokens": null,
+      "request_id": null,
+      "status": null,
+      "client_seconds": 0.0001253829977940768
+    },
+    {
+      "id": "golden-askubuntu-150141",
+      "concurrency": 1,
+      "max_new_tokens": 32,
+      "error": "URLError: <urlopen error [Errno 111] Connection refused>",
+      "model_id": null,
+      "generation_seconds": null,
+      "queue_seconds": null,
+      "output_tokens": null,
+      "request_id": null,
+      "status": null,
+      "client_seconds": 0.00010116500197909772
+    },
+    {
+      "id": "golden-askubuntu-573791",
+      "concurrency": 2,
+      "max_new_tokens": 32,
+      "error": "URLError: <urlopen error [Errno 111] Connection refused>",
+      "model_id": null,
+      "generation_seconds": null,
+      "queue_seconds": null,
+      "output_tokens": null,
+      "request_id": null,
+      "status": null,
+      "client_seconds": 0.0002756530011538416
+    },
+    {
+      "id": "golden-askubuntu-1154282",
+      "concurrency": 2,
+      "max_new_tokens": 32,
+      "error": "URLError: <urlopen error [Errno 111] Connection refused>",
+      "model_id": null,
+      "generation_seconds": null,
+      "queue_seconds": null,
+      "output_tokens": null,
+      "request_id": null,
+      "status": null,
+      "client_seconds": 0.00027690200658980757
+    },
+    {
+      "id": "golden-askubuntu-700840",
+      "concurrency": 2,
+      "max_new_tokens": 32,
+      "error": "URLError: <urlopen error [Errno 111] Connection refused>",
+      "model_id": null,
+      "generation_seconds": null,
+      "queue_seconds": null,
+      "output_tokens": null,
+      "request_id": null,
+      "status": null,
+      "client_seconds": 0.0002503459982108325
+    },
+    {
+      "id": "golden-askubuntu-150141",
+      "concurrency": 2,
+      "max_new_tokens": 32,
+      "error": "URLError: <urlopen error [Errno 111] Connection refused>",
+      "model_id": null,
+      "generation_seconds": null,
+      "queue_seconds": null,
+      "output_tokens": null,
+      "request_id": null,
+      "status": null,
+      "client_seconds": 0.0001399000029778108
+    }
+  ]
+}
