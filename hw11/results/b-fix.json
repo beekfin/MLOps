@@ -1,0 +1,9 @@
+{
+  "before": "sticky",
+  "after": "normal",
+  "change": "sessionAffinity: ClientIP -> None",
+  "matching_schedule": true,
+  "backend_unchanged": true,
+  "keep_alive_unchanged": true,
+  "evidence": "b-summary.json: три повтора каждой политики и трафика"
+}

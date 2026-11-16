@@ -1,0 +1,8 @@
+{
+  "name": "b-sticky-uniform-3",
+  "start": 1794832152.1923723,
+  "plan": "results/schedules/b-uniform.json",
+  "service": "hw11-sticky",
+  "end": 1794832279.0488992,
+  "attempts": 480
+}

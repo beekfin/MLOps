@@ -1,0 +1,6 @@
+*
+!requirements.txt
+!src
+!src/**
+!scripts
+!scripts/client.py

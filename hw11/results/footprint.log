@@ -1,0 +1,45 @@
+{
+  "unix": 1794833273.4299726,
+  "images": {
+    "kindest/node@sha256:7416a61b42b1662ca6ca89f02028ac133a309a2a30ba309614e8ec94d976dc5a": {
+      "id": "sha256:7416a61b42b1662ca6ca89f02028ac133a309a2a30ba309614e8ec94d976dc5a",
+      "bytes": 1451164928
+    },
+    "python@sha256:519591d6871b7bc437060736b9f7456b8731f1499a57e22e6c285135ae657bf7": {
+      "id": "sha256:519591d6871b7bc437060736b9f7456b8731f1499a57e22e6c285135ae657bf7",
+      "bytes": 185990608
+    },
+    "prom/prometheus@sha256:63805ebb8d2b3920190daf1cb14a60871b16fd38bed42b857a3182bc621f4996": {
+      "id": "sha256:63805ebb8d2b3920190daf1cb14a60871b16fd38bed42b857a3182bc621f4996",
+      "bytes": 439761253
+    },
+    "grafana/grafana@sha256:a1701c2180249361737a99a01bc770db39381640e4d631825d38ff4535efa47d": {
+      "id": "sha256:a1701c2180249361737a99a01bc770db39381640e4d631825d38ff4535efa47d",
+      "bytes": 961336429
+    },
+    "registry.k8s.io/metrics-server/metrics-server@sha256:89258156d0e9af60403eafd44da9676fd66f600c7934d468ccc17e42b199aee2": {
+      "id": "sha256:89258156d0e9af60403eafd44da9676fd66f600c7934d468ccc17e42b199aee2",
+      "bytes": 108434346
+    },
+    "hw11-service:e4b59485645c": {
+      "id": "sha256:64ec9da5188ee98344b0f374bb594ffe554a02e5259ac44aba24606b7565da94",
+      "bytes": 212009531
+    }
+  },
+  "images_sum_bytes_unshared_upper_bound": 3358697095,
+  "node_writable_bytes": 3477504,
+  "node_volumes": {
+    "/var": {
+      "volume_name": "7662af6133f3b0c64aac3deffcfd8af2ef52d641337e547220a26c992f402cd9",
+      "allocated_bytes": 2820898816
+    }
+  },
+  "node_volumes_allocated_bytes": 2820898816,
+  "node_limits": {
+    "memory_bytes": 3221225472,
+    "nano_cpus": 4000000000
+  },
+  "hw11_directory_logical_bytes_includes_tools_and_venv": 503900065,
+  "note": "Сумма размеров образов — верхняя оценка без вычитания общих слоёв. Внутренние образы containerd находятся в отдельном Docker-томе /var, его размер учтён отдельно; SizeRw контейнера не включает этот том. Это оценка занятого диска, а не RAM.",
+  "docker_system_df": "TYPE            TOTAL     ACTIVE    SIZE      RECLAIMABLE\nImages          17        7         9.078GB   3.18GB (35%)\nContainers      7         1         149MB     145.6MB (97%)\nLocal Volumes   13        8         3.059GB   73.07MB (2%)\nBuild Cache     13        0         455.8MB   14.53MB\n"
+}

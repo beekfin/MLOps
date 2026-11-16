@@ -1,0 +1,8 @@
+{
+  "name": "a-warmup-before",
+  "start": 1794830447.3616102,
+  "plan": "results/schedules/a-warmup-before.json",
+  "service": "hw11-normal",
+  "end": 1794830482.85754,
+  "attempts": 70
+}

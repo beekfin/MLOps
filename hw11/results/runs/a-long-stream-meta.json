@@ -1,0 +1,8 @@
+{
+  "name": "a-long-stream",
+  "start": 1794830537.932676,
+  "plan": "results/schedules/a-long-stream.json",
+  "service": "hw11-normal",
+  "end": 1794830609.1309278,
+  "attempts": 1
+}

@@ -1,0 +1,73 @@
+{
+  "overload": {
+    "sent": 280,
+    "completed": 34,
+    "outcomes": {
+      "rejected": 246,
+      "completed": 34
+    },
+    "pods": {
+      "hw11-api-59dc96cb8d-k9pg7": 135,
+      "hw11-api-59dc96cb8d-kfxzr": 145
+    },
+    "error_rate": 0.8785714285714286,
+    "ttfc_p50": 10.491124344500122,
+    "ttfc_p95": 14.898083359700102,
+    "response_p95": 15.98410450060013,
+    "send_lag_p95": 0.973228919506073
+  },
+  "force_kill": [
+    {
+      "run_id": "a-force-kill",
+      "client_id": 0,
+      "request_id": "a-force-kill-0-0",
+      "scheduled_offset": 0.0,
+      "scheduled_unix": 1794830372.5850043,
+      "sent_unix": 1794830374.1897476,
+      "sent_mono": 1978.605231505,
+      "send_lag_seconds": 1.604743242263794,
+      "input_length": 63,
+      "output_limit": 70,
+      "error": "RemoteProtocolError: peer closed connection without sending complete message body (incomplete chunked read)",
+      "status": 200,
+      "outcome": "interrupted",
+      "pod": "hw11-api-59dc96cb8d-k9pg7",
+      "model_id": "B",
+      "first_mono": 1979.214277507,
+      "finished_mono": 1983.158787658,
+      "ttfc_seconds": 0.6090460020000137,
+      "duration_seconds": 4.553556153000045,
+      "chunks": 10,
+      "done": false,
+      "queue_seconds": 0.00010356299981140182,
+      "cache_hit": true,
+      "inter_chunk_seconds": [
+        0.40461500000014894,
+        0.40462003899983756,
+        0.40541695400020217,
+        0.4062201969998114,
+        0.40360471700000744,
+        0.4039452600000004,
+        0.40512854100006734,
+        0.4045473690000563,
+        0.40340505899985146
+      ]
+    }
+  ],
+  "crash_unix": 1794830375.657037,
+  "recovered": {
+    "status": 200,
+    "text": "{\"backend_mode\": \"simulated\", \"pod\": \"hw11-api-59dc96cb8d-kfxzr\", \"model_id\": \"B\", \"artifact_sha256\": \"ab5c5be3f6e6e55cf5572f68f9458dd3fdab6a9d613cba447ab13206365c7cac\", \"request_id\": \"95f7a265-2632-4511-9acb-0ea0f837a245\", \"session_id\": \"check\", \"index\": 0, \"text\": \"check\", \"queue_seconds\": 9.399900000062189e-05, \"cache_hit\": true}\n{\"backend_mode\": \"simulated\", \"pod\": \"hw11-api-59dc96cb8d-kfxzr\", \"model_id\": \"B\", \"artifact_sha256\": \"ab5c5be3f6e6e55cf5572f68f9458dd3fdab6a9d613cba447ab13206365c7cac\", \"request_id\": \"95f7a265-2632-4511-9acb-0ea0f837a245\", \"session_id\": \"check\", \"index\": 1, \"text\": \"part-1\", \"queue_seconds\": 9.399900000062189e-05, \"cache_hit\": true}\n{\"backend_mode\": \"simulated\", \"pod\": \"hw11-api-59dc96cb8d-kfxzr\", \"model_id\": \"B\", \"artifact_sha256\": \"ab5c5be3f6e6e55cf5572f68f9458dd3fdab6a9d613cba447ab13206365c7cac\", \"request_id\": \"95f7a265-2632-4511-9acb-0ea0f837a245\", \"session_id\": \"check\", \"index\": 2, \"text\": \"part-2\", \"queue_seconds\": 9.399900000062189e-05, \"cache_hit\": true}\n{\"backend_mode\": \"simulated\", \"pod\": \"hw11-api-59dc96cb8d-kfxzr\", \"model_id\": \"B\", \"artifact_sha256\": \"ab5c5be3f6e6e55cf5572f68f9458dd3fdab6a9d613cba447ab13206365c7cac\", \"request_id\": \"95f7a265-2632-4511-9acb-0ea0f837a245\", \"session_id\": \"check\", \"index\": 3, \"text\": \"part-3\", \"queue_seconds\": 9.399900000062189e-05, \"cache_hit\": true}\n{\"backend_mode\": \"simulated\", \"pod\": \"hw11-api-59dc96cb8d-kfxzr\", \"model_id\": \"B\", \"artifact_sha256\": \"ab5c5be3f6e6e55cf5572f68f9458dd3fdab6a9d613cba447ab13206365c7cac\", \"request_id\": \"95f7a265-2632-4511-9acb-0ea0f837a245\", \"session_id\": \"check\", \"done\": true, \"chunks\": 4}\n",
+    "headers": {
+      "date": "Mon, 16 Nov 2026 12:00:03 GMT",
+      "server": "uvicorn",
+      "x-pod": "hw11-api-59dc96cb8d-kfxzr",
+      "x-model-id": "B",
+      "x-request-id": "95f7a265-2632-4511-9acb-0ea0f837a245",
+      "content-type": "application/x-ndjson",
+      "transfer-encoding": "chunked"
+    },
+    "duration": 0.9353912050000872
+  },
+  "recovered_unix": 1794830404.1296809
+}

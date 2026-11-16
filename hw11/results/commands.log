@@ -1,0 +1,90 @@
+$ helm upgrade hw11 charts/hw11 -n hw11 -f source/installed-values.json --set brokenProbes=true --set warmupSeconds=20 --set modelVersion=A
+Release "hw11" has been upgraded. Happy Helming!
+NAME: hw11
+LAST DEPLOYED: Mon Nov 16 14:55:44 2026
+NAMESPACE: hw11
+STATUS: deployed
+REVISION: 2
+TEST SUITE: None
+
+$ helm upgrade hw11 charts/hw11 -n hw11 -f source/installed-values.json --set brokenProbes=false --set warmupSeconds=20 --set modelVersion=A
+Release "hw11" has been upgraded. Happy Helming!
+NAME: hw11
+LAST DEPLOYED: Mon Nov 16 14:56:24 2026
+NAMESPACE: hw11
+STATUS: deployed
+REVISION: 3
+TEST SUITE: None
+
+$ helm upgrade hw11 charts/hw11 -n hw11 -f source/installed-values.json --set modelVersion=B --set warmupSeconds=20
+Release "hw11" has been upgraded. Happy Helming!
+NAME: hw11
+LAST DEPLOYED: Mon Nov 16 14:57:19 2026
+NAMESPACE: hw11
+STATUS: deployed
+REVISION: 4
+TEST SUITE: None
+
+$ helm upgrade hw11 charts/hw11 -n hw11 -f source/installed-values.json --set brokenProbes=true --set warmupSeconds=20 --set modelVersion=A
+Release "hw11" has been upgraded. Happy Helming!
+NAME: hw11
+LAST DEPLOYED: Mon Nov 16 15:00:44 2026
+NAMESPACE: hw11
+STATUS: deployed
+REVISION: 5
+TEST SUITE: None
+
+$ helm upgrade hw11 charts/hw11 -n hw11 -f source/installed-values.json --set brokenProbes=false --set warmupSeconds=20 --set modelVersion=A
+Release "hw11" has been upgraded. Happy Helming!
+NAME: hw11
+LAST DEPLOYED: Mon Nov 16 15:01:23 2026
+NAMESPACE: hw11
+STATUS: deployed
+REVISION: 6
+TEST SUITE: None
+
+$ helm upgrade hw11 charts/hw11 -n hw11 -f source/installed-values.json --set modelVersion=B --set warmupSeconds=20
+Release "hw11" has been upgraded. Happy Helming!
+NAME: hw11
+LAST DEPLOYED: Mon Nov 16 15:02:20 2026
+NAMESPACE: hw11
+STATUS: deployed
+REVISION: 7
+TEST SUITE: None
+
+$ helm upgrade hw11 charts/hw11 -n hw11 -f source/installed-values.json --set modelVersion=B --set failWarmup=true --set warmupSeconds=20
+Release "hw11" has been upgraded. Happy Helming!
+NAME: hw11
+LAST DEPLOYED: Mon Nov 16 15:03:33 2026
+NAMESPACE: hw11
+STATUS: deployed
+REVISION: 8
+TEST SUITE: None
+
+$ helm upgrade hw11 charts/hw11 -n hw11 -f source/installed-values.json --set modelVersion=A --set failWarmup=false --set warmupSeconds=20
+Release "hw11" has been upgraded. Happy Helming!
+NAME: hw11
+LAST DEPLOYED: Mon Nov 16 15:04:15 2026
+NAMESPACE: hw11
+STATUS: deployed
+REVISION: 9
+TEST SUITE: None
+
+$ helm upgrade hw11 charts/hw11 -n hw11 -f source/installed-values.json --set modelVersion=A --set warmupSeconds=20
+Release "hw11" has been upgraded. Happy Helming!
+NAME: hw11
+LAST DEPLOYED: Mon Nov 16 15:07:36 2026
+NAMESPACE: hw11
+STATUS: deployed
+REVISION: 10
+TEST SUITE: None
+
+$ helm upgrade hw11 charts/hw11 -n hw11 -f source/installed-values.json --set hpa.enabled=true --set hpa.targetCPU=60 --set hpa.stabilizationSeconds=45
+Release "hw11" has been upgraded. Happy Helming!
+NAME: hw11
+LAST DEPLOYED: Mon Nov 16 15:36:55 2026
+NAMESPACE: hw11
+STATUS: deployed
+REVISION: 11
+TEST SUITE: None
+

@@ -1,0 +1,8 @@
+{
+  "name": "b-normal-hot-3",
+  "start": 1794832299.3685236,
+  "plan": "results/schedules/b-hot.json",
+  "service": "hw11-normal",
+  "end": 1794832420.3408582,
+  "attempts": 480
+}

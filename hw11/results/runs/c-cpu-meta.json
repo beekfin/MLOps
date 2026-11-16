@@ -1,0 +1,8 @@
+{
+  "name": "c-cpu",
+  "start": 1794832645.6443138,
+  "plan": "results/schedules/c-cpu.json",
+  "service": "hw11-normal",
+  "end": 1794832765.9518485,
+  "attempts": 1200
+}

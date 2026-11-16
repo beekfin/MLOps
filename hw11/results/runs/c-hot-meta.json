@@ -1,0 +1,8 @@
+{
+  "name": "c-hot",
+  "start": 1794832842.9109313,
+  "plan": "results/schedules/c-hot.json",
+  "service": "hw11-sticky",
+  "end": 1794832969.7479978,
+  "attempts": 480
+}

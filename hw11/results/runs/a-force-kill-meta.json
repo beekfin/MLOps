@@ -1,0 +1,8 @@
+{
+  "name": "a-force-kill",
+  "plan": "results/schedules/a-force-kill.json",
+  "service": "direct-pod",
+  "start": 1794830779.925202,
+  "end": 1794830786.638648,
+  "attempts": 1
+}

@@ -1,0 +1,8 @@
+{
+  "name": "a-rollout",
+  "start": 1794830242.8339574,
+  "plan": "results/schedules/a-rollout.json",
+  "service": "hw11-normal",
+  "end": 1794830307.8503478,
+  "attempts": 65
+}

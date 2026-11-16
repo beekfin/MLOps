@@ -1,0 +1,12 @@
+{
+  "initial_queue_timeout_seconds": 15,
+  "initial_rollout": {
+    "sent": 65,
+    "completed": 63,
+    "rejected_429": 2,
+    "unfinished_streams": 0
+  },
+  "cause": "Единственный слот занят длинным ответом; два коротких запроса ждали больше 15 с.",
+  "change": "queueTimeoutSeconds увеличен до 45 при client timeout=45 и grace=60; backend, concurrency и расписание сохранены.",
+  "initial_evidence": "initial-a/"
+}

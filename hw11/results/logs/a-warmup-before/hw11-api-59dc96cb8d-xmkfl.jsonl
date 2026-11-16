@@ -1,0 +1,1 @@
+failed to try resolving symlinks in path "/var/log/pods/hw11_hw11-api-59dc96cb8d-xmkfl_97817a3b-0f5a-4362-b0e0-cbfb849c9108/api/0.log": lstat /var/log/pods/hw11_hw11-api-59dc96cb8d-xmkfl_97817a3b-0f5a-4362-b0e0-cbfb849c9108/api/0.log: no such file or directory

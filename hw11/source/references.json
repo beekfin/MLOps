@@ -1,0 +1,9 @@
+{
+  "lecture": {"file": "lecture11-extended.mp4", "duration_seconds": 2734.5, "scenes": 227, "relevant_scenes": [21,22,23,33,34,44,47,48,52,53,54,55,60,65,69,70,72,225,226,227]},
+  "primary_case": "https://cloud.google.com/blog/products/containers-kubernetes/how-gke-inference-gateway-improved-latency-for-vertex-ai",
+  "probes": "https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/",
+  "termination": "https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/",
+  "affinity": "https://kubernetes.io/docs/concepts/services-networking/service/#session-affinity",
+  "hpa": "https://kubernetes.io/docs/concepts/workloads/autoscaling/horizontal-pod-autoscale/",
+  "histograms": "https://prometheus.io/docs/practices/histograms/"
+}

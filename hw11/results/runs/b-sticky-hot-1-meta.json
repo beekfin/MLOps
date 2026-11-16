@@ -1,0 +1,8 @@
+{
+  "name": "b-sticky-hot-1",
+  "start": 1794831298.303232,
+  "plan": "results/schedules/b-hot.json",
+  "service": "hw11-sticky",
+  "end": 1794831425.4870183,
+  "attempts": 480
+}

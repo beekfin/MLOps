@@ -1,0 +1,10 @@
+test_01_warmup_excluded_from_traffic (test_kubernetes.KubernetesContract.test_01_warmup_excluded_from_traffic) ... ok
+test_02_actual_version_after_rollback (test_kubernetes.KubernetesContract.test_02_actual_version_after_rollback) ... ok
+test_03_replacement_keeps_version_and_dialog (test_kubernetes.KubernetesContract.test_03_replacement_keeps_version_and_dialog) ... ok
+test_04_rejections_and_interrupted_stream_counted (test_kubernetes.KubernetesContract.test_04_rejections_and_interrupted_stream_counted) ... ok
+test_05_two_dialogs_are_isolated (test_kubernetes.KubernetesContract.test_05_two_dialogs_are_isolated) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 376.116s
+
+OK

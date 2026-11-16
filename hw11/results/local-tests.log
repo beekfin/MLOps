@@ -1,0 +1,8 @@
+test_artifact_changed_rejected (test_local.Contract.test_artifact_changed_rejected) ... ok
+test_cache_is_local_bounded_and_real_work (test_local.Contract.test_cache_is_local_bounded_and_real_work) ... ok
+test_dialog_history_explicit_and_input_bounded (test_local.Contract.test_dialog_history_explicit_and_input_bounded) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.017s
+
+OK

@@ -1,0 +1,516 @@
+{
+  "checks": [
+    {
+      "requirement": "12 полных прогонов B",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "requirement": "Одинаковое расписание uniform",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "requirement": "normal/uniform: 3 повтора",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "requirement": "sticky/uniform: 3 повтора",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "requirement": "Одинаковое расписание hot",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "requirement": "normal/hot: 3 повтора",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "requirement": "sticky/hot: 3 повтора",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "requirement": "b-normal-uniform-1: 120 с, 480 попыток",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "requirement": "b-normal-uniform-1: 4 клиента",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "requirement": "b-normal-uniform-1: завершённые имеют done",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "requirement": "b-normal-uniform-1: кеш сброшен на двух Pod",
+      "passed": true,
+      "detail": [
+        "hw11-api-77f9dd6f8b-c27ld",
+        "hw11-api-77f9dd6f8b-tgq86"
+      ]
+    },
+    {
+      "requirement": "b-normal-uniform-1: тот же набор успехов в Histogram",
+      "passed": true,
+      "detail": {
+        "client": 480,
+        "prometheus": 480.0
+      }
+    },
+    {
+      "requirement": "b-sticky-uniform-1: 120 с, 480 попыток",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "requirement": "b-sticky-uniform-1: 4 клиента",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "requirement": "b-sticky-uniform-1: завершённые имеют done",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "requirement": "b-sticky-uniform-1: кеш сброшен на двух Pod",
+      "passed": true,
+      "detail": [
+        "hw11-api-77f9dd6f8b-c27ld",
+        "hw11-api-77f9dd6f8b-tgq86"
+      ]
+    },
+    {
+      "requirement": "b-sticky-uniform-1: тот же набор успехов в Histogram",
+      "passed": true,
+      "detail": {
+        "client": 417,
+        "prometheus": 417.0
+      }
+    },
+    {
+      "requirement": "b-normal-hot-1: 120 с, 480 попыток",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "requirement": "b-normal-hot-1: 4 клиента",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "requirement": "b-normal-hot-1: завершённые имеют done",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "requirement": "b-normal-hot-1: кеш сброшен на двух Pod",
+      "passed": true,
+      "detail": [
+        "hw11-api-77f9dd6f8b-c27ld",
+        "hw11-api-77f9dd6f8b-tgq86"
+      ]
+    },
+    {
+      "requirement": "b-normal-hot-1: тот же набор успехов в Histogram",
+      "passed": true,
+      "detail": {
+        "client": 480,
+        "prometheus": 480.0
+      }
+    },
+    {
+      "requirement": "b-sticky-hot-1: 120 с, 480 попыток",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "requirement": "b-sticky-hot-1: 4 клиента",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "requirement": "b-sticky-hot-1: завершённые имеют done",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "requirement": "b-sticky-hot-1: кеш сброшен на двух Pod",
+      "passed": true,
+      "detail": [
+        "hw11-api-77f9dd6f8b-c27ld",
+        "hw11-api-77f9dd6f8b-tgq86"
+      ]
+    },
+    {
+      "requirement": "b-sticky-hot-1: тот же набор успехов в Histogram",
+      "passed": true,
+      "detail": {
+        "client": 296,
+        "prometheus": 296.0
+      }
+    },
+    {
+      "requirement": "b-normal-uniform-2: 120 с, 480 попыток",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "requirement": "b-normal-uniform-2: 4 клиента",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "requirement": "b-normal-uniform-2: завершённые имеют done",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "requirement": "b-normal-uniform-2: кеш сброшен на двух Pod",
+      "passed": true,
+      "detail": [
+        "hw11-api-77f9dd6f8b-c27ld",
+        "hw11-api-77f9dd6f8b-tgq86"
+      ]
+    },
+    {
+      "requirement": "b-normal-uniform-2: тот же набор успехов в Histogram",
+      "passed": true,
+      "detail": {
+        "client": 480,
+        "prometheus": 480.0
+      }
+    },
+    {
+      "requirement": "b-sticky-uniform-2: 120 с, 480 попыток",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "requirement": "b-sticky-uniform-2: 4 клиента",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "requirement": "b-sticky-uniform-2: завершённые имеют done",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "requirement": "b-sticky-uniform-2: кеш сброшен на двух Pod",
+      "passed": true,
+      "detail": [
+        "hw11-api-77f9dd6f8b-c27ld",
+        "hw11-api-77f9dd6f8b-tgq86"
+      ]
+    },
+    {
+      "requirement": "b-sticky-uniform-2: тот же набор успехов в Histogram",
+      "passed": true,
+      "detail": {
+        "client": 480,
+        "prometheus": 480.0
+      }
+    },
+    {
+      "requirement": "b-normal-hot-2: 120 с, 480 попыток",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "requirement": "b-normal-hot-2: 4 клиента",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "requirement": "b-normal-hot-2: завершённые имеют done",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "requirement": "b-normal-hot-2: кеш сброшен на двух Pod",
+      "passed": true,
+      "detail": [
+        "hw11-api-77f9dd6f8b-c27ld",
+        "hw11-api-77f9dd6f8b-tgq86"
+      ]
+    },
+    {
+      "requirement": "b-normal-hot-2: тот же набор успехов в Histogram",
+      "passed": true,
+      "detail": {
+        "client": 480,
+        "prometheus": 480.0
+      }
+    },
+    {
+      "requirement": "b-sticky-hot-2: 120 с, 480 попыток",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "requirement": "b-sticky-hot-2: 4 клиента",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "requirement": "b-sticky-hot-2: завершённые имеют done",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "requirement": "b-sticky-hot-2: кеш сброшен на двух Pod",
+      "passed": true,
+      "detail": [
+        "hw11-api-77f9dd6f8b-c27ld",
+        "hw11-api-77f9dd6f8b-tgq86"
+      ]
+    },
+    {
+      "requirement": "b-sticky-hot-2: тот же набор успехов в Histogram",
+      "passed": true,
+      "detail": {
+        "client": 328,
+        "prometheus": 328.0
+      }
+    },
+    {
+      "requirement": "b-normal-uniform-3: 120 с, 480 попыток",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "requirement": "b-normal-uniform-3: 4 клиента",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "requirement": "b-normal-uniform-3: завершённые имеют done",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "requirement": "b-normal-uniform-3: кеш сброшен на двух Pod",
+      "passed": true,
+      "detail": [
+        "hw11-api-77f9dd6f8b-c27ld",
+        "hw11-api-77f9dd6f8b-tgq86"
+      ]
+    },
+    {
+      "requirement": "b-normal-uniform-3: тот же набор успехов в Histogram",
+      "passed": true,
+      "detail": {
+        "client": 480,
+        "prometheus": 480.0
+      }
+    },
+    {
+      "requirement": "b-sticky-uniform-3: 120 с, 480 попыток",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "requirement": "b-sticky-uniform-3: 4 клиента",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "requirement": "b-sticky-uniform-3: завершённые имеют done",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "requirement": "b-sticky-uniform-3: кеш сброшен на двух Pod",
+      "passed": true,
+      "detail": [
+        "hw11-api-77f9dd6f8b-c27ld",
+        "hw11-api-77f9dd6f8b-tgq86"
+      ]
+    },
+    {
+      "requirement": "b-sticky-uniform-3: тот же набор успехов в Histogram",
+      "passed": true,
+      "detail": {
+        "client": 414,
+        "prometheus": 414.0
+      }
+    },
+    {
+      "requirement": "b-normal-hot-3: 120 с, 480 попыток",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "requirement": "b-normal-hot-3: 4 клиента",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "requirement": "b-normal-hot-3: завершённые имеют done",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "requirement": "b-normal-hot-3: кеш сброшен на двух Pod",
+      "passed": true,
+      "detail": [
+        "hw11-api-77f9dd6f8b-c27ld",
+        "hw11-api-77f9dd6f8b-tgq86"
+      ]
+    },
+    {
+      "requirement": "b-normal-hot-3: тот же набор успехов в Histogram",
+      "passed": true,
+      "detail": {
+        "client": 480,
+        "prometheus": 480.0
+      }
+    },
+    {
+      "requirement": "b-sticky-hot-3: 120 с, 480 попыток",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "requirement": "b-sticky-hot-3: 4 клиента",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "requirement": "b-sticky-hot-3: завершённые имеют done",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "requirement": "b-sticky-hot-3: кеш сброшен на двух Pod",
+      "passed": true,
+      "detail": [
+        "hw11-api-77f9dd6f8b-c27ld",
+        "hw11-api-77f9dd6f8b-tgq86"
+      ]
+    },
+    {
+      "requirement": "b-sticky-hot-3: тот же набор успехов в Histogram",
+      "passed": true,
+      "detail": {
+        "client": 359,
+        "prometheus": 359.0
+      }
+    },
+    {
+      "requirement": "Дефект прогрева воспроизведён",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "requirement": "Прогрев исправлен",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "requirement": "Штатное обновление без 5xx/обрывов",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "requirement": "Фактическая версия после отката A",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "requirement": "Принудительный обрыв записан",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "requirement": "Два изолированных диалога",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "requirement": "5 собственных Kubernetes-проверок прошли",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "requirement": "HPA 2→3→2",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "requirement": "HighFirstChunkLatency: inactive/pending/firing",
+      "passed": true,
+      "detail": [
+        "firing",
+        "inactive",
+        "pending"
+      ]
+    },
+    {
+      "requirement": "HighFirstChunkLatency: вернулся в inactive после firing",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "requirement": "HighRejectionRate: inactive/pending/firing",
+      "passed": true,
+      "detail": [
+        "firing",
+        "inactive",
+        "pending"
+      ]
+    },
+    {
+      "requirement": "HighRejectionRate: вернулся в inactive после firing",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "requirement": "Service видит >=4 разных клиентских IP",
+      "passed": true,
+      "detail": [
+        "10.244.0.5",
+        "10.244.0.6",
+        "10.244.0.7",
+        "10.244.0.8"
+      ]
+    },
+    {
+      "requirement": "График 1",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "requirement": "График 2",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "requirement": "График 3",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "requirement": "График 4",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "requirement": "HTML-отчёт",
+      "passed": true,
+      "detail": null
+    }
+  ],
+  "passed": 85,
+  "failed": 0
+}

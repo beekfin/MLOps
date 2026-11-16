@@ -1,0 +1,30 @@
+[
+  {
+    "status": 200,
+    "text": "{\"backend_mode\": \"simulated\", \"pod\": \"hw11-api-59dc96cb8d-xmkfl\", \"model_id\": \"B\", \"artifact_sha256\": \"ab5c5be3f6e6e55cf5572f68f9458dd3fdab6a9d613cba447ab13206365c7cac\", \"request_id\": \"2252819d-17c4-49c5-98c5-5a9b449f0479\", \"session_id\": \"ALPHA_ONLY_731\", \"index\": 0, \"text\": \"ALPHA_ONLY_731 | Продолжи мой диалог\", \"queue_seconds\": 0.00023497999995925056, \"cache_hit\": false}\n{\"backend_mode\": \"simulated\", \"pod\": \"hw11-api-59dc96cb8d-xmkfl\", \"model_id\": \"B\", \"artifact_sha256\": \"ab5c5be3f6e6e55cf5572f68f9458dd3fdab6a9d613cba447ab13206365c7cac\", \"request_id\": \"2252819d-17c4-49c5-98c5-5a9b449f0479\", \"session_id\": \"ALPHA_ONLY_731\", \"index\": 1, \"text\": \"part-1\", \"queue_seconds\": 0.00023497999995925056, \"cache_hit\": false}\n{\"backend_mode\": \"simulated\", \"pod\": \"hw11-api-59dc96cb8d-xmkfl\", \"model_id\": \"B\", \"artifact_sha256\": \"ab5c5be3f6e6e55cf5572f68f9458dd3fdab6a9d613cba447ab13206365c7cac\", \"request_id\": \"2252819d-17c4-49c5-98c5-5a9b449f0479\", \"session_id\": \"ALPHA_ONLY_731\", \"index\": 2, \"text\": \"part-2\", \"queue_seconds\": 0.00023497999995925056, \"cache_hit\": false}\n{\"backend_mode\": \"simulated\", \"pod\": \"hw11-api-59dc96cb8d-xmkfl\", \"model_id\": \"B\", \"artifact_sha256\": \"ab5c5be3f6e6e55cf5572f68f9458dd3fdab6a9d613cba447ab13206365c7cac\", \"request_id\": \"2252819d-17c4-49c5-98c5-5a9b449f0479\", \"session_id\": \"ALPHA_ONLY_731\", \"index\": 3, \"text\": \"part-3\", \"queue_seconds\": 0.00023497999995925056, \"cache_hit\": false}\n{\"backend_mode\": \"simulated\", \"pod\": \"hw11-api-59dc96cb8d-xmkfl\", \"model_id\": \"B\", \"artifact_sha256\": \"ab5c5be3f6e6e55cf5572f68f9458dd3fdab6a9d613cba447ab13206365c7cac\", \"request_id\": \"2252819d-17c4-49c5-98c5-5a9b449f0479\", \"session_id\": \"ALPHA_ONLY_731\", \"done\": true, \"chunks\": 4}\n",
+    "headers": {
+      "date": "Mon, 16 Nov 2026 12:00:07 GMT",
+      "server": "uvicorn",
+      "x-pod": "hw11-api-59dc96cb8d-xmkfl",
+      "x-model-id": "B",
+      "x-request-id": "2252819d-17c4-49c5-98c5-5a9b449f0479",
+      "content-type": "application/x-ndjson",
+      "transfer-encoding": "chunked"
+    },
+    "duration": 1.2225479650001034
+  },
+  {
+    "status": 200,
+    "text": "{\"backend_mode\": \"simulated\", \"pod\": \"hw11-api-59dc96cb8d-kfxzr\", \"model_id\": \"B\", \"artifact_sha256\": \"ab5c5be3f6e6e55cf5572f68f9458dd3fdab6a9d613cba447ab13206365c7cac\", \"request_id\": \"b6579884-3b61-4eaa-9762-9b093287e263\", \"session_id\": \"BETA_ONLY_948\", \"index\": 0, \"text\": \"BETA_ONLY_948 | Продолжи мой диалог\", \"queue_seconds\": 9.976399996958207e-05, \"cache_hit\": true}\n{\"backend_mode\": \"simulated\", \"pod\": \"hw11-api-59dc96cb8d-kfxzr\", \"model_id\": \"B\", \"artifact_sha256\": \"ab5c5be3f6e6e55cf5572f68f9458dd3fdab6a9d613cba447ab13206365c7cac\", \"request_id\": \"b6579884-3b61-4eaa-9762-9b093287e263\", \"session_id\": \"BETA_ONLY_948\", \"index\": 1, \"text\": \"part-1\", \"queue_seconds\": 9.976399996958207e-05, \"cache_hit\": true}\n{\"backend_mode\": \"simulated\", \"pod\": \"hw11-api-59dc96cb8d-kfxzr\", \"model_id\": \"B\", \"artifact_sha256\": \"ab5c5be3f6e6e55cf5572f68f9458dd3fdab6a9d613cba447ab13206365c7cac\", \"request_id\": \"b6579884-3b61-4eaa-9762-9b093287e263\", \"session_id\": \"BETA_ONLY_948\", \"index\": 2, \"text\": \"part-2\", \"queue_seconds\": 9.976399996958207e-05, \"cache_hit\": true}\n{\"backend_mode\": \"simulated\", \"pod\": \"hw11-api-59dc96cb8d-kfxzr\", \"model_id\": \"B\", \"artifact_sha256\": \"ab5c5be3f6e6e55cf5572f68f9458dd3fdab6a9d613cba447ab13206365c7cac\", \"request_id\": \"b6579884-3b61-4eaa-9762-9b093287e263\", \"session_id\": \"BETA_ONLY_948\", \"index\": 3, \"text\": \"part-3\", \"queue_seconds\": 9.976399996958207e-05, \"cache_hit\": true}\n{\"backend_mode\": \"simulated\", \"pod\": \"hw11-api-59dc96cb8d-kfxzr\", \"model_id\": \"B\", \"artifact_sha256\": \"ab5c5be3f6e6e55cf5572f68f9458dd3fdab6a9d613cba447ab13206365c7cac\", \"request_id\": \"b6579884-3b61-4eaa-9762-9b093287e263\", \"session_id\": \"BETA_ONLY_948\", \"done\": true, \"chunks\": 4}\n",
+    "headers": {
+      "date": "Mon, 16 Nov 2026 12:00:11 GMT",
+      "server": "uvicorn",
+      "x-pod": "hw11-api-59dc96cb8d-kfxzr",
+      "x-model-id": "B",
+      "x-request-id": "b6579884-3b61-4eaa-9762-9b093287e263",
+      "content-type": "application/x-ndjson",
+      "transfer-encoding": "chunked"
+    },
+    "duration": 0.9301596279999558
+  }
+]

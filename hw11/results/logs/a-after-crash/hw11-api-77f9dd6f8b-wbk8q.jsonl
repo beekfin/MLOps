@@ -1,0 +1,8 @@
+INFO:     Started server process [1]
+INFO:     Waiting for application startup.
+{"event": "load_start", "unix": 1794830785.5068178, "mono": 2389.922302691, "pod": "hw11-api-77f9dd6f8b-wbk8q", "warmup_seconds": 20.0}
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+{"event": "warmup_complete", "unix": 1794830805.5098672, "mono": 2409.925352938, "pod": "hw11-api-77f9dd6f8b-wbk8q", "model_id": "A", "artifact_sha256": "969e0ae047510c3e500bdbbc211e48910453db646fceaf11d83dd64abccae9f4"}
+{"event": "request_arrived", "unix": 1794830810.0071778, "mono": 2414.422662396, "pod": "hw11-api-77f9dd6f8b-wbk8q", "backend_mode": "simulated", "model_id": "A", "artifact_sha256": "969e0ae047510c3e500bdbbc211e48910453db646fceaf11d83dd64abccae9f4", "request_id": "a38a148d-38ff-425d-be74-9a75eaacd1da", "session_id": "check", "peer_ip": "10.244.0.6", "ready": true, "running": 0, "waiting": 0, "prefix": "common-prefix"}
+{"event": "request_completed", "unix": 1794830810.6131215, "mono": 2415.028606335, "pod": "hw11-api-77f9dd6f8b-wbk8q", "request_id": "a38a148d-38ff-425d-be74-9a75eaacd1da", "session_id": "check", "model_id": "A", "ttfc": 0.3204803729995547, "queue_seconds": 0.00014060899957257789, "duration": 0.6059134469996934, "chunks": 4, "cache_hit": false}

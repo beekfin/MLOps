@@ -1,0 +1,7 @@
+INFO:     Started server process [1]
+INFO:     Waiting for application startup.
+{"event": "load_start", "unix": 1794830616.163673, "mono": 2220.579157412, "pod": "hw11-api-b59cc4fbb-fd6r6", "warmup_seconds": 20.0}
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+{"event": "load_failed", "unix": 1794830636.1648316, "mono": 2240.580316583, "pod": "hw11-api-b59cc4fbb-fd6r6", "error": "Контролируемый отказ прогрева"}
+{"event": "drain_started", "unix": 1794830656.7762403, "mono": 2261.191725406, "pod": "hw11-api-b59cc4fbb-fd6r6", "active": 0}

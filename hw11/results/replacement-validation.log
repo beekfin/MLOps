@@ -1,0 +1,6 @@
+test_03_replacement_keeps_version_and_dialog (test_kubernetes.KubernetesContract.test_03_replacement_keeps_version_and_dialog) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 36.177s
+
+OK

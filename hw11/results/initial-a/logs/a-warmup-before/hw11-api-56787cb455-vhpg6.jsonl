@@ -1,0 +1,15 @@
+INFO:     Started server process [1]
+INFO:     Waiting for application startup.
+{"event": "load_start", "unix": 1794830069.233141, "mono": 1673.648625894, "pod": "hw11-api-56787cb455-vhpg6", "warmup_seconds": 20.0}
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+{"event": "warmup_complete", "unix": 1794830089.2341087, "mono": 1693.649593808, "pod": "hw11-api-56787cb455-vhpg6", "model_id": "A", "artifact_sha256": "969e0ae047510c3e500bdbbc211e48910453db646fceaf11d83dd64abccae9f4"}
+{"event": "request_arrived", "unix": 1794830150.5762455, "mono": 1754.991730318, "pod": "hw11-api-56787cb455-vhpg6", "backend_mode": "simulated", "model_id": "A", "artifact_sha256": "969e0ae047510c3e500bdbbc211e48910453db646fceaf11d83dd64abccae9f4", "request_id": "a-warmup-before-1-5", "session_id": "session-1", "peer_ip": "10.244.0.5", "ready": true, "running": 0, "waiting": 0, "prefix": "prefix-1"}
+{"event": "request_arrived", "unix": 1794830151.07423, "mono": 1755.489714942, "pod": "hw11-api-56787cb455-vhpg6", "backend_mode": "simulated", "model_id": "A", "artifact_sha256": "969e0ae047510c3e500bdbbc211e48910453db646fceaf11d83dd64abccae9f4", "request_id": "a-warmup-before-2-6", "session_id": "session-2", "peer_ip": "10.244.0.8", "ready": true, "running": 1, "waiting": 0, "prefix": "prefix-2"}
+{"event": "request_completed", "unix": 1794830151.20988, "mono": 1755.625364709, "pod": "hw11-api-56787cb455-vhpg6", "request_id": "a-warmup-before-1-5", "session_id": "session-1", "model_id": "A", "ttfc": 0.3374121379999906, "queue_seconds": 0.0002790460000596795, "duration": 0.6336275040000601, "chunks": 4, "cache_hit": false}
+{"event": "drain_started", "unix": 1794830151.8979485, "mono": 1756.313433098, "pod": "hw11-api-56787cb455-vhpg6", "active": 1}
+{"event": "request_completed", "unix": 1794830151.9874387, "mono": 1756.402923097, "pod": "hw11-api-56787cb455-vhpg6", "request_id": "a-warmup-before-2-6", "session_id": "session-2", "model_id": "A", "ttfc": 0.6250343300000623, "queue_seconds": 0.13624693700012358, "duration": 0.9132272070000909, "chunks": 4, "cache_hit": false}
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [1]

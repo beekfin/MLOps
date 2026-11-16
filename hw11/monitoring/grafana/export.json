@@ -1,0 +1,230 @@
+{
+  "id": 1,
+  "panels": [
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "s"
+        }
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 0
+      },
+      "id": 1,
+      "targets": [
+        {
+          "expr": "histogram_quantile(0.95, sum by (le,pod) (rate(hw11_ttfc_seconds_bucket[30s])))",
+          "legendFormat": "{{pod}} {{outcome}}",
+          "refId": "A"
+        }
+      ],
+      "title": "TTFC p95, с",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "s"
+        }
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 0
+      },
+      "id": 2,
+      "targets": [
+        {
+          "expr": "histogram_quantile(0.95, sum by (le,pod) (rate(hw11_response_seconds_bucket[30s])))",
+          "legendFormat": "{{pod}} {{outcome}}",
+          "refId": "A"
+        }
+      ],
+      "title": "Полный ответ p95, с",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short"
+        }
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 8
+      },
+      "id": 3,
+      "targets": [
+        {
+          "expr": "hw11_running or hw11_waiting",
+          "legendFormat": "{{pod}} {{outcome}}",
+          "refId": "A"
+        }
+      ],
+      "title": "Обрабатываются и ждут по Pod",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "reqps"
+        }
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 8
+      },
+      "id": 4,
+      "targets": [
+        {
+          "expr": "sum by (pod) (rate(hw11_requests_total{outcome=\"completed\"}[30s]))",
+          "legendFormat": "{{pod}} {{outcome}}",
+          "refId": "A"
+        }
+      ],
+      "title": "Завершено запросов/с",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "reqps"
+        }
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 16
+      },
+      "id": 5,
+      "targets": [
+        {
+          "expr": "sum by (pod,outcome) (rate(hw11_requests_total{outcome!=\"completed\"}[30s]))",
+          "legendFormat": "{{pod}} {{outcome}}",
+          "refId": "A"
+        }
+      ],
+      "title": "Отказы и обрывы/с",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short"
+        }
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 16
+      },
+      "id": 6,
+      "targets": [
+        {
+          "expr": "sum by (pod) (rate(container_cpu_usage_seconds_total{namespace=\"hw11\",container=\"api\"}[30s]))",
+          "legendFormat": "{{pod}} {{outcome}}",
+          "refId": "A"
+        }
+      ],
+      "title": "CPU ядер по Pod",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "bytes"
+        }
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 24
+      },
+      "id": 7,
+      "targets": [
+        {
+          "expr": "container_memory_working_set_bytes{namespace=\"hw11\",container=\"api\"}",
+          "legendFormat": "{{pod}} {{outcome}}",
+          "refId": "A"
+        }
+      ],
+      "title": "RAM по Pod",
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "prometheus"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short"
+        }
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 24
+      },
+      "id": 8,
+      "targets": [
+        {
+          "expr": "sum(hw11_ready)",
+          "legendFormat": "{{pod}} {{outcome}}",
+          "refId": "A"
+        }
+      ],
+      "title": "Готовые backend",
+      "type": "timeseries"
+    }
+  ],
+  "refresh": "5s",
+  "schemaVersion": 39,
+  "time": {
+    "from": "now-30m",
+    "to": "now"
+  },
+  "title": "ДЗ11 — simulated CPU",
+  "uid": "hw11",
+  "version": 1
+}

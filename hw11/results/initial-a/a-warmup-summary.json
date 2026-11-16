@@ -1,0 +1,40 @@
+{
+  "a-warmup-before": {
+    "sent": 70,
+    "completed": 34,
+    "outcomes": {
+      "http_error": 36,
+      "completed": 34
+    },
+    "pods": {
+      "hw11-api-67895b977d-qsqjw": 39,
+      "hw11-api-56787cb455-s5467": 6,
+      "hw11-api-67895b977d-mf6kx": 23,
+      "hw11-api-56787cb455-vhpg6": 2
+    },
+    "error_rate": 0.5142857142857142,
+    "ttfc_p50": 0.18369676099996468,
+    "ttfc_p95": 0.5042152667000437,
+    "response_p95": 0.7893070752501102,
+    "send_lag_p95": 0.5424401879310587,
+    "rows": 70
+  },
+  "a-warmup-after": {
+    "sent": 70,
+    "completed": 70,
+    "outcomes": {
+      "completed": 70
+    },
+    "pods": {
+      "hw11-api-67895b977d-mf6kx": 36,
+      "hw11-api-67895b977d-qsqjw": 20,
+      "hw11-api-56787cb455-r2dvc": 14
+    },
+    "error_rate": 0.0,
+    "ttfc_p50": 0.14213418099996034,
+    "ttfc_p95": 0.3478971160499782,
+    "response_p95": 0.633873736549981,
+    "send_lag_p95": 0.0028597950935363766,
+    "rows": 70
+  }
+}

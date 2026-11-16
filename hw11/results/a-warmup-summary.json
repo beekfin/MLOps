@@ -1,0 +1,40 @@
+{
+  "a-warmup-before": {
+    "sent": 70,
+    "completed": 36,
+    "outcomes": {
+      "completed": 36,
+      "http_error": 34
+    },
+    "pods": {
+      "hw11-api-59dc96cb8d-xmkfl": 2,
+      "hw11-api-6f8cfbf6d7-mp8kb": 33,
+      "hw11-api-59dc96cb8d-kfxzr": 10,
+      "hw11-api-6f8cfbf6d7-n6ksl": 25
+    },
+    "error_rate": 0.48571428571428577,
+    "ttfc_p50": 0.14449490050014901,
+    "ttfc_p95": 0.5619247972499579,
+    "response_p95": 0.8476112784999259,
+    "send_lag_p95": 0.003085422515869141,
+    "rows": 70
+  },
+  "a-warmup-after": {
+    "sent": 70,
+    "completed": 70,
+    "outcomes": {
+      "completed": 70
+    },
+    "pods": {
+      "hw11-api-6f8cfbf6d7-mp8kb": 42,
+      "hw11-api-6f8cfbf6d7-n6ksl": 19,
+      "hw11-api-77f9dd6f8b-4kptm": 9
+    },
+    "error_rate": 0.0,
+    "ttfc_p50": 0.14404402600007415,
+    "ttfc_p95": 0.5245687285000253,
+    "response_p95": 0.8098297545499459,
+    "send_lag_p95": 0.002937996387481689,
+    "rows": 70
+  }
+}

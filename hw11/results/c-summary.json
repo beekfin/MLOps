@@ -1,0 +1,1381 @@
+{
+  "start": 1794832641.075232,
+  "configured_stabilization_seconds": 45,
+  "load_start": 1794832645.6443138,
+  "observed_three": 1794832678.9903848,
+  "three_ready": 1794832701.0356576,
+  "load_finished": 1794832765.9655619,
+  "cpu_summary": {
+    "per_pod": {
+      "hw11-api-77f9dd6f8b-hpjk8": {
+        "sent": 199,
+        "completed": 199,
+        "ttfc_p95": 0.11612766030002603,
+        "queue_p95": 0.03192001600009462
+      },
+      "hw11-api-77f9dd6f8b-jtkbw": {
+        "sent": 502,
+        "completed": 502,
+        "ttfc_p95": 0.15784308535012306,
+        "queue_p95": 0.0690257113998541
+      },
+      "hw11-api-77f9dd6f8b-tgq86": {
+        "sent": 499,
+        "completed": 499,
+        "ttfc_p95": 0.11737019660004079,
+        "queue_p95": 0.03540364209966355
+      }
+    },
+    "cache_hit_rate": 0.9933333333333333,
+    "sent": 1200,
+    "completed": 1200,
+    "outcomes": {
+      "completed": 1200
+    },
+    "pods": {
+      "hw11-api-77f9dd6f8b-tgq86": 499,
+      "hw11-api-77f9dd6f8b-jtkbw": 502,
+      "hw11-api-77f9dd6f8b-hpjk8": 199
+    },
+    "error_rate": 0.0,
+    "ttfc_p50": 0.08285103500020341,
+    "ttfc_p95": 0.12585919120010655,
+    "response_p50": 0.11897236899994823,
+    "response_p95": 0.16179128730004777,
+    "send_lag_p95": 0.0023050665855407714
+  },
+  "observed_two": 1794832826.9529479,
+  "two_ready": 1794832827.0056598,
+  "downscale_delay_seconds": 61.04009795188904,
+  "hpa_after_low_load": {
+    "apiVersion": "autoscaling/v2",
+    "kind": "HorizontalPodAutoscaler",
+    "metadata": {
+      "annotations": {
+        "meta.helm.sh/release-name": "hw11",
+        "meta.helm.sh/release-namespace": "hw11"
+      },
+      "creationTimestamp": "2026-11-16T12:36:56Z",
+      "labels": {
+        "app.kubernetes.io/managed-by": "Helm"
+      },
+      "name": "hw11-api",
+      "namespace": "hw11",
+      "resourceVersion": "6183",
+      "uid": "eafd2a11-ea6c-4168-81cd-7efa5735313c"
+    },
+    "spec": {
+      "behavior": {
+        "scaleDown": {
+          "policies": [
+            {
+              "periodSeconds": 15,
+              "type": "Pods",
+              "value": 1
+            }
+          ],
+          "selectPolicy": "Max",
+          "stabilizationWindowSeconds": 45
+        },
+        "scaleUp": {
+          "policies": [
+            {
+              "periodSeconds": 15,
+              "type": "Pods",
+              "value": 1
+            }
+          ],
+          "selectPolicy": "Max",
+          "stabilizationWindowSeconds": 0
+        }
+      },
+      "maxReplicas": 3,
+      "metrics": [
+        {
+          "resource": {
+            "name": "cpu",
+            "target": {
+              "averageUtilization": 60,
+              "type": "Utilization"
+            }
+          },
+          "type": "Resource"
+        }
+      ],
+      "minReplicas": 2,
+      "scaleTargetRef": {
+        "apiVersion": "apps/v1",
+        "kind": "Deployment",
+        "name": "hw11-api"
+      }
+    },
+    "status": {
+      "conditions": [
+        {
+          "lastTransitionTime": "2026-11-16T12:37:11Z",
+          "message": "the HPA controller was able to update the target scale to 2",
+          "reason": "SucceededRescale",
+          "status": "True",
+          "type": "AbleToScale"
+        },
+        {
+          "lastTransitionTime": "2026-11-16T12:37:11Z",
+          "message": "the HPA was able to successfully calculate a replica count from cpu resource utilization (percentage of request)",
+          "reason": "ValidMetricFound",
+          "status": "True",
+          "type": "ScalingActive"
+        },
+        {
+          "lastTransitionTime": "2026-11-16T12:40:26Z",
+          "message": "the desired replica count is less than the minimum replica count",
+          "reason": "TooFewReplicas",
+          "status": "True",
+          "type": "ScalingLimited"
+        }
+      ],
+      "currentMetrics": [
+        {
+          "resource": {
+            "current": {
+              "averageUtilization": 5,
+              "averageValue": "5m"
+            },
+            "name": "cpu"
+          },
+          "type": "Resource"
+        }
+      ],
+      "currentReplicas": 3,
+      "desiredReplicas": 2,
+      "lastScaleTime": "2026-11-16T12:40:26Z"
+    }
+  },
+  "hot_start": 1794832842.9109313,
+  "hot_summary": {
+    "per_pod": {
+      "hw11-api-77f9dd6f8b-jtkbw": {
+        "sent": 416,
+        "completed": 293,
+        "ttfc_p95": 6.864483842199843,
+        "queue_p95": 6.722882518799997
+      },
+      "hw11-api-77f9dd6f8b-tgq86": {
+        "sent": 64,
+        "completed": 64,
+        "ttfc_p95": 0.3520230236004407,
+        "queue_p95": 0.17967652045008436
+      }
+    },
+    "cache_hit_rate": 0.9775910364145658,
+    "sent": 480,
+    "completed": 357,
+    "outcomes": {
+      "completed": 357,
+      "rejected": 123
+    },
+    "pods": {
+      "hw11-api-77f9dd6f8b-jtkbw": 416,
+      "hw11-api-77f9dd6f8b-tgq86": 64
+    },
+    "error_rate": 0.25625,
+    "ttfc_p50": 6.666462494999905,
+    "ttfc_p95": 6.861017111199908,
+    "response_p50": 6.950258420000864,
+    "response_p95": 7.146216706800078,
+    "send_lag_p95": 0.006779086589813231
+  },
+  "hot_pods": [
+    {
+      "apiVersion": "v1",
+      "kind": "Pod",
+      "metadata": {
+        "annotations": {
+          "model-sha256": "969e0ae047510c3e500bdbbc211e48910453db646fceaf11d83dd64abccae9f4",
+          "prometheus.io/scrape": "true"
+        },
+        "creationTimestamp": "2026-11-16T12:41:11Z",
+        "generateName": "hw11-api-77f9dd6f8b-",
+        "generation": 1,
+        "labels": {
+          "app": "hw11-api",
+          "pod-template-hash": "77f9dd6f8b"
+        },
+        "name": "hw11-api-77f9dd6f8b-5l8kd",
+        "namespace": "hw11",
+        "ownerReferences": [
+          {
+            "apiVersion": "apps/v1",
+            "blockOwnerDeletion": true,
+            "controller": true,
+            "kind": "ReplicaSet",
+            "name": "hw11-api-77f9dd6f8b",
+            "uid": "b6441cb4-4027-44b3-92ff-0023c117c5e0"
+          }
+        ],
+        "resourceVersion": "6345",
+        "uid": "93c22b06-e4e7-412c-a96d-19916d5fbd90"
+      },
+      "spec": {
+        "containers": [
+          {
+            "env": [
+              {
+                "name": "POD_NAME",
+                "valueFrom": {
+                  "fieldRef": {
+                    "apiVersion": "v1",
+                    "fieldPath": "metadata.name"
+                  }
+                }
+              },
+              {
+                "name": "ARTIFACT_SHA256",
+                "value": "969e0ae047510c3e500bdbbc211e48910453db646fceaf11d83dd64abccae9f4"
+              },
+              {
+                "name": "WARMUP_SECONDS",
+                "value": "20"
+              },
+              {
+                "name": "BROKEN_PROBES",
+                "value": "false"
+              },
+              {
+                "name": "FAIL_WARMUP",
+                "value": "false"
+              },
+              {
+                "name": "CONCURRENCY",
+                "value": "1"
+              },
+              {
+                "name": "MAX_WAITING",
+                "value": "16"
+              },
+              {
+                "name": "QUEUE_TIMEOUT_SECONDS",
+                "value": "45"
+              },
+              {
+                "name": "CACHE_SIZE",
+                "value": "8"
+              },
+              {
+                "name": "CACHE_HIT_MS",
+                "value": "40"
+              },
+              {
+                "name": "CACHE_MISS_MS",
+                "value": "160"
+              },
+              {
+                "name": "CHUNK_CPU_MS",
+                "value": "3"
+              }
+            ],
+            "image": "hw11-service:e4b59485645c",
+            "imagePullPolicy": "Never",
+            "lifecycle": {
+              "preStop": {
+                "exec": {
+                  "command": [
+                    "python",
+                    "-c",
+                    "import urllib.request; urllib.request.urlopen(urllib.request.Request('http://127.0.0.1:8000/drain',data=b'',method='POST'),timeout=8).read()"
+                  ]
+                }
+              }
+            },
+            "livenessProbe": {
+              "failureThreshold": 3,
+              "httpGet": {
+                "path": "/health",
+                "port": "http",
+                "scheme": "HTTP"
+              },
+              "periodSeconds": 5,
+              "successThreshold": 1,
+              "timeoutSeconds": 2
+            },
+            "name": "api",
+            "ports": [
+              {
+                "containerPort": 8000,
+                "name": "http",
+                "protocol": "TCP"
+              }
+            ],
+            "readinessProbe": {
+              "failureThreshold": 1,
+              "httpGet": {
+                "path": "/ready",
+                "port": "http",
+                "scheme": "HTTP"
+              },
+              "periodSeconds": 1,
+              "successThreshold": 1,
+              "timeoutSeconds": 1
+            },
+            "resources": {
+              "limits": {
+                "cpu": "800m",
+                "memory": "192Mi"
+              },
+              "requests": {
+                "cpu": "100m",
+                "memory": "64Mi"
+              }
+            },
+            "startupProbe": {
+              "failureThreshold": 90,
+              "httpGet": {
+                "path": "/startup",
+                "port": "http",
+                "scheme": "HTTP"
+              },
+              "periodSeconds": 1,
+              "successThreshold": 1,
+              "timeoutSeconds": 1
+            },
+            "terminationMessagePath": "/dev/termination-log",
+            "terminationMessagePolicy": "File",
+            "volumeMounts": [
+              {
+                "mountPath": "/config",
+                "name": "model",
+                "readOnly": true
+              },
+              {
+                "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount",
+                "name": "kube-api-access-ktb5b",
+                "readOnly": true
+              }
+            ]
+          }
+        ],
+        "dnsPolicy": "ClusterFirst",
+        "enableServiceLinks": true,
+        "nodeName": "hw11-control-plane",
+        "preemptionPolicy": "PreemptLowerPriority",
+        "priority": 0,
+        "restartPolicy": "Always",
+        "schedulerName": "default-scheduler",
+        "securityContext": {},
+        "serviceAccount": "default",
+        "serviceAccountName": "default",
+        "terminationGracePeriodSeconds": 60,
+        "tolerations": [
+          {
+            "effect": "NoExecute",
+            "key": "node.kubernetes.io/not-ready",
+            "operator": "Exists",
+            "tolerationSeconds": 300
+          },
+          {
+            "effect": "NoExecute",
+            "key": "node.kubernetes.io/unreachable",
+            "operator": "Exists",
+            "tolerationSeconds": 300
+          }
+        ],
+        "volumes": [
+          {
+            "configMap": {
+              "defaultMode": 420,
+              "name": "hw11-model-a"
+            },
+            "name": "model"
+          },
+          {
+            "name": "kube-api-access-ktb5b",
+            "projected": {
+              "defaultMode": 420,
+              "sources": [
+                {
+                  "serviceAccountToken": {
+                    "expirationSeconds": 3607,
+                    "path": "token"
+                  }
+                },
+                {
+                  "configMap": {
+                    "items": [
+                      {
+                        "key": "ca.crt",
+                        "path": "ca.crt"
+                      }
+                    ],
+                    "name": "kube-root-ca.crt"
+                  }
+                },
+                {
+                  "downwardAPI": {
+                    "items": [
+                      {
+                        "fieldRef": {
+                          "apiVersion": "v1",
+                          "fieldPath": "metadata.namespace"
+                        },
+                        "path": "namespace"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "status": {
+        "conditions": [
+          {
+            "lastProbeTime": null,
+            "lastTransitionTime": "2026-11-16T12:41:12Z",
+            "observedGeneration": 1,
+            "status": "True",
+            "type": "PodReadyToStartContainers"
+          },
+          {
+            "lastProbeTime": null,
+            "lastTransitionTime": "2026-11-16T12:41:11Z",
+            "observedGeneration": 1,
+            "status": "True",
+            "type": "Initialized"
+          },
+          {
+            "lastProbeTime": null,
+            "lastTransitionTime": "2026-11-16T12:41:34Z",
+            "observedGeneration": 1,
+            "status": "True",
+            "type": "Ready"
+          },
+          {
+            "lastProbeTime": null,
+            "lastTransitionTime": "2026-11-16T12:41:34Z",
+            "observedGeneration": 1,
+            "status": "True",
+            "type": "ContainersReady"
+          },
+          {
+            "lastProbeTime": null,
+            "lastTransitionTime": "2026-11-16T12:41:11Z",
+            "observedGeneration": 1,
+            "status": "True",
+            "type": "PodScheduled"
+          }
+        ],
+        "containerStatuses": [
+          {
+            "allocatedResources": {
+              "cpu": "100m",
+              "memory": "64Mi"
+            },
+            "containerID": "containerd://219e21a50f93076615d1fd47e9b234b4b25c89a7eaa365092025bee5687f7b32",
+            "image": "docker.io/library/hw11-service:e4b59485645c",
+            "imageID": "sha256:6ddffabb1523c5bb4a94f929c1ff30bcb2502182dafff356690ca0efa969bef9",
+            "lastState": {},
+            "name": "api",
+            "ready": true,
+            "resources": {
+              "limits": {
+                "cpu": "800m",
+                "memory": "192Mi"
+              },
+              "requests": {
+                "cpu": "100m",
+                "memory": "64Mi"
+              }
+            },
+            "restartCount": 0,
+            "started": true,
+            "state": {
+              "running": {
+                "startedAt": "2026-11-16T12:41:12Z"
+              }
+            },
+            "user": {
+              "linux": {
+                "gid": 0,
+                "supplementalGroups": [
+                  0
+                ],
+                "uid": 10001
+              }
+            },
+            "volumeMounts": [
+              {
+                "mountPath": "/config",
+                "name": "model",
+                "readOnly": true,
+                "recursiveReadOnly": "Disabled"
+              },
+              {
+                "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount",
+                "name": "kube-api-access-ktb5b",
+                "readOnly": true,
+                "recursiveReadOnly": "Disabled"
+              }
+            ]
+          }
+        ],
+        "hostIP": "172.22.0.2",
+        "hostIPs": [
+          {
+            "ip": "172.22.0.2"
+          }
+        ],
+        "observedGeneration": 1,
+        "phase": "Running",
+        "podIP": "10.244.0.37",
+        "podIPs": [
+          {
+            "ip": "10.244.0.37"
+          }
+        ],
+        "qosClass": "Burstable",
+        "startTime": "2026-11-16T12:41:11Z"
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Pod",
+      "metadata": {
+        "annotations": {
+          "model-sha256": "969e0ae047510c3e500bdbbc211e48910453db646fceaf11d83dd64abccae9f4",
+          "prometheus.io/scrape": "true"
+        },
+        "creationTimestamp": "2026-11-16T12:36:56Z",
+        "generateName": "hw11-api-77f9dd6f8b-",
+        "generation": 1,
+        "labels": {
+          "app": "hw11-api",
+          "pod-template-hash": "77f9dd6f8b"
+        },
+        "name": "hw11-api-77f9dd6f8b-jtkbw",
+        "namespace": "hw11",
+        "ownerReferences": [
+          {
+            "apiVersion": "apps/v1",
+            "blockOwnerDeletion": true,
+            "controller": true,
+            "kind": "ReplicaSet",
+            "name": "hw11-api-77f9dd6f8b",
+            "uid": "b6441cb4-4027-44b3-92ff-0023c117c5e0"
+          }
+        ],
+        "resourceVersion": "5862",
+        "uid": "789db5e2-8c74-4a7e-8215-a20f695e0092"
+      },
+      "spec": {
+        "containers": [
+          {
+            "env": [
+              {
+                "name": "POD_NAME",
+                "valueFrom": {
+                  "fieldRef": {
+                    "apiVersion": "v1",
+                    "fieldPath": "metadata.name"
+                  }
+                }
+              },
+              {
+                "name": "ARTIFACT_SHA256",
+                "value": "969e0ae047510c3e500bdbbc211e48910453db646fceaf11d83dd64abccae9f4"
+              },
+              {
+                "name": "WARMUP_SECONDS",
+                "value": "20"
+              },
+              {
+                "name": "BROKEN_PROBES",
+                "value": "false"
+              },
+              {
+                "name": "FAIL_WARMUP",
+                "value": "false"
+              },
+              {
+                "name": "CONCURRENCY",
+                "value": "1"
+              },
+              {
+                "name": "MAX_WAITING",
+                "value": "16"
+              },
+              {
+                "name": "QUEUE_TIMEOUT_SECONDS",
+                "value": "45"
+              },
+              {
+                "name": "CACHE_SIZE",
+                "value": "8"
+              },
+              {
+                "name": "CACHE_HIT_MS",
+                "value": "40"
+              },
+              {
+                "name": "CACHE_MISS_MS",
+                "value": "160"
+              },
+              {
+                "name": "CHUNK_CPU_MS",
+                "value": "3"
+              }
+            ],
+            "image": "hw11-service:e4b59485645c",
+            "imagePullPolicy": "Never",
+            "lifecycle": {
+              "preStop": {
+                "exec": {
+                  "command": [
+                    "python",
+                    "-c",
+                    "import urllib.request; urllib.request.urlopen(urllib.request.Request('http://127.0.0.1:8000/drain',data=b'',method='POST'),timeout=8).read()"
+                  ]
+                }
+              }
+            },
+            "livenessProbe": {
+              "failureThreshold": 3,
+              "httpGet": {
+                "path": "/health",
+                "port": "http",
+                "scheme": "HTTP"
+              },
+              "periodSeconds": 5,
+              "successThreshold": 1,
+              "timeoutSeconds": 2
+            },
+            "name": "api",
+            "ports": [
+              {
+                "containerPort": 8000,
+                "name": "http",
+                "protocol": "TCP"
+              }
+            ],
+            "readinessProbe": {
+              "failureThreshold": 1,
+              "httpGet": {
+                "path": "/ready",
+                "port": "http",
+                "scheme": "HTTP"
+              },
+              "periodSeconds": 1,
+              "successThreshold": 1,
+              "timeoutSeconds": 1
+            },
+            "resources": {
+              "limits": {
+                "cpu": "800m",
+                "memory": "192Mi"
+              },
+              "requests": {
+                "cpu": "100m",
+                "memory": "64Mi"
+              }
+            },
+            "startupProbe": {
+              "failureThreshold": 90,
+              "httpGet": {
+                "path": "/startup",
+                "port": "http",
+                "scheme": "HTTP"
+              },
+              "periodSeconds": 1,
+              "successThreshold": 1,
+              "timeoutSeconds": 1
+            },
+            "terminationMessagePath": "/dev/termination-log",
+            "terminationMessagePolicy": "File",
+            "volumeMounts": [
+              {
+                "mountPath": "/config",
+                "name": "model",
+                "readOnly": true
+              },
+              {
+                "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount",
+                "name": "kube-api-access-g7nkz",
+                "readOnly": true
+              }
+            ]
+          }
+        ],
+        "dnsPolicy": "ClusterFirst",
+        "enableServiceLinks": true,
+        "nodeName": "hw11-control-plane",
+        "preemptionPolicy": "PreemptLowerPriority",
+        "priority": 0,
+        "restartPolicy": "Always",
+        "schedulerName": "default-scheduler",
+        "securityContext": {},
+        "serviceAccount": "default",
+        "serviceAccountName": "default",
+        "terminationGracePeriodSeconds": 60,
+        "tolerations": [
+          {
+            "effect": "NoExecute",
+            "key": "node.kubernetes.io/not-ready",
+            "operator": "Exists",
+            "tolerationSeconds": 300
+          },
+          {
+            "effect": "NoExecute",
+            "key": "node.kubernetes.io/unreachable",
+            "operator": "Exists",
+            "tolerationSeconds": 300
+          }
+        ],
+        "volumes": [
+          {
+            "configMap": {
+              "defaultMode": 420,
+              "name": "hw11-model-a"
+            },
+            "name": "model"
+          },
+          {
+            "name": "kube-api-access-g7nkz",
+            "projected": {
+              "defaultMode": 420,
+              "sources": [
+                {
+                  "serviceAccountToken": {
+                    "expirationSeconds": 3607,
+                    "path": "token"
+                  }
+                },
+                {
+                  "configMap": {
+                    "items": [
+                      {
+                        "key": "ca.crt",
+                        "path": "ca.crt"
+                      }
+                    ],
+                    "name": "kube-root-ca.crt"
+                  }
+                },
+                {
+                  "downwardAPI": {
+                    "items": [
+                      {
+                        "fieldRef": {
+                          "apiVersion": "v1",
+                          "fieldPath": "metadata.namespace"
+                        },
+                        "path": "namespace"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "status": {
+        "conditions": [
+          {
+            "lastProbeTime": null,
+            "lastTransitionTime": "2026-11-16T12:36:58Z",
+            "observedGeneration": 1,
+            "status": "True",
+            "type": "PodReadyToStartContainers"
+          },
+          {
+            "lastProbeTime": null,
+            "lastTransitionTime": "2026-11-16T12:36:56Z",
+            "observedGeneration": 1,
+            "status": "True",
+            "type": "Initialized"
+          },
+          {
+            "lastProbeTime": null,
+            "lastTransitionTime": "2026-11-16T12:37:19Z",
+            "observedGeneration": 1,
+            "status": "True",
+            "type": "Ready"
+          },
+          {
+            "lastProbeTime": null,
+            "lastTransitionTime": "2026-11-16T12:37:19Z",
+            "observedGeneration": 1,
+            "status": "True",
+            "type": "ContainersReady"
+          },
+          {
+            "lastProbeTime": null,
+            "lastTransitionTime": "2026-11-16T12:36:56Z",
+            "observedGeneration": 1,
+            "status": "True",
+            "type": "PodScheduled"
+          }
+        ],
+        "containerStatuses": [
+          {
+            "allocatedResources": {
+              "cpu": "100m",
+              "memory": "64Mi"
+            },
+            "containerID": "containerd://de69850f6d1cbbf6272965f128c536949d23f743bf466f5ddd8f5ba1899faf52",
+            "image": "docker.io/library/hw11-service:e4b59485645c",
+            "imageID": "sha256:6ddffabb1523c5bb4a94f929c1ff30bcb2502182dafff356690ca0efa969bef9",
+            "lastState": {},
+            "name": "api",
+            "ready": true,
+            "resources": {
+              "limits": {
+                "cpu": "800m",
+                "memory": "192Mi"
+              },
+              "requests": {
+                "cpu": "100m",
+                "memory": "64Mi"
+              }
+            },
+            "restartCount": 0,
+            "started": true,
+            "state": {
+              "running": {
+                "startedAt": "2026-11-16T12:36:57Z"
+              }
+            },
+            "user": {
+              "linux": {
+                "gid": 0,
+                "supplementalGroups": [
+                  0
+                ],
+                "uid": 10001
+              }
+            },
+            "volumeMounts": [
+              {
+                "mountPath": "/config",
+                "name": "model",
+                "readOnly": true,
+                "recursiveReadOnly": "Disabled"
+              },
+              {
+                "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount",
+                "name": "kube-api-access-g7nkz",
+                "readOnly": true,
+                "recursiveReadOnly": "Disabled"
+              }
+            ]
+          }
+        ],
+        "hostIP": "172.22.0.2",
+        "hostIPs": [
+          {
+            "ip": "172.22.0.2"
+          }
+        ],
+        "observedGeneration": 1,
+        "phase": "Running",
+        "podIP": "10.244.0.35",
+        "podIPs": [
+          {
+            "ip": "10.244.0.35"
+          }
+        ],
+        "qosClass": "Burstable",
+        "startTime": "2026-11-16T12:36:56Z"
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Pod",
+      "metadata": {
+        "annotations": {
+          "model-sha256": "969e0ae047510c3e500bdbbc211e48910453db646fceaf11d83dd64abccae9f4",
+          "prometheus.io/scrape": "true"
+        },
+        "creationTimestamp": "2026-11-16T12:04:40Z",
+        "generateName": "hw11-api-77f9dd6f8b-",
+        "generation": 1,
+        "labels": {
+          "app": "hw11-api",
+          "pod-template-hash": "77f9dd6f8b"
+        },
+        "name": "hw11-api-77f9dd6f8b-tgq86",
+        "namespace": "hw11",
+        "ownerReferences": [
+          {
+            "apiVersion": "apps/v1",
+            "blockOwnerDeletion": true,
+            "controller": true,
+            "kind": "ReplicaSet",
+            "name": "hw11-api-77f9dd6f8b",
+            "uid": "b6441cb4-4027-44b3-92ff-0023c117c5e0"
+          }
+        ],
+        "resourceVersion": "3007",
+        "uid": "7fd355fc-fd9b-46fb-a187-459cff3bfddb"
+      },
+      "spec": {
+        "containers": [
+          {
+            "env": [
+              {
+                "name": "POD_NAME",
+                "valueFrom": {
+                  "fieldRef": {
+                    "apiVersion": "v1",
+                    "fieldPath": "metadata.name"
+                  }
+                }
+              },
+              {
+                "name": "ARTIFACT_SHA256",
+                "value": "969e0ae047510c3e500bdbbc211e48910453db646fceaf11d83dd64abccae9f4"
+              },
+              {
+                "name": "WARMUP_SECONDS",
+                "value": "20"
+              },
+              {
+                "name": "BROKEN_PROBES",
+                "value": "false"
+              },
+              {
+                "name": "FAIL_WARMUP",
+                "value": "false"
+              },
+              {
+                "name": "CONCURRENCY",
+                "value": "1"
+              },
+              {
+                "name": "MAX_WAITING",
+                "value": "16"
+              },
+              {
+                "name": "QUEUE_TIMEOUT_SECONDS",
+                "value": "45"
+              },
+              {
+                "name": "CACHE_SIZE",
+                "value": "8"
+              },
+              {
+                "name": "CACHE_HIT_MS",
+                "value": "40"
+              },
+              {
+                "name": "CACHE_MISS_MS",
+                "value": "160"
+              },
+              {
+                "name": "CHUNK_CPU_MS",
+                "value": "3"
+              }
+            ],
+            "image": "hw11-service:e4b59485645c",
+            "imagePullPolicy": "Never",
+            "lifecycle": {
+              "preStop": {
+                "exec": {
+                  "command": [
+                    "python",
+                    "-c",
+                    "import urllib.request; urllib.request.urlopen(urllib.request.Request('http://127.0.0.1:8000/drain',data=b'',method='POST'),timeout=8).read()"
+                  ]
+                }
+              }
+            },
+            "livenessProbe": {
+              "failureThreshold": 3,
+              "httpGet": {
+                "path": "/health",
+                "port": "http",
+                "scheme": "HTTP"
+              },
+              "periodSeconds": 5,
+              "successThreshold": 1,
+              "timeoutSeconds": 2
+            },
+            "name": "api",
+            "ports": [
+              {
+                "containerPort": 8000,
+                "name": "http",
+                "protocol": "TCP"
+              }
+            ],
+            "readinessProbe": {
+              "failureThreshold": 1,
+              "httpGet": {
+                "path": "/ready",
+                "port": "http",
+                "scheme": "HTTP"
+              },
+              "periodSeconds": 1,
+              "successThreshold": 1,
+              "timeoutSeconds": 1
+            },
+            "resources": {
+              "limits": {
+                "cpu": "800m",
+                "memory": "192Mi"
+              },
+              "requests": {
+                "cpu": "100m",
+                "memory": "64Mi"
+              }
+            },
+            "startupProbe": {
+              "failureThreshold": 90,
+              "httpGet": {
+                "path": "/startup",
+                "port": "http",
+                "scheme": "HTTP"
+              },
+              "periodSeconds": 1,
+              "successThreshold": 1,
+              "timeoutSeconds": 1
+            },
+            "terminationMessagePath": "/dev/termination-log",
+            "terminationMessagePolicy": "File",
+            "volumeMounts": [
+              {
+                "mountPath": "/config",
+                "name": "model",
+                "readOnly": true
+              },
+              {
+                "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount",
+                "name": "kube-api-access-8rd54",
+                "readOnly": true
+              }
+            ]
+          }
+        ],
+        "dnsPolicy": "ClusterFirst",
+        "enableServiceLinks": true,
+        "nodeName": "hw11-control-plane",
+        "preemptionPolicy": "PreemptLowerPriority",
+        "priority": 0,
+        "restartPolicy": "Always",
+        "schedulerName": "default-scheduler",
+        "securityContext": {},
+        "serviceAccount": "default",
+        "serviceAccountName": "default",
+        "terminationGracePeriodSeconds": 60,
+        "tolerations": [
+          {
+            "effect": "NoExecute",
+            "key": "node.kubernetes.io/not-ready",
+            "operator": "Exists",
+            "tolerationSeconds": 300
+          },
+          {
+            "effect": "NoExecute",
+            "key": "node.kubernetes.io/unreachable",
+            "operator": "Exists",
+            "tolerationSeconds": 300
+          }
+        ],
+        "volumes": [
+          {
+            "configMap": {
+              "defaultMode": 420,
+              "name": "hw11-model-a"
+            },
+            "name": "model"
+          },
+          {
+            "name": "kube-api-access-8rd54",
+            "projected": {
+              "defaultMode": 420,
+              "sources": [
+                {
+                  "serviceAccountToken": {
+                    "expirationSeconds": 3607,
+                    "path": "token"
+                  }
+                },
+                {
+                  "configMap": {
+                    "items": [
+                      {
+                        "key": "ca.crt",
+                        "path": "ca.crt"
+                      }
+                    ],
+                    "name": "kube-root-ca.crt"
+                  }
+                },
+                {
+                  "downwardAPI": {
+                    "items": [
+                      {
+                        "fieldRef": {
+                          "apiVersion": "v1",
+                          "fieldPath": "metadata.namespace"
+                        },
+                        "path": "namespace"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "status": {
+        "conditions": [
+          {
+            "lastProbeTime": null,
+            "lastTransitionTime": "2026-11-16T12:04:40Z",
+            "observedGeneration": 1,
+            "status": "True",
+            "type": "PodReadyToStartContainers"
+          },
+          {
+            "lastProbeTime": null,
+            "lastTransitionTime": "2026-11-16T12:04:40Z",
+            "observedGeneration": 1,
+            "status": "True",
+            "type": "Initialized"
+          },
+          {
+            "lastProbeTime": null,
+            "lastTransitionTime": "2026-11-16T12:05:02Z",
+            "observedGeneration": 1,
+            "status": "True",
+            "type": "Ready"
+          },
+          {
+            "lastProbeTime": null,
+            "lastTransitionTime": "2026-11-16T12:05:02Z",
+            "observedGeneration": 1,
+            "status": "True",
+            "type": "ContainersReady"
+          },
+          {
+            "lastProbeTime": null,
+            "lastTransitionTime": "2026-11-16T12:04:40Z",
+            "observedGeneration": 1,
+            "status": "True",
+            "type": "PodScheduled"
+          }
+        ],
+        "containerStatuses": [
+          {
+            "allocatedResources": {
+              "cpu": "100m",
+              "memory": "64Mi"
+            },
+            "containerID": "containerd://5856f1047190e3f817f3cf3dd23444ba13617656e4fbb747ea5f41bd4f3bf8e8",
+            "image": "docker.io/library/hw11-service:e4b59485645c",
+            "imageID": "sha256:6ddffabb1523c5bb4a94f929c1ff30bcb2502182dafff356690ca0efa969bef9",
+            "lastState": {},
+            "name": "api",
+            "ready": true,
+            "resources": {
+              "limits": {
+                "cpu": "800m",
+                "memory": "192Mi"
+              },
+              "requests": {
+                "cpu": "100m",
+                "memory": "64Mi"
+              }
+            },
+            "restartCount": 0,
+            "started": true,
+            "state": {
+              "running": {
+                "startedAt": "2026-11-16T12:04:40Z"
+              }
+            },
+            "user": {
+              "linux": {
+                "gid": 0,
+                "supplementalGroups": [
+                  0
+                ],
+                "uid": 10001
+              }
+            },
+            "volumeMounts": [
+              {
+                "mountPath": "/config",
+                "name": "model",
+                "readOnly": true,
+                "recursiveReadOnly": "Disabled"
+              },
+              {
+                "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount",
+                "name": "kube-api-access-8rd54",
+                "readOnly": true,
+                "recursiveReadOnly": "Disabled"
+              }
+            ]
+          }
+        ],
+        "hostIP": "172.22.0.2",
+        "hostIPs": [
+          {
+            "ip": "172.22.0.2"
+          }
+        ],
+        "observedGeneration": 1,
+        "phase": "Running",
+        "podIP": "10.244.0.31",
+        "podIPs": [
+          {
+            "ip": "10.244.0.31"
+          }
+        ],
+        "qosClass": "Burstable",
+        "startTime": "2026-11-16T12:04:40Z"
+      }
+    }
+  ],
+  "hot_end": 1794832969.803911,
+  "alerts_summary": {
+    "per_pod": {
+      "hw11-api-77f9dd6f8b-jtkbw": {
+        "sent": 702,
+        "completed": 58,
+        "ttfc_p95": 16.834587280899996,
+        "queue_p95": 16.658128620099525
+      },
+      "hw11-api-77f9dd6f8b-tgq86": {
+        "sent": 108,
+        "completed": 58,
+        "ttfc_p95": 16.8045656875503,
+        "queue_p95": 16.631596998599342
+      }
+    },
+    "cache_hit_rate": 1.0,
+    "sent": 810,
+    "completed": 116,
+    "outcomes": {
+      "rejected": 694,
+      "completed": 116
+    },
+    "pods": {
+      "hw11-api-77f9dd6f8b-jtkbw": 702,
+      "hw11-api-77f9dd6f8b-tgq86": 108
+    },
+    "error_rate": 0.8567901234567901,
+    "ttfc_p50": 16.58303955149995,
+    "ttfc_p95": 16.828139458999658,
+    "response_p50": 17.459377970999867,
+    "response_p95": 17.70494328174982,
+    "send_lag_p95": 0.0024292945861816404
+  },
+  "final_observed_two": 1794833086.4634423,
+  "end": 1794833086.5972886,
+  "final_hpa": {
+    "apiVersion": "autoscaling/v2",
+    "kind": "HorizontalPodAutoscaler",
+    "metadata": {
+      "annotations": {
+        "meta.helm.sh/release-name": "hw11",
+        "meta.helm.sh/release-namespace": "hw11"
+      },
+      "creationTimestamp": "2026-11-16T12:36:56Z",
+      "labels": {
+        "app.kubernetes.io/managed-by": "Helm"
+      },
+      "name": "hw11-api",
+      "namespace": "hw11",
+      "resourceVersion": "6616",
+      "uid": "eafd2a11-ea6c-4168-81cd-7efa5735313c"
+    },
+    "spec": {
+      "behavior": {
+        "scaleDown": {
+          "policies": [
+            {
+              "periodSeconds": 15,
+              "type": "Pods",
+              "value": 1
+            }
+          ],
+          "selectPolicy": "Max",
+          "stabilizationWindowSeconds": 45
+        },
+        "scaleUp": {
+          "policies": [
+            {
+              "periodSeconds": 15,
+              "type": "Pods",
+              "value": 1
+            }
+          ],
+          "selectPolicy": "Max",
+          "stabilizationWindowSeconds": 0
+        }
+      },
+      "maxReplicas": 3,
+      "metrics": [
+        {
+          "resource": {
+            "name": "cpu",
+            "target": {
+              "averageUtilization": 60,
+              "type": "Utilization"
+            }
+          },
+          "type": "Resource"
+        }
+      ],
+      "minReplicas": 2,
+      "scaleTargetRef": {
+        "apiVersion": "apps/v1",
+        "kind": "Deployment",
+        "name": "hw11-api"
+      }
+    },
+    "status": {
+      "conditions": [
+        {
+          "lastTransitionTime": "2026-11-16T12:37:11Z",
+          "message": "the HPA controller was able to update the target scale to 2",
+          "reason": "SucceededRescale",
+          "status": "True",
+          "type": "AbleToScale"
+        },
+        {
+          "lastTransitionTime": "2026-11-16T12:37:11Z",
+          "message": "the HPA was able to successfully calculate a replica count from cpu resource utilization (percentage of request)",
+          "reason": "ValidMetricFound",
+          "status": "True",
+          "type": "ScalingActive"
+        },
+        {
+          "lastTransitionTime": "2026-11-16T12:41:26Z",
+          "message": "the desired count is within the acceptable range",
+          "reason": "DesiredWithinRange",
+          "status": "False",
+          "type": "ScalingLimited"
+        }
+      ],
+      "currentMetrics": [
+        {
+          "resource": {
+            "current": {
+              "averageUtilization": 5,
+              "averageValue": "5m"
+            },
+            "name": "cpu"
+          },
+          "type": "Resource"
+        }
+      ],
+      "currentReplicas": 3,
+      "desiredReplicas": 2,
+      "lastScaleTime": "2026-11-16T12:44:42Z"
+    }
+  }
+}

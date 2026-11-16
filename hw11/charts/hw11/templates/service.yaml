@@ -1,0 +1,115 @@
+{{- $model := .Files.Get (printf "files/model-%s.json" .Values.modelVersion) }}
+apiVersion: v1
+kind: ConfigMap
+metadata: {name: 'hw11-model-{{ .Values.modelVersion | lower }}'}
+immutable: true
+data:
+  model.json: {{ $model | quote }}
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata: {name: hw11-api}
+spec:
+  {{- if not .Values.hpa.enabled }}
+  replicas: {{ .Values.replicas }}
+  {{- end }}
+  revisionHistoryLimit: 5
+  minReadySeconds: 2
+  progressDeadlineSeconds: 120
+  strategy:
+    type: RollingUpdate
+    rollingUpdate: {maxSurge: 1, maxUnavailable: 0}
+  selector:
+    matchLabels: {app: hw11-api}
+  template:
+    metadata:
+      labels: {app: hw11-api}
+      annotations:
+        prometheus.io/scrape: "true"
+        model-sha256: {{ $model | sha256sum | quote }}
+    spec:
+      terminationGracePeriodSeconds: 60
+      containers:
+        - name: api
+          image: {{ .Values.image | quote }}
+          imagePullPolicy: Never
+          ports: [{containerPort: 8000, name: http}]
+          resources:
+{{ toYaml .Values.resources | indent 12 }}
+          env:
+            - name: POD_NAME
+              valueFrom: {fieldRef: {fieldPath: metadata.name}}
+            - {name: ARTIFACT_SHA256, value: {{ $model | sha256sum | quote }}}
+            - {name: WARMUP_SECONDS, value: {{ .Values.warmupSeconds | quote }}}
+            - {name: BROKEN_PROBES, value: {{ .Values.brokenProbes | quote }}}
+            - {name: FAIL_WARMUP, value: {{ .Values.failWarmup | quote }}}
+            - {name: CONCURRENCY, value: {{ .Values.concurrency | quote }}}
+            - {name: MAX_WAITING, value: {{ .Values.maxWaiting | quote }}}
+            - {name: QUEUE_TIMEOUT_SECONDS, value: {{ .Values.queueTimeoutSeconds | quote }}}
+            - {name: CACHE_SIZE, value: {{ .Values.cacheSize | quote }}}
+            - {name: CACHE_HIT_MS, value: {{ .Values.cacheHitMs | quote }}}
+            - {name: CACHE_MISS_MS, value: {{ .Values.cacheMissMs | quote }}}
+            - {name: CHUNK_CPU_MS, value: {{ .Values.chunkCpuMs | quote }}}
+          volumeMounts: [{name: model, mountPath: /config, readOnly: true}]
+          startupProbe:
+            httpGet: {path: /startup, port: http}
+            periodSeconds: 1
+            timeoutSeconds: 1
+            failureThreshold: 90
+          readinessProbe:
+            httpGet: {path: /ready, port: http}
+            periodSeconds: 1
+            timeoutSeconds: 1
+            failureThreshold: 1
+          livenessProbe:
+            httpGet: {path: /health, port: http}
+            periodSeconds: 5
+            timeoutSeconds: 2
+            failureThreshold: 3
+          lifecycle:
+            preStop:
+              exec:
+                command: [python, -c, "import urllib.request; urllib.request.urlopen(urllib.request.Request('http://127.0.0.1:8000/drain',data=b'',method='POST'),timeout=8).read()"]
+      volumes:
+        - name: model
+          configMap: {name: 'hw11-model-{{ .Values.modelVersion | lower }}'}
+---
+apiVersion: v1
+kind: Service
+metadata: {name: hw11-normal}
+spec:
+  selector: {app: hw11-api}
+  sessionAffinity: None
+  ports: [{port: 8000, targetPort: http}]
+---
+apiVersion: v1
+kind: Service
+metadata: {name: hw11-sticky}
+spec:
+  selector: {app: hw11-api}
+  sessionAffinity: ClientIP
+  sessionAffinityConfig:
+    clientIP: {timeoutSeconds: 30}
+  ports: [{port: 8000, targetPort: http}]
+{{- if .Values.hpa.enabled }}
+---
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata: {name: hw11-api}
+spec:
+  scaleTargetRef: {apiVersion: apps/v1, kind: Deployment, name: hw11-api}
+  minReplicas: 2
+  maxReplicas: 3
+  metrics:
+    - type: Resource
+      resource:
+        name: cpu
+        target: {type: Utilization, averageUtilization: {{ .Values.hpa.targetCPU }}}
+  behavior:
+    scaleDown:
+      stabilizationWindowSeconds: {{ .Values.hpa.stabilizationSeconds }}
+      policies: [{type: Pods, value: 1, periodSeconds: 15}]
+    scaleUp:
+      stabilizationWindowSeconds: 0
+      policies: [{type: Pods, value: 1, periodSeconds: 15}]
+{{- end }}

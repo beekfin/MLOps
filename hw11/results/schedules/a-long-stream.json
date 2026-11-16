@@ -1,0 +1,1 @@
+{"name": "a-long-stream", "duration": 1, "rps": 1, "traffic": "uniform", "cache_initial": "empty", "requests": [{"index": 0, "client": 0, "offset": 0.0, "payload": {"prompt": "Question 00000 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx", "prefix": "prefix-0", "chunks": 70, "chunk_delay": 0.4}}]}

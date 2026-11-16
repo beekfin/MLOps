@@ -1,0 +1,8 @@
+{
+  "name": "b-normal-uniform-2",
+  "start": 1794831444.6709096,
+  "plan": "results/schedules/b-uniform.json",
+  "service": "hw11-normal",
+  "end": 1794831565.3103206,
+  "attempts": 480
+}

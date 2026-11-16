@@ -1,0 +1,23 @@
+image: hw11-service:dev
+replicas: 2
+modelVersion: A
+warmupSeconds: 20
+brokenProbes: false
+failWarmup: false
+concurrency: 1
+maxWaiting: 16
+queueTimeoutSeconds: 45
+cacheSize: 8
+cacheHitMs: 40
+cacheMissMs: 160
+chunkCpuMs: 3
+resources:
+  requests: {cpu: 100m, memory: 64Mi}
+  limits: {cpu: 800m, memory: 192Mi}
+hpa:
+  enabled: false
+  targetCPU: 60
+  stabilizationSeconds: 45
+monitoring:
+  prometheusImage: prom/prometheus:v3.5.0
+  grafanaImage: grafana/grafana:12.1.1

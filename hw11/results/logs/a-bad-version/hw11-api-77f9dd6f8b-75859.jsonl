@@ -1,0 +1,7 @@
+INFO:     Started server process [1]
+INFO:     Waiting for application startup.
+{"event": "load_start", "unix": 1794830658.0224893, "mono": 2262.437973781, "pod": "hw11-api-77f9dd6f8b-75859", "warmup_seconds": 20.0}
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+{"event": "warmup_complete", "unix": 1794830678.0232935, "mono": 2282.43877831, "pod": "hw11-api-77f9dd6f8b-75859", "model_id": "A", "artifact_sha256": "969e0ae047510c3e500bdbbc211e48910453db646fceaf11d83dd64abccae9f4"}
+{"event": "request_arrived", "unix": 1794830707.4559045, "mono": 2311.871389031, "pod": "hw11-api-77f9dd6f8b-75859", "backend_mode": "simulated", "model_id": "A", "artifact_sha256": "969e0ae047510c3e500bdbbc211e48910453db646fceaf11d83dd64abccae9f4", "request_id": "0ae1eb82-b3a9-4c6d-9a89-d36bf5529d10", "session_id": "check", "peer_ip": "10.244.0.6", "ready": true, "running": 0, "waiting": 0, "prefix": "common-prefix"}
