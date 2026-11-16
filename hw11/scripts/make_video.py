@@ -6,7 +6,7 @@ ROOT=Path(__file__).resolve().parents[1];R=ROOT/'results';FRAMES=ROOT/'.runtime/
 BG='#0b1421';PANEL='#142337';FG='#ebf1f8';CYAN='#57ceef';GREEN='#48d7a7';GRAY='#94a5bb'
 F=Path('/usr/share/fonts/TTF')
 def font(size,bold=False,mono=False):return ImageFont.truetype(str(F/('DejaVuSansMono.ttf' if mono else 'DejaVuSans-Bold.ttf' if bold else 'DejaVuSans.ttf')),size*2)
-def text(im,x,y,value,size=25,color=FG,bold=False):ImageDraw.Draw(im).text((x*2,y*2),str(value),font=font(size,bold),fill=color)
+def text(im,x,y,value,size=25,color=FG,bold=False,mono=False):ImageDraw.Draw(im).text((x*2,y*2),str(value),font=font(size,bold,mono),fill=color)
 def read(name):return json.loads((R/name).read_text())
 def base(title,source,index,total):
  im=Image.new('RGB',(3840,2160),BG);d=ImageDraw.Draw(im);d.rectangle((0,0,3840,110),fill='#070d16')
@@ -19,28 +19,30 @@ def base(title,source,index,total):
  text(im,1740,1025,f'{index+1}/{total}',19,GRAY)
  return im
 
-def body(im,values,size=29):
+def body(im,values,size=29,mono=False,compact=False):
  d=ImageDraw.Draw(im)
  def wrap(s,n):
   out=[]
-  while d.textlength(s,font=font(n))>3390:
+  while d.textlength(s,font=font(n,mono=mono))>3390:
    low,high=1,len(s)
    while low<high:
     mid=(low+high+1)//2
-    if d.textlength(s[:mid],font=font(n))<=3390:low=mid
+    if d.textlength(s[:mid],font=font(n,mono=mono))<=3390:low=mid
     else:high=mid-1
    cut=s.rfind(' ',0,low+1)
    if cut<low//2:cut=low
    out.append(s[:cut]);s=s[cut:].lstrip()
   return out+[s]
- while sum(len(wrap(s,size))*(size+15)+18 for s in values)>710:
+ gap=5 if compact else 18;leading=8 if compact else 15
+ values=[line for value in values for line in value.split("\n")]
+ while sum(len(wrap(s,size))*(size+leading)+gap for s in values)>710:
   size-=1
-  if size<20:raise ValueError('Переполнен кадр')
+  if size<(17 if compact else 20):raise ValueError('Переполнен кадр')
  d.rounded_rectangle((100,435,3740,1970),radius=22,fill=PANEL,outline='#30455e',width=2)
  y=245
  for s in values:
-  for line in wrap(s,size):text(im,85,y,line,size,GREEN if 'PASS' in line or 'OK' in line else FG);y+=size+15
-  y+=18
+  for line in wrap(s,size):text(im,85,y,line,size,GREEN if 'PASS' in line or 'OK' in line else FG,mono=mono);y+=size+leading
+  y+=gap
 
 def plot(im,name,crop=None):
  chart=Image.open(R/'plots'/name).convert('RGB')
@@ -178,12 +180,14 @@ def main():
   'Видео — обзор выполненных опытов по сохранённым данным.',
   'Музыка: C418 — Haggstrom. Без голосовой озвучки.'
  ],18)
+ from video_evidence import enrich
+ scenes=enrich(scenes)
  FRAMES.mkdir(parents=True,exist_ok=True);out=ROOT/'submission';out.mkdir(exist_ok=True)
  concat=[];metadata=[';FFMETADATA1','title=ДЗ11 — Kubernetes под нагрузкой'];elapsed=0
  for i,s in enumerate(scenes):
   im=base(s['title'],s['source'],i,len(scenes))
   if 'plot' in s:plot(im,s['plot'],s.get('crop'))
-  else:body(im,s['values'])
+  else:body(im,s['values'],size=23 if s.get('evidence') else 29,mono=s.get('evidence',False),compact=s.get('evidence',False))
   path=FRAMES/f'{i:02d}.png';im.save(path);im.close()
   concat += [f"file '{path}'",f"duration {s['duration']}"]
   metadata += ['[CHAPTER]','TIMEBASE=1/1000',f'START={elapsed*1000}',f"END={(elapsed+s['duration'])*1000}",'title='+s['title']]
@@ -199,6 +203,7 @@ def main():
  facts={'file':str(target.relative_to(ROOT)),'duration_seconds':elapsed,'resolution':[3840,2160],'chapters':len(scenes),'music':'C418 — Haggstrom',
         'music_sha256':hashlib.sha256(args.music.read_bytes()).hexdigest(),'video_sha256':hashlib.sha256(target.read_bytes()).hexdigest(),'results_commit':commit,
         'presentation':'Обзор сохранённых результатов, не запись повторного запуска'}
+ (out/'video-scenes.json').write_text(json.dumps(scenes,ensure_ascii=False,indent=2)+'\n')
  (out/'video-info.json').write_text(json.dumps(facts,ensure_ascii=False,indent=2)+'\n')
  print(json.dumps(facts,ensure_ascii=False,indent=2))
 if __name__=='__main__':main()
