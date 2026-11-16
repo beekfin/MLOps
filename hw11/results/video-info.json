@@ -1,0 +1,14 @@
+{
+  "file": "submission/hw11_beekfin_4k_music.mp4",
+  "duration_seconds": 472,
+  "resolution": [
+    3840,
+    2160
+  ],
+  "chapters": 19,
+  "music": "C418 — Haggstrom",
+  "music_sha256": "16e5044b7d83f52ca7e52eb1fd0d55a74322b0d26b5ef7286b315d4e5f61d5a2",
+  "video_sha256": "72d3744cab94b64e9fee7878cf2f893c7615340311a48b2b83879c2220b6100b",
+  "results_commit": "ebd996a",
+  "presentation": "Обзор сохранённых результатов, не запись повторного запуска"
+}

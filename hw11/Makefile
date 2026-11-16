@@ -22,3 +22,7 @@ report:
 	$(PYTHON) scripts/audit.py
 down:
 	kind delete cluster --name hw11
+
+.PHONY: video
+video:
+	$(PYTHON) scripts/make_video.py
